@@ -1,15 +1,12 @@
 import React from "react"
 
 
-export default class Level extends React.Component {
+export default class Grade extends React.Component {
 
     state = {
         "level": "Primary",
         "grade": [1, 2, 3, 4, 5, 6]
     }
-
-
-
 
     render() {
         return (
@@ -25,9 +22,6 @@ export default class Level extends React.Component {
                     )
                 })}
             </React.Fragment>
-
-
-
 
         )
     }
