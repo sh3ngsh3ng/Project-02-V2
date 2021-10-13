@@ -2,7 +2,7 @@ import React from "react"
 
 export default class TopicList extends React.Component {
     state = {
-        "topics": ['Math', 'Science', 'English', 'Mother Tongue']
+        "topics": ['Algebra', 'Fractions', 'Addition', 'Subtraction']
     }
 
 
