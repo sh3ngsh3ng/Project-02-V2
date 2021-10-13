@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import "bootstrap/dist/css/bostrap.min.css"
+
+import React from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from "./NavBar"
 
 function App() {
   return (
     <React.Fragment>
-      <NavBar/>
+      <NavBar />
     </React.Fragment>
   );
 }
