@@ -1,7 +1,7 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
-import NavBar from "./NavBar"
-import FilterForm from "./FilterForm"
+import NavBar from "./components/NavBar"
+import FilterForm from "./components/FilterForm"
 
 function App() {
   return (
