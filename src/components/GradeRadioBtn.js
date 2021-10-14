@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export default class Grade extends React.Component {
+export default class GradeRadioBtn extends React.Component {
 
     state = {
         "level": "Primary",

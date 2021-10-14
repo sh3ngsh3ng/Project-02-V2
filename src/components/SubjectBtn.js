@@ -1,6 +1,6 @@
 import React from "react"
 
-export default class Subject extends React.Component {
+export default class SubjectBtn extends React.Component {
     state = {
         "subjects": ["Math", "Science", "English"]
     }

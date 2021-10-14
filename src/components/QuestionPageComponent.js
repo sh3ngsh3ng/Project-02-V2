@@ -1,10 +1,11 @@
 import React from "react"
-import Grade from "./Grade"
+import GradeRadioBtn from "./GradeRadioBtn"
 import TopicList from "./TopicList"
-import Subject from "./Subject"
+import SubjectBtn from "./SubjectBtn"
+import QuestionDisplay from "./QuestionDisplay"
 
 
-export default class FilterForm extends React.Component {
+export default class QuestionPageComponent extends React.Component {
     state = {
 
     }
@@ -13,12 +14,13 @@ export default class FilterForm extends React.Component {
         return (
             <React.Fragment>
                 <div className="box">
-                <Subject />
+                <SubjectBtn />
                 <br/>
-                <Grade />
+                <GradeRadioBtn />
                 <br/>
                 <TopicList />
-
+                <br/>
+                <QuestionDisplay />
                 </div>
 
             </React.Fragment>
