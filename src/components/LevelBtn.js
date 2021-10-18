@@ -1,15 +1,14 @@
 import React from "react"
 
 export default function LevelBtn (props) {
-    return(
+    return (
         <React.Fragment>
-            {props.levels.map(function(obj) {
-                return (
-                    <React.Fragment>
-                        <button type="button" className="btn btn-primary">{obj.level}</button>
-                        <br/>
-                    </React.Fragment>
-                )
+            {props.data.map(function(obj) {
+                return <button type="button" 
+                            value={obj.value} 
+                            className="btn btn-primary"
+                            onClick={props.function}
+                            >{obj.level}</button>
             })}
         </React.Fragment>
     )

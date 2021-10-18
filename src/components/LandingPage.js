@@ -1,25 +1,11 @@
-import axios from "axios"
 import React from "react"
 import LevelBtn from "./LevelBtn"
 
-export default class LandingPage extends React.Component {
-    state = {
-        'levels': []
-    }
+export default function LandingPage (props) {
+    return (
+        <React.Fragment>
+            <LevelBtn data={props.data} function={props.function}/>
+        </React.Fragment>
 
-    async componentDidMount() {
-        let response = await axios.get("levels.json")
-        this.setState ({
-            'levels': response.data
-        })
-    }
-
-    render() {
-
-
-
-        return (
-            <LevelBtn levels={this.state.levels} />
-        )
-    }
+    )
 }

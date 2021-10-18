@@ -1,0 +1,17 @@
+[
+    {
+        "level": "Primary",
+        "value": "pri",
+        "grade": [1, 2, 3, 4, 5, 6]
+    },
+    {
+        "level": "Secondary",
+        "value": "sec",
+        "grade": [1, 2, 3, 4]
+    },
+    {
+        "level": "Junior College",
+        "value": "jc",
+        "grade": [1, 2]
+    }
+]
