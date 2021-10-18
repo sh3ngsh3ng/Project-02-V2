@@ -2,16 +2,19 @@
     {
         "level": "Primary",
         "value": "pri",
-        "grade": [1, 2, 3, 4, 5, 6]
+        "grade": [1, 2, 3, 4, 5, 6],
+        "subjects": ["Math", "English", "Science"]
     },
     {
         "level": "Secondary",
         "value": "sec",
-        "grade": [1, 2, 3, 4]
+        "grade": [1, 2, 3, 4],
+        "subjects": ["A Math", "E Math", "Pure Chemistry", "Pure Biology", "History", "Geography"]
     },
     {
         "level": "Junior College",
         "value": "jc",
-        "grade": [1, 2]
+        "grade": [1, 2],
+        "subjects": ["H2 Math", "H2 Economics", "H2 Chemistry", "H2 Biology"]
     }
 ]

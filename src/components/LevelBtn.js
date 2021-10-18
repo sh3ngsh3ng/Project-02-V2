@@ -5,11 +5,12 @@ export default function LevelBtn (props) {
         <React.Fragment>
             {props.data.map(function(obj) {
                 return <button type="button" 
-                            value={obj.value} 
+                            value={obj.value}
                             className="btn btn-primary"
-                            onClick={props.function}
+                            onClick={props.changePage}
                             >{obj.level}</button>
             })}
+            
         </React.Fragment>
     )
 }

@@ -11,9 +11,11 @@ export default class App extends React.Component {
     'data': [],
     'active': "landingpage",
     'selectedLevel': "",
-  
+    'selectedSubjects': []
   }
 
+
+  // fetch data.json
   async componentDidMount() {
     let response = await axios.get("data.json")
     this.setState ({
@@ -21,10 +23,21 @@ export default class App extends React.Component {
     })
   }
 
+  // function to change page from landing to question page + set state (level, subjects)
   changePage = (evt) => {
+    let subjects = []
+    if (this.state.selectedLevel === "pri") {
+      subjects = this.state.data[0].subjects
+    } else if (this.state.selectedLevel === "sec") {
+      subjects = this.state.data[1].subjects
+    } else {
+      subjects = this.state.data[2].subjects
+    }
+
     this.setState({
       'active': "questionpage",
-      'selectedLevel': evt.target.value
+      'selectedLevel': evt.target.value,
+      'selectedSubjects': subjects
     })
   }
 
@@ -32,7 +45,7 @@ export default class App extends React.Component {
   renderContent() {
     if (this.state.active === "landingpage") {
       return(
-        <LandingPage data={this.state.data} function={this.changePage}/>
+        <LandingPage data={this.state.data} changePage={this.changePage}/>
       )
     } else if (this.state.active === "questionpage") {
       return (
