@@ -1,5 +1,6 @@
 import axios from "axios"
 import React from "react"
+import LevelBtn from "./LevelBtn"
 
 export default class LandingPage extends React.Component {
     state = {
@@ -7,7 +8,7 @@ export default class LandingPage extends React.Component {
     }
 
     async componentDidMount() {
-        let response = await axios.get("./json/levels.json")
+        let response = await axios.get("levels.json")
         this.setState ({
             'levels': response.data
         })
@@ -18,9 +19,7 @@ export default class LandingPage extends React.Component {
 
 
         return (
-            <div>
-                {this.state.levels}
-            </div>
+            <LevelBtn levels={this.state.levels} />
         )
     }
 }
