@@ -11,11 +11,6 @@ export default class App extends React.Component {
     active: "landingpage"
   }
 
-  url = "https://3000-red-bovid-jbf53hi9.ws-us17.gitpod.io/"
-
-
-
-
 
   renderContent() {
     if (this.state.active === "landingpage") {
@@ -25,6 +20,7 @@ export default class App extends React.Component {
     } else if (this.state.active === "questionpage") {
       return (
         <QuestionPage />
+        
       )
     }
   }
