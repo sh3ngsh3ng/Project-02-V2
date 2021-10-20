@@ -24,7 +24,7 @@ export default class App extends React.Component {
   }
 
   // function to change page from landing to question page + set state (level, subjects)
-  changePage = (evt) => {
+  changeToQuestionPage = (evt) => {
     let subjects = []
     if (this.state.selectedLevel === "pri") {
       subjects = this.state.data[0].subjects
@@ -41,15 +41,27 @@ export default class App extends React.Component {
     })
   }
 
+
+
+  // function to change page from question page to landing + reset states
+  changeToLandingPage = () => {
+    this.setState({
+      'active': 'landingpage',
+      'selectedLevel': "",
+      'selectedSubjects': ""
+    })
+  }
+
+
   // conditional rendering of pages
   renderContent() {
     if (this.state.active === "landingpage") {
       return(
-        <LandingPage data={this.state.data} changePage={this.changePage}/>
+        <LandingPage data={this.state.data} changePage={this.changeToQuestionPage}/>
       )
     } else if (this.state.active === "questionpage") {
       return (
-        <QuestionPage />
+        <QuestionPage changePage={this.changeToLandingPage}/>
         
       )
     }
