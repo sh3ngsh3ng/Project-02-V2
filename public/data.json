@@ -15,6 +15,7 @@
         "subjects": ["A Math", "E Math", "Pure Chemistry", "Pure Biology", "History", "Geography"],
         "A Math": ["Polynomials", "Quadratic Equations", "Binomial Theorem"],
         "E Math": ["Linear Functions", "Geometry", "Graphs"],
+        "Pure Chemistry": ["Periodic Table", "Kinetic Particle Theory", "Ionic Equations"],
         "Pure Biology": ["Cells", "Evolution", "Biological Molecules", "Reproduction"],
         "History": ["History of Singapore", "World War I", "World War II"],
         "Geography": ["Mountains", "Volcanoes", "Climate"]

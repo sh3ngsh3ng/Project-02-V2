@@ -10,18 +10,17 @@ export default function SearchForm (props) {
                                 selectedLevel = {props.selectedLevel}
                                 levelObj = {props.levelObj}/>
                 <br/>
-                <TopicList data={props.data}
-                            selectedLevel = {props.selectedLevel}
-                            levelObj = {props.levelObj}
-                            selectedSubject = {props.selectedSubject}
-                            />
-                <br/>
                 <SubjectBtn data={props.data}
                             selectSubject = {props.selectSubject}
                              selectedLevel = {props.selectedLevel}
                              levelObj = {props.levelObj}
                              />
-                
+                <br/>
+                <TopicList data={props.data}
+                            selectedLevel = {props.selectedLevel}
+                            levelObj = {props.levelObj}
+                            selectedSubject = {props.selectedSubject}
+                            />
             </React.Fragment>
         )
 }

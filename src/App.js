@@ -25,12 +25,10 @@ export default class App extends React.Component {
 
   // function to change page from landing to question page + set state (level, subjects)
   changeToQuestionPage = async (evt) => {
-    let levelObj = this.findLevelObj (this.state.data, evt.target.value)
 
     this.setState({
       'active': "questionpage",
       'selectedLevel': evt.target.value,
-      'selectedSubjects': levelObj.subjects[0]
     })
   }
 
