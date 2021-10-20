@@ -83,6 +83,7 @@ export default class App extends React.Component {
                       selectedLevel={this.state.selectedLevel}
                       changePage={this.changeToLandingPage}
                       selectSubject = {this.selectSubject}
+                      selectedSubject = {this.state.selectedSubjects}
                       levelObj = {this.findLevelObj}
                       />
         

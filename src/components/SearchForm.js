@@ -12,7 +12,9 @@ export default function SearchForm (props) {
                 <br/>
                 <TopicList data={props.data}
                             selectedLevel = {props.selectedLevel}
-                            levelObj = {props.levelObj}/>
+                            levelObj = {props.levelObj}
+                            selectedSubject = {props.selectedSubject}
+                            />
 
                 <br/>
                 <SubjectBtn data={props.data}

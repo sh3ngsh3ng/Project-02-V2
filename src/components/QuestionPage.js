@@ -12,6 +12,7 @@ export default function QuestionPage (props) {
                         selectedLevel = {props.selectedLevel}
                         levelObj = {props.levelObj}
                         selectSubject = {props.selectSubject}
+                        selectedSubject = {props.selectedSubject}
                         />
 
             <BackBtn changePage={props.changePage} />
