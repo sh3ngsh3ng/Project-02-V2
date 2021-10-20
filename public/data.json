@@ -12,12 +12,21 @@
         "level": "Secondary",
         "value": "sec",
         "grade": [1, 2, 3, 4],
-        "subjects": ["A Math", "E Math", "Pure Chemistry", "Pure Biology", "History", "Geography"]
+        "subjects": ["A Math", "E Math", "Pure Chemistry", "Pure Biology", "History", "Geography"],
+        "A Math": ["Polynomials", "Quadratic Equations", "Binomial Theorem"],
+        "E Math": ["Linear Functions", "Geometry", "Graphs"],
+        "Pure Biology": ["Cells", "Evolution", "Biological Molecules", "Reproduction"],
+        "History": ["History of Singapore", "World War I", "World War II"],
+        "Geography": ["Mountains", "Volcanoes", "Climate"]
     },
     {
         "level": "Junior College",
         "value": "jc",
         "grade": [1, 2],
-        "subjects": ["H2 Math", "H2 Economics", "H2 Chemistry", "H2 Biology"]
+        "subjects": ["H2 Math", "H2 Economics", "H2 Chemistry", "H2 Biology"],
+        "H2 Math": ["Functions", "Differentiation", "Integration", "Complex Numbers", "Probability"],
+        "H2 Economics": ["Demand & Supply", "Market Structure", "Globalisation"],
+        "H2 Chemistry": ["Atomic Structure", "Reaction Kinetics", "Chemical Bonding", "Electrochemistry"],
+        "H2 Biology": ["Stem Cells", "Cellular Respiration", "Enzymes", "Inheritance", "Photosynthesis"]
     }
 ]
