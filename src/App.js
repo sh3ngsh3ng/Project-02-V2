@@ -24,20 +24,13 @@ export default class App extends React.Component {
   }
 
   // function to change page from landing to question page + set state (level, subjects)
-  changeToQuestionPage = (evt) => {
-    let subjects = []
-    if (this.state.selectedLevel === "pri") {
-      subjects = this.state.data[0].subjects
-    } else if (this.state.selectedLevel === "sec") {
-      subjects = this.state.data[1].subjects
-    } else {
-      subjects = this.state.data[2].subjects
-    }
+  changeToQuestionPage = async (evt) => {
+    let levelObj = this.findLevelObj (this.state.data, evt.target.value)
 
     this.setState({
       'active': "questionpage",
       'selectedLevel': evt.target.value,
-      'selectedSubjects': subjects
+      'selectedSubjects': levelObj.subjects[0]
     })
   }
 
@@ -50,6 +43,9 @@ export default class App extends React.Component {
       'selectedSubjects': ""
     })
   }
+
+
+
 
   // recursion function to find object of selected level
   findLevelObj = (array, level) => {

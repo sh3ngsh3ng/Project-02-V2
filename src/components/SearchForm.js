@@ -15,7 +15,6 @@ export default function SearchForm (props) {
                             levelObj = {props.levelObj}
                             selectedSubject = {props.selectedSubject}
                             />
-
                 <br/>
                 <SubjectBtn data={props.data}
                             selectSubject = {props.selectSubject}
