@@ -20,6 +20,7 @@ export default function SearchForm (props) {
                             selectedLevel = {props.selectedLevel}
                             levelObj = {props.levelObj}
                             selectedSubject = {props.selectedSubject}
+                            selectTopic = {props.selectTopic}
                             />
             </React.Fragment>
         )

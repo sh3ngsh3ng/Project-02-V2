@@ -1,6 +1,7 @@
 import React from "react"
 
 export default function SubjectBtn (props) {
+    // find object that matches the level selected
     let levelObj = props.levelObj(props.data, props.selectedLevel)
 
     return (

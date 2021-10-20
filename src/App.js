@@ -24,7 +24,7 @@ export default class App extends React.Component {
     })
   }
 
-  // function to change page from landing to question page + set state (level, subjects)
+  // event handler to change page from landing to question page + set state for selectedLevel)
   changeToQuestionPage = async (evt) => {
 
     this.setState({
@@ -33,13 +33,28 @@ export default class App extends React.Component {
     })
   }
 
-
-  // function to change page from question page to landing + reset states
+  // event handler to change page from question to landing page + reset all states
   changeToLandingPage = () => {
     this.setState({
       'active': 'landingpage',
       'selectedLevel': "",
-      'selectedSubject': ""
+      'selectedSubject': "",
+      'selectedTopic': ""
+    })
+  }
+
+
+  // event handler to update state of selectedSubject
+  selectSubject = (evt) => {
+    this.setState({
+      'selectedSubject': evt.target.value
+    })
+  }
+
+  // event handler to update state of selectedTopic
+  selectTopic = (evt) => {
+    this.setState({
+      'selectedTopic': evt.target.value
     })
   }
 
@@ -57,13 +72,9 @@ export default class App extends React.Component {
     }
   }
 
-  selectSubject = (evt) => {
-    this.setState({
-      'selectedSubject': evt.target.value
-    })
-  }
 
-  // conditional rendering of pages
+
+  // function for conditional rendering of pages (landing & question)
   renderContent() {
     if (this.state.active === "landingpage") {
       return(
@@ -77,14 +88,14 @@ export default class App extends React.Component {
                       changePage={this.changeToLandingPage}
                       selectSubject = {this.selectSubject}
                       selectedSubject = {this.state.selectedSubject}
+                      selectTopic = {this.selectTopic}
                       levelObj = {this.findLevelObj}
+                      
                       />
         
       )
     }
   }
-
-
 
 
   render () {

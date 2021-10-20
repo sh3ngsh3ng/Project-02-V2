@@ -16,7 +16,7 @@ export default function TopicList (props) {
         return (
             <select>
                 {levelObj[selectedSubject].map(function(topic) {
-                    return <option>{topic}</option>
+                    return <option onClick={props.selectTopic}>{topic}</option>
                 })}
             </select>
         )
