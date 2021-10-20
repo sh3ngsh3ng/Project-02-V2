@@ -1,21 +1,14 @@
 import React from "react"
 
-export default class TopicList extends React.Component {
-    state = {
-        "topics": ['Algebra', 'Fractions', 'Addition', 'Subtraction']
-    }
+export default function TopicList (props) {
+    let levelObj = props.levelObj(props.data, props.selectedLevel)
 
+    return (
+        <select>
+            {/* {levelObj.topics.map(function(topic) {
+                return <option>{topic}</option>
+            })} */}
+        </select>
 
-
-
-    render() {
-        return (
-            <select>
-                {this.state.topics.map(function(topic) {
-                    return <option>{topic}</option>
-                })}
-            </select>
-
-        )
-    }
+    )
 }

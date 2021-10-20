@@ -1,22 +1,17 @@
 import React from "react"
 
-export default class SubjectBtn extends React.Component {
-    state = {
-        "subjects": ["Math", "Science", "English"]
-    }
+export default function SubjectBtn (props) {
+    let levelObj = props.levelObj(props.data, props.selectedLevel)
 
-    render() {
-        return (
-            <React.Fragment>
-                {this.state.subjects.map(function(subject) {
-                    return (
-                        <button type="button" class="btn btn-outline-primary">{subject}</button>
-                    )
-                })}
+    return (
+        <React.Fragment>
+            {levelObj.subjects.map(function(subject) {
+                return (
+                    <button type="button" class="btn btn-outline-primary">{subject}</button>
+                )
+            })}
 
-            </React.Fragment>
-        )
-    }
-
+        </React.Fragment>
+    )
 
 }
