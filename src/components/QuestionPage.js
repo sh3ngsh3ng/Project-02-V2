@@ -11,6 +11,7 @@ export default function QuestionPage (props) {
             <SearchForm data={props.data} 
                         selectedLevel = {props.selectedLevel}
                         levelObj = {props.levelObj}
+                        selectSubject = {props.selectSubject}
                         />
 
             <BackBtn changePage={props.changePage} />

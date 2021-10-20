@@ -3,7 +3,8 @@
         "level": "Primary",
         "value": "pri",
         "grade": [1, 2, 3, 4, 5, 6],
-        "subjects": ["Math", "English", "Science"]
+        "subjects": ["Math", "English", "Science"],
+        "mathtopics": ["Addition", "Subtraction", "Division", "Multiplication", "Algebra"]
     },
     {
         "level": "Secondary",

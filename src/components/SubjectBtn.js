@@ -6,8 +6,13 @@ export default function SubjectBtn (props) {
     return (
         <React.Fragment>
             {levelObj.subjects.map(function(subject) {
+                console.log(subject)
                 return (
-                    <button type="button" class="btn btn-outline-primary">{subject}</button>
+                    <button type="button" 
+                            class="btn btn-outline-primary"
+                            value = {subject}
+                            onClick = {props.selectSubject}
+                            >{subject}</button>
                 )
             })}
 

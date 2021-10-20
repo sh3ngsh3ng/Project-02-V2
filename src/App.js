@@ -11,7 +11,7 @@ export default class App extends React.Component {
     'data': [],
     'active': "landingpage",
     'selectedLevel': "",
-    'selectedSubjects': []
+    'selectedSubjects': ""
   }
 
 
@@ -64,6 +64,12 @@ export default class App extends React.Component {
     }
   }
 
+  selectSubject = (evt) => {
+    this.setState({
+      'selectedSubjects': evt.target.value
+    })
+  }
+
   // conditional rendering of pages
   renderContent() {
     if (this.state.active === "landingpage") {
@@ -76,7 +82,9 @@ export default class App extends React.Component {
         <QuestionPage data={this.state.data} 
                       selectedLevel={this.state.selectedLevel}
                       changePage={this.changeToLandingPage}
-                      levelObj = {this.findLevelObj}/>
+                      selectSubject = {this.selectSubject}
+                      levelObj = {this.findLevelObj}
+                      />
         
       )
     }
