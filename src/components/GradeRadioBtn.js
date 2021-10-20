@@ -1,28 +1,23 @@
 import React from "react"
 
 
-export default class GradeRadioBtn extends React.Component {
+export default function GradeRadioBtn (props) {
+    let levelObj = props.levelObj(props.data, props.selectedLevel)
 
-    state = {
-        "level": "Primary",
-        "grade": [1, 2, 3, 4, 5, 6]
-    }
+    return (
+        <React.Fragment>
+            <label>{levelObj.level}: </label>
+            {levelObj.grade.map(function(grade){
+                return (
+                    <React.Fragment>
+                        <input type="radio" value={grade}/>
+                        <span>{grade}</span>
+                    </React.Fragment>
 
-    render() {
-        return (
-            <React.Fragment>
-                <label>{this.state.level}: </label>
-                {this.state.grade.map(function(grade){
-                    return (
-                        <React.Fragment>
-                            <input type="radio" value={grade}/>
-                            <span>{grade}</span>
-                        </React.Fragment>
+                )
+            })}
+        </React.Fragment>
 
-                    )
-                })}
-            </React.Fragment>
+    )
 
-        )
-    }
 }

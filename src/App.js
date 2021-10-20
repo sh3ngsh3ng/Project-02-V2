@@ -15,7 +15,7 @@ export default class App extends React.Component {
   }
 
 
-  // fetch data.json
+  // fetch data.json on load
   async componentDidMount() {
     let response = await axios.get("data.json")
     this.setState ({
@@ -42,7 +42,6 @@ export default class App extends React.Component {
   }
 
 
-
   // function to change page from question page to landing + reset states
   changeToLandingPage = () => {
     this.setState({
@@ -52,20 +51,38 @@ export default class App extends React.Component {
     })
   }
 
+  // recursion function to find object of selected level
+  findLevelObj = (array, level) => {
+    if (array.length === 1) {
+      return array[0]
+    } else {
+      if (array[0].value === level) {
+        return array[0]
+      } else {
+        return this.findLevelObj(array.slice(1), level)
+      }
+    }
+  }
 
   // conditional rendering of pages
   renderContent() {
     if (this.state.active === "landingpage") {
       return(
-        <LandingPage data={this.state.data} changePage={this.changeToQuestionPage}/>
+        <LandingPage data={this.state.data} 
+                      changePage={this.changeToQuestionPage}/>
       )
     } else if (this.state.active === "questionpage") {
       return (
-        <QuestionPage changePage={this.changeToLandingPage}/>
+        <QuestionPage data={this.state.data} 
+                      selectedLevel={this.state.selectedLevel}
+                      changePage={this.changeToLandingPage}
+                      levelObj = {this.findLevelObj}/>
         
       )
     }
   }
+
+
 
 
   render () {

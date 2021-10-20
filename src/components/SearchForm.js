@@ -3,14 +3,16 @@ import GradeRadioBtn from "./GradeRadioBtn"
 import TopicList from "./TopicList"
 import SubjectBtn from "./SubjectBtn"
 
-export default function SearchForm () {
+export default function SearchForm (props) {
         return (
             <React.Fragment>
-                <GradeRadioBtn />
+                <GradeRadioBtn data={props.data} 
+                                selectedLevel = {props.selectedLevel}
+                                levelObj = {props.levelObj}/>
                 <br/>
-                <TopicList />
+                <TopicList data={props.data}/>
                 <br/>
-                <SubjectBtn />
+                <SubjectBtn data={props.data}/>
             </React.Fragment>
         )
 }
