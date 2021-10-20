@@ -11,7 +11,8 @@ export default class App extends React.Component {
     'data': [],
     'active': "landingpage",
     'selectedLevel': "",
-    'selectedSubjects': ""
+    'selectedSubject': "",
+    'selectedTopic': ""
   }
 
 
@@ -38,11 +39,9 @@ export default class App extends React.Component {
     this.setState({
       'active': 'landingpage',
       'selectedLevel': "",
-      'selectedSubjects': ""
+      'selectedSubject': ""
     })
   }
-
-
 
 
   // recursion function to find object of selected level
@@ -60,7 +59,7 @@ export default class App extends React.Component {
 
   selectSubject = (evt) => {
     this.setState({
-      'selectedSubjects': evt.target.value
+      'selectedSubject': evt.target.value
     })
   }
 
@@ -77,7 +76,7 @@ export default class App extends React.Component {
                       selectedLevel={this.state.selectedLevel}
                       changePage={this.changeToLandingPage}
                       selectSubject = {this.selectSubject}
-                      selectedSubject = {this.state.selectedSubjects}
+                      selectedSubject = {this.state.selectedSubject}
                       levelObj = {this.findLevelObj}
                       />
         
