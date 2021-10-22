@@ -11,7 +11,8 @@ export default function SubjectBtn (props) {
                     <button type="button" 
                             class="btn btn-outline-primary"
                             value = {subject}
-                            onClick = {props.selectSubject}
+                            name = "selectedSubject"
+                            onClick = {props.updateFormField}
                             >{subject}</button>
                 )
             })}

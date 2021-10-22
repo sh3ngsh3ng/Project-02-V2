@@ -13,8 +13,10 @@ export default function QuestionPage (props) {
                         levelObj = {props.levelObj}
                         selectSubject = {props.selectSubject}
                         selectedSubject = {props.selectedSubject}
+                        selectedGrade = {props.selectedGrade}
                         selectTopic = {props.selectTopic}
                         searchQuestions = {props.searchQuestions}
+                        updateFormField = {props.updateFormField}
                         />
             <BackBtn changePage={props.changePage} />
             <br/>

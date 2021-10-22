@@ -10,7 +10,12 @@ export default function GradeRadioBtn (props) {
             {levelObj.grade.map(function(grade){
                 return (
                     <React.Fragment>
-                        <input type="radio" value={grade}/>
+                        <input type="radio" 
+                                name="selectedGrade" 
+                                value={grade} 
+                                checked={props.selectedGrade == grade}
+                                onChange = {props.updateFormField}
+                                />
                         <span>{grade}</span>
                     </React.Fragment>
 

@@ -11,6 +11,7 @@ export default class App extends React.Component {
     'data': [],
     'active': "landingpage",
     'selectedLevel': "",
+    'selectedGrade': "",
     'selectedSubject': "",
     'selectedTopic': ""
   }
@@ -48,12 +49,6 @@ export default class App extends React.Component {
   }
 
 
-  // event handler to update state of selectedSubject
-  selectSubject = (evt) => {
-    this.setState({
-      'selectedSubject': evt.target.value
-    })
-  }
 
   // event handler to update state of selectedTopic
   selectTopic = (evt) => {
@@ -80,6 +75,12 @@ export default class App extends React.Component {
     }
   }
 
+  // update form field
+  updateFormField = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    })
+  }
 
 
   // function for conditional rendering of pages (landing & question)
@@ -96,9 +97,11 @@ export default class App extends React.Component {
                       changePage={this.changeToLandingPage}
                       selectSubject = {this.selectSubject}
                       selectedSubject = {this.state.selectedSubject}
+                      selectedGrade = {this.state.selectedGrade}
                       selectTopic = {this.selectTopic}
                       levelObj = {this.findLevelObj}
                       searchQuestions = {this.searchQuestions}
+                      updateFormField = {this.updateFormField}
                       />
         
       )

@@ -14,9 +14,10 @@ export default function TopicList (props) {
         )
     } else {
         return (
-            <select>
+            <select onChange={props.updateFormField} name = "selectedTopic">
                 {levelObj[selectedSubject].map(function(topic) {
-                    return <option onClick={props.selectTopic}>{topic}</option>
+                    return <option value = {topic}
+                    >{topic}</option>
                 })}
             </select>
         )
