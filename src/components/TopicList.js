@@ -6,7 +6,7 @@ export default function TopicList (props) {
 
 
 
-    if (selectedSubject == "") {
+    if (selectedSubject === "") {
         return (
             <select>
                 <option>Please Choose a Subject</option>

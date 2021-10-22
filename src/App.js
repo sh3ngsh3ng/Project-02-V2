@@ -16,12 +16,16 @@ export default class App extends React.Component {
   }
 
 
-  // fetch data.json on load
+  
   async componentDidMount() {
+    // fetch data.json on load
     let response = await axios.get("data.json")
     this.setState ({
       'data': response.data
     })
+
+
+
   }
 
   // event handler to change page from landing to question page + set state for selectedLevel)
@@ -58,6 +62,10 @@ export default class App extends React.Component {
     })
   }
 
+  // event handler to search questions in searchForm
+  searchQuestions = () => {
+    // write axios here to get ques
+  }
 
   // recursion function to find object of selected level
   findLevelObj = (array, level) => {
@@ -90,7 +98,7 @@ export default class App extends React.Component {
                       selectedSubject = {this.state.selectedSubject}
                       selectTopic = {this.selectTopic}
                       levelObj = {this.findLevelObj}
-                      
+                      searchQuestions = {this.searchQuestions}
                       />
         
       )

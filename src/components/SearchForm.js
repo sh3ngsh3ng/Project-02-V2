@@ -2,6 +2,7 @@ import React from "react"
 import GradeRadioBtn from "./GradeRadioBtn"
 import TopicList from "./TopicList"
 import SubjectBtn from "./SubjectBtn"
+import SearchBtn from "./SearchBtn"
 
 export default function SearchForm (props) {
         return (
@@ -22,6 +23,7 @@ export default function SearchForm (props) {
                             selectedSubject = {props.selectedSubject}
                             selectTopic = {props.selectTopic}
                             />
+                <SearchBtn searchQuestions = {props.searchQuestions}/>
             </React.Fragment>
         )
 }

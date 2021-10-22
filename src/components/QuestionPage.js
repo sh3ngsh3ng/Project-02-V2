@@ -14,6 +14,7 @@ export default function QuestionPage (props) {
                         selectSubject = {props.selectSubject}
                         selectedSubject = {props.selectedSubject}
                         selectTopic = {props.selectTopic}
+                        searchQuestions = {props.searchQuestions}
                         />
             <BackBtn changePage={props.changePage} />
             <br/>
