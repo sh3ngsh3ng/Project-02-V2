@@ -137,6 +137,8 @@ export default class QuestionForm extends React.Component {
                     </select>
                 </React.Fragment>
             )
+        } else {
+            return null
         }
     }
 
