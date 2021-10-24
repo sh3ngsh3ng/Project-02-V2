@@ -1,5 +1,6 @@
 [
     {
+        "id": "a",
         "level": "Primary",
         "value": "pri",
         "grade": [1, 2, 3, 4, 5, 6],
@@ -9,6 +10,7 @@
         "english": ["Vocabulary", "Grammar", "Adjectives"]
     },
     {
+        "id": "b",
         "level": "Secondary",
         "value": "sec",
         "grade": [1, 2, 3, 4],
@@ -21,6 +23,7 @@
         "geography": ["Mountains", "Volcanoes", "Climate"]
     },
     {
+        "id": "c",
         "level": "Junior College",
         "value": "jc",
         "grade": [1, 2],
