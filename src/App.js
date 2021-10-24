@@ -107,6 +107,7 @@ export default class App extends React.Component {
                       levelObj = {this.findLevelObj}
                       searchQuestions = {this.searchQuestions}
                       updateFormField = {this.updateFormField}
+                      searchResults = {this.state.searchResults}
                       />
         
       )

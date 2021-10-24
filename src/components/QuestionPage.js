@@ -20,7 +20,7 @@ export default function QuestionPage (props) {
                         />
             <BackBtn changePage={props.changePage} />
             <br/>
-            <QuestionDisplay />
+            <QuestionDisplay searchResults = {props.searchResults}/>
         </React.Fragment>
     )
 
