@@ -17,7 +17,8 @@ export default function TopicList (props) {
             <select class= "form-select" onChange={props.updateFormField} name ="selectedTopic">
                 <option value="">Please Choose a Topic</option>
                 {levelObj[selectedSubject].map(function(topic) {
-                    return <option value = {topic}
+                    let smallCaseValue = topic.toLowerCase()
+                    return <option value = {smallCaseValue}
                     >{topic}</option>
                 })}
             </select>

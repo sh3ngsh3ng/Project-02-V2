@@ -13,25 +13,42 @@ export default class App extends React.Component {
     'selectedLevel': "",
     'selectedGrade': "",
     'selectedSubject': "",
-    'selectedTopic': ""
+    'selectedTopic': "",
+    'searchResults': []
   }
 
 
+  // API url
+  url = "https://3000-olive-rooster-dsty3hak.ws-us17.gitpod.io/"
+
+  // event handler to search questions in searchForm
+  searchQuestions = async () => {
+    // API call
+    let response = await axios.get(this.url + `${this.state.selectedLevel}`, {
+      params: {
+        "grade": `${this.state.selectedGrade}`,
+        "subject": `${this.state.selectedSubject}`,
+        "topic": `${this.state.selectedTopic}`
+      }
+    })
+    // store results (array) in state
+    this.setState({
+      'searchResults': response.data
+    })
+  }
+
   
   async componentDidMount() {
-    // fetch data.json on load
+    // fetch data.json on loa
     let response = await axios.get("data.json")
     this.setState ({
       'data': response.data
     })
 
-
-
   }
 
   // event handler to change page from landing to question page + set state for selectedLevel)
   changeToQuestionPage = async (evt) => {
-
     this.setState({
       'active': "questionpage",
       'selectedLevel': evt.target.value,
@@ -49,18 +66,6 @@ export default class App extends React.Component {
   }
 
 
-
-  // event handler to update state of selectedTopic
-  selectTopic = (evt) => {
-    this.setState({
-      'selectedTopic': evt.target.value
-    })
-  }
-
-  // event handler to search questions in searchForm
-  searchQuestions = () => {
-    // write axios here to get ques
-  }
 
   // recursion function to find object of selected level
   findLevelObj = (array, level) => {

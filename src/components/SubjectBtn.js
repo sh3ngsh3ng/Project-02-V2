@@ -7,10 +7,11 @@ export default function SubjectBtn (props) {
     return (
         <React.Fragment>
             {levelObj.subjects.map(function(subject) {
+                let smallCaseValue = subject.toLowerCase()
                 return (
                     <button type="button" 
                             class="btn btn-outline-primary"
-                            value = {subject}
+                            value = {smallCaseValue}
                             name = "selectedSubject"
                             onClick = {props.updateFormField}
                             >{subject}</button>
