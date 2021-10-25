@@ -14,7 +14,7 @@ export default class QuestionForm extends React.Component {
         "submitAnswer": ""
     }
 
-
+    // baseState & resetState function to reset states
     baseState = {
         "levelObj": {},
         "submitLevel": "",
@@ -31,9 +31,10 @@ export default class QuestionForm extends React.Component {
         })
     }
 
-    // API
+    // API URL
     url = "https://3000-olive-rooster-dsty3hak.ws-us17.gitpod.io/"
 
+    // event handler to update state
     updateFormField = (evt) => {
         this.setState({
             [evt.target.name]: evt.target.value
@@ -41,7 +42,7 @@ export default class QuestionForm extends React.Component {
     }
 
 
-    // select subject handler 
+    // select subject event handler 
     selectLevel = (evt) => {
         this.resetState()
         let levelObj = this.props.levelObj(this.state.data, evt.target.value)
@@ -52,6 +53,7 @@ export default class QuestionForm extends React.Component {
     }
 
 
+    // fetch data.json upon component mount
     async componentDidMount() {
         let response = await axios.get("data.json")
         this.setState({
@@ -142,7 +144,27 @@ export default class QuestionForm extends React.Component {
         }
     }
 
-    // conditional rendering of ....
+    // conditional rendering of question prompt and suggested answer function
+    renderQnA = () => {
+        if (this.state.submitTopic !== "") {
+            return (
+                <React.Fragment>
+                        
+                    <div class="input-group">
+                        <span class="input-group-text">Enter Question Prompt:</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                    <div>
+                        <label>Suggested Answer: </label>
+                    </div>
+                </React.Fragment>
+            )
+        } else {
+            return null
+        }
+    }
+
+
 
     render() {
         return (
@@ -181,14 +203,9 @@ export default class QuestionForm extends React.Component {
                         {this.renderTopics()}
                     </div>
 
-                    {/* Question Prompt */}
+                    {/* Question Prompt & Suggested Answer*/}
                     <div>
-                        <label>Question Prompt:</label>
-                    </div>
-
-                    {/* Suggested Answer */}
-                    <div>
-                        <label>Suggested Answer:</label>
+                        {this.renderQnA()}
                     </div>
 
             </React.Fragment>
