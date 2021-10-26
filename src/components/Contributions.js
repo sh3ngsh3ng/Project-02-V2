@@ -26,6 +26,8 @@ export default function Contributions(props) {
                                 <EditForm question={question} 
                                             data={props.data}
                                             currentQuestion = {props.currentQuestion}
+                                            levelObj = {props.levelObj}
+                                            
                                 />
                             </Accordion.Body>
                         </Accordion.Item>

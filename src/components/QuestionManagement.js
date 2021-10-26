@@ -39,6 +39,7 @@ export default class QuestionManagement extends React.Component {
                 data = {this.state.data}
                 modifyQuestion = {this.modifyingQuestion}
                 currentQuestion = {this.state.modifyingCurrentQuestion}
+                levelObj = {this.props.levelObj}
                 />
             )
         }

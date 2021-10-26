@@ -2,8 +2,7 @@ import React from 'react'
 
 
 export default function EditForm (props) {
-
-
+    let levelObj = props.levelObj(props.data, props.currentQuestion.level)
 
     return (
         
@@ -11,7 +10,9 @@ export default function EditForm (props) {
             <div>
                 <div className="mb-3">
                     <label className="form-label">Level: </label>
-                    <select value = {props.currentQuestion.level}>
+                    <select value = {props.currentQuestion.level} 
+                            className="form-control"
+                            disabled>
                         {props.data.map(function(obj) {
                             return(
                                 <option value = {obj.value}
@@ -22,6 +23,18 @@ export default function EditForm (props) {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Grade: </label>
+                    {levelObj.grade.map(function(grade) {
+                        return (
+                        <React.Fragment>
+                                <input type="radio"
+                                        checked={props.currentQuestion.grade == grade}
+                                        value={grade}
+                                        disabled                          
+                                />
+                                <span>{grade}</span>
+                            </React.Fragment>
+                        )
+                    })}
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Subject: </label>
