@@ -192,7 +192,7 @@ export default class QuestionForm extends React.Component {
     render() {
         return (
             <React.Fragment>
-                    <button onClick={this.resetState}>Reset</button>
+                    
                     {/* Form Title */}
                     <h1>Submit Question</h1>
 
@@ -236,6 +236,8 @@ export default class QuestionForm extends React.Component {
                         <button onClick={this.submitNewQuestion}>Submit Question</button>
                     </div>
 
+                    {/* Reset Button Temp*/}
+                    <button onClick={this.resetState}>Reset</button>
             </React.Fragment>
         )
     }

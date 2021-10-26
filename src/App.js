@@ -119,7 +119,7 @@ export default class App extends React.Component {
       )
     } else if (this.state.active === "questionmanage") {
       return (
-        <QuestionManagement />
+        <QuestionManagement levelObj = {this.findLevelObj}/>
       )
     }
   }

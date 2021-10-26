@@ -1,4 +1,5 @@
 import React from "react"
+import QuestionForm from "./QuestionForm"
 
 
 export default class QuestionManagement extends React.Component {
@@ -13,7 +14,9 @@ export default class QuestionManagement extends React.Component {
 
     renderContent() {
         if (this.state.active == "addnew") {
-            return("addnew")
+            return(
+                <QuestionForm levelObj = {this.props.levelObj}/>
+            )
         } else if (this.state.active == "submissions") {
             return ("submissions")
         }
@@ -25,11 +28,6 @@ export default class QuestionManagement extends React.Component {
             'active': page
         })
     }
-
-    setActiveTab = (evt) => {
-        evt.target.className = "nav-link active"
-    }
-
 
     render() {
         return (
@@ -50,7 +48,7 @@ export default class QuestionManagement extends React.Component {
                         >Add New</button>
                     </li>
                 </ul>
-                {this.renderContent}
+                {this.renderContent()}
             </React.Fragment>
         )
     }
