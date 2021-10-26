@@ -154,8 +154,9 @@ export default class QuestionForm extends React.Component {
                         <span class="input-group-text">Enter Question Prompt:</span>
                         <textarea class="form-control" aria-label="With textarea"></textarea>
                     </div>
-                    <div>
-                        <label>Suggested Answer: </label>
+                    <div class="input-group">
+                        <span class="input-group-text">Suggested Answer:</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
                     </div>
                 </React.Fragment>
             )
