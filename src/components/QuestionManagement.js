@@ -1,6 +1,6 @@
 import axios from "axios"
 import React from "react"
-import QuestionForm from "./QuestionForm"
+import QuestionForm from "./AddQuestion"
 import QuestionDisplay from "./QuestionDisplay"
 import Contributions from "./Contributions"
 
