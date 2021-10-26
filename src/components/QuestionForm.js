@@ -176,6 +176,18 @@ export default class QuestionForm extends React.Component {
     }
 
 
+    // submit newQuestion function
+    submitNewQuestion = async () => {
+        let newQuestion = await axios.post(this.url + `addquestion`, {
+                "level": this.state.submitLevel,
+                "grade": this.state.submitGrade,
+                "subject": this.state.submitSubject,
+                "topic": this.state.submitTopic,
+                "prompt": this.state.submitPrompt,
+                "answer": this.state.submitAnswer
+        })
+        console.log(newQuestion)
+    }
 
     render() {
         return (
@@ -217,6 +229,11 @@ export default class QuestionForm extends React.Component {
                     {/* Question Prompt & Suggested Answer*/}
                     <div>
                         {this.renderQnA()}
+                    </div>
+
+                    {/* Submit Question */}
+                    <div>
+                        <button onClick={this.submitNewQuestion}>Submit Question</button>
                     </div>
 
             </React.Fragment>
