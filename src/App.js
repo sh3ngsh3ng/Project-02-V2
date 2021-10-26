@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from "./components/NavBar"
 import QuestionPage from "./components/QuestionPage"
 import LandingPage from "./components/LandingPage"
+import QuestionManagement from "./components/QuestionManagement"
 import axios from "axios"
 import "./App.css"
 
@@ -117,7 +118,9 @@ export default class App extends React.Component {
                       />
       )
     } else if (this.state.active === "questionmanage") {
-      return ("hi")
+      return (
+        <QuestionManagement />
+      )
     }
   }
 
