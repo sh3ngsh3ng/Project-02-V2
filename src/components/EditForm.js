@@ -11,7 +11,7 @@ export default function EditForm (props) {
             <div>
                 <div className="mb-3">
                     <label className="form-label">Level: </label>
-                    <select value = {props.question.value}>
+                    <select value = {props.currentQuestion.level}>
                         {props.data.map(function(obj) {
                             return(
                                 

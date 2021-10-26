@@ -38,6 +38,7 @@ export default class QuestionManagement extends React.Component {
                 searchResults={this.state.contributions}
                 data = {this.state.data}
                 modifyQuestion = {this.modifyingQuestion}
+                currentQuestion = {this.state.modifyingCurrentQuestion}
                 />
             )
         }
@@ -52,9 +53,9 @@ export default class QuestionManagement extends React.Component {
 
 
     // event handler to set the question to modify
-    modifyingQuestion = (obj) => {
+    modifyingQuestion = (questionObj) => {
         this.setState({
-            "modifyingCurrentQuestion": obj
+            "modifyingCurrentQuestion": questionObj
         })
     }
 

@@ -23,7 +23,10 @@ export default function Contributions(props) {
                                 {question.prompt}
                             </Accordion.Header>
                             <Accordion.Body>
-                                <EditForm question={question} data={props.data}/>
+                                <EditForm question={question} 
+                                            data={props.data}
+                                            currentQuestion = {props.currentQuestion}
+                                />
                             </Accordion.Body>
                         </Accordion.Item>
                     )
