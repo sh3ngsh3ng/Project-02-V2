@@ -14,9 +14,7 @@ export default function EditForm (props) {
                     <select value = {props.currentQuestion.level}>
                         {props.data.map(function(obj) {
                             return(
-                                
                                 <option value = {obj.value}
-                                        // {...(obj.value == props.question.value) ? 'selected' : null}
                                 >{obj.level}</option>
                             )
                         })}
