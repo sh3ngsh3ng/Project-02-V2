@@ -6,7 +6,11 @@ export default function EditForm (props) {
 
 
     return (
-        <h1>Hi</h1>
+        <React.Fragment>
+            <h1>{props.question.subject}</h1>
+
+        </React.Fragment>
+        
 
     )
 

@@ -32,7 +32,10 @@ export default class QuestionManagement extends React.Component {
         } else if (this.state.active == "submissions") {
             // List of Contributed questions
             return (
-                <Contributions searchResults={this.state.contributions}/>
+                <Contributions 
+                searchResults={this.state.contributions}
+                
+                />
             )
         }
     }

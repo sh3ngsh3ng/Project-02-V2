@@ -16,7 +16,7 @@ export default function Contributions(props) {
                                 {question.prompt}
                             </Accordion.Header>
                             <Accordion.Body>
-                                <EditForm />
+                                <EditForm question={question}/>
                                 <span>Answer: {question.suggested_answer} </span>
                             </Accordion.Body>
                         </Accordion.Item>
