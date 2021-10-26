@@ -10,7 +10,6 @@ export default class QuestionManagement extends React.Component {
         'active': "submissions",
         "contributions": [],
         "modifyingCurrentQuestion": {}
-
     }
 
     url = "https://3000-olive-rooster-dsty3hak.ws-us17.gitpod.io/"
@@ -27,19 +26,20 @@ export default class QuestionManagement extends React.Component {
 
     renderContent() {
         if (this.state.active == "addnew") {
-            return(
+            return (
                 // Form to addnew
-                <AddQuestion levelObj = {this.props.levelObj}/>
+                <AddQuestion levelObj={this.props.levelObj} />
             )
         } else if (this.state.active == "submissions") {
             // List of Contributed questions
             return (
-                <Contributions 
-                searchResults={this.state.contributions}
-                data = {this.state.data}
-                modifyQuestion = {this.modifyingQuestion}
-                currentQuestion = {this.state.modifyingCurrentQuestion}
-                levelObj = {this.props.levelObj}
+                <Contributions
+                    searchResults={this.state.contributions}
+                    data={this.state.data}
+                    modifyQuestion={this.modifyingQuestion}
+                    currentQuestion={this.state.modifyingCurrentQuestion}
+                    levelObj={this.props.levelObj}
+                    renderEditForm={this.renderEditForm}
                 />
             )
         }
@@ -61,22 +61,25 @@ export default class QuestionManagement extends React.Component {
     }
 
 
+
+
+
     render() {
         return (
             <React.Fragment>
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <button className={`nav-link ${this.state.active === "submissions" ? "active" : null}`} 
-                                onClick={(evt) => {
-                                    this.setActive('submissions')
-                                }}
+                        <button className={`nav-link ${this.state.active === "submissions" ? "active" : null}`}
+                            onClick={(evt) => {
+                                this.setActive('submissions')
+                            }}
                         >Submissions</button>
                     </li>
                     <li class="nav-item">
-                        <button className= {`nav-link ${this.state.active === "addnew" ? "active" : null}`} 
-                                onClick ={(evt) => {
-                                    this.setActive('addnew')
-                                }}
+                        <button className={`nav-link ${this.state.active === "addnew" ? "active" : null}`}
+                            onClick={(evt) => {
+                                this.setActive('addnew')
+                            }}
                         >Add New</button>
                     </li>
                 </ul>
