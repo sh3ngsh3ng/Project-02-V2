@@ -2,6 +2,7 @@ import axios from "axios"
 import React from "react"
 import QuestionForm from "./QuestionForm"
 import QuestionDisplay from "./QuestionDisplay"
+import Contributions from "./Contributions"
 
 
 export default class QuestionManagement extends React.Component {
@@ -31,7 +32,7 @@ export default class QuestionManagement extends React.Component {
         } else if (this.state.active == "submissions") {
             // List of Contributed questions
             return (
-                <QuestionDisplay searchResults={this.state.contributions}/>
+                <Contributions searchResults={this.state.contributions}/>
             )
         }
     }
