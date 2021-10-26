@@ -5,8 +5,9 @@ import LevelBtn from "./LevelBtn"
 export default function LandingPage (props) {
     return (
         <React.Fragment>
-            <LevelBtn data={props.data} changePage={props.changePage}/>
-            <br/>
+            <div>
+                <button onClick={props.changePage}>Find Questions</button>
+            </div>
         </React.Fragment>
 
     )

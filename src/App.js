@@ -99,8 +99,7 @@ export default class App extends React.Component {
   renderContent() {
     if (this.state.active === "landingpage") {
       return(
-        <LandingPage data={this.state.data} 
-                      changePage={this.changeToQuestionPage}/>
+        <LandingPage changePage={this.changeToQuestionPage}/>
       )
     } else if (this.state.active === "questionpage") {
       return (

@@ -8,7 +8,8 @@ export default function LevelBtn (props) {
                             key = {obj.id} 
                             value={obj.value}
                             className="btn btn-primary"
-                            onClick={props.changePage}
+                            name = "selectedLevel"
+                            onClick = {props.updateFormField}
                             >{obj.level}</button>
             })}
             
