@@ -17,12 +17,17 @@ export default class QuestionManagement extends React.Component {
     url = "https://3000-maroon-whale-lsdblj2a.ws-us17.gitpod.io/"
 
 
-    async componentDidMount() {
+    fetchData = async () => {
         let contributions = (await axios.get(this.url)).data
         let data = (await axios.get("data.json")).data
         this.setState({
             contributions, data
         })
+        console.log("Data Fetched")
+    }
+
+    async componentDidMount() {
+        this.fetchData()
     }
 
 
@@ -45,6 +50,7 @@ export default class QuestionManagement extends React.Component {
                     updatingQuestion={this.updatingQuestion}
                     updateQuestion={this.updateQuestion}
                     deleteQuestion={this.deleteQuestion}
+                    reloadQuestions={this.fetchData}
                 />
             )
         }

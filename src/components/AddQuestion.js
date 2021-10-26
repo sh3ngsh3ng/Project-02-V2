@@ -126,7 +126,8 @@ export default class AddQuestion extends React.Component {
             let subjectChosen = this.state.submitSubject
             let topics = this.state.levelObj[subjectChosen.toLowerCase()]
             for(let topic of topics) {
-                topicsJSX.push(<option value={topic}
+                let topicSmallCase = topic.toLowerCase()
+                topicsJSX.push(<option value={topicSmallCase}
                         >{topic}</option>)
             }
             return (

@@ -88,8 +88,15 @@ export default function EditForm(props) {
                     </div>
                 </div>
             </div>
-            <button className="btn btn-secondary" onClick={props.updateQuestion}>Update</button>
-            <button className="btn btn-danger" onClick={props.deleteQuestion}>Delete</button>
+            <button className="btn btn-secondary" onClick={async () => {
+                                                await props.updateQuestion()
+                                                props.reloadQuestions()
+                                                }}
+                                                >Update</button>
+            <button className="btn btn-danger" onClick={async () => {
+                                                await props.deleteQuestion()
+                                                props.reloadQuestions()
+                                                }}>Delete</button>
         </React.Fragment>
 
 

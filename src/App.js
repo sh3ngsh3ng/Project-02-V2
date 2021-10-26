@@ -94,6 +94,7 @@ export default class App extends React.Component {
   }
 
 
+
   // function for conditional rendering of pages (landing & question)
   renderContent() {
     if (this.state.active === "landingpage") {
@@ -117,7 +118,10 @@ export default class App extends React.Component {
       )
     } else if (this.state.active === "questionmanage") {
       return (
-        <QuestionManagement levelObj = {this.findLevelObj}/>
+        <QuestionManagement levelObj = {this.findLevelObj}
+                            editDone = {this.editDone}
+        
+        />
       )
     }
   }

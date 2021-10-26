@@ -31,6 +31,7 @@ export default function Contributions(props) {
                                             updatingQuestion = {props.updatingQuestion}
                                             updateQuestion = {props.updateQuestion}
                                             deleteQuestion={props.deleteQuestion}
+                                            reloadQuestions={props.reloadQuestions}
                                 />
                                 }
                             </Accordion.Body>
