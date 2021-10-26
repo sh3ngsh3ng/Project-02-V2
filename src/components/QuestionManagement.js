@@ -107,6 +107,7 @@ export default class QuestionManagement extends React.Component {
                         <button className={`nav-link ${this.state.active === "submissions" ? "active" : null}`}
                             onClick={(evt) => {
                                 this.setActive('submissions')
+                                this.fetchData()
                             }}
                         >Submissions</button>
                     </li>
