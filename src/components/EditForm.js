@@ -74,15 +74,15 @@ export default function EditForm(props) {
 
                 <div className="mb-3">
                     <div className="input-group">
-                        <span className="input-group-text" >Answer: </span>
+                        <span className="input-group-text">Answer: </span>
                         <textarea className="form-control" value={props.currentQuestion.suggested_answer}
                         >
                         </textarea>
                     </div>
                 </div>
-
-                <h1>{props.question.subject}</h1>
             </div>
+            <button className="btn btn-secondary">Update</button>
+            <button className="btn btn-danger">Delete</button>
         </React.Fragment>
 
 

@@ -9,7 +9,9 @@ export default class QuestionManagement extends React.Component {
         'data': [],
         'active': "submissions",
         "contributions": [],
-        "modifyingCurrentQuestion": {}
+        "modifyingCurrentQuestion": {},
+        "modifiedPrompt": "",
+        "modifiedAnswer": ""
     }
 
     url = "https://3000-olive-rooster-dsty3hak.ws-us17.gitpod.io/"
