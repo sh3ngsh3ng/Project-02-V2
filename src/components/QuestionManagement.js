@@ -1,14 +1,15 @@
 import axios from "axios"
 import React from "react"
-import QuestionForm from "./AddQuestion"
-import QuestionDisplay from "./QuestionDisplay"
+import AddQuestion from "./AddQuestion"
 import Contributions from "./Contributions"
 
 
 export default class QuestionManagement extends React.Component {
     state = {
+        'data': [],
         'active': "submissions",
-        "contributions": []
+        "contributions": [],
+        "modifyingCurrentQuestion": {}
 
     }
 
@@ -17,8 +18,9 @@ export default class QuestionManagement extends React.Component {
 
     async componentDidMount() {
         let contributions = (await axios.get(this.url)).data
+        let data = (await axios.get("data.json")).data
         this.setState({
-            contributions
+            contributions, data
         })
     }
 
@@ -27,14 +29,15 @@ export default class QuestionManagement extends React.Component {
         if (this.state.active == "addnew") {
             return(
                 // Form to addnew
-                <QuestionForm levelObj = {this.props.levelObj}/>
+                <AddQuestion levelObj = {this.props.levelObj}/>
             )
         } else if (this.state.active == "submissions") {
             // List of Contributed questions
             return (
                 <Contributions 
                 searchResults={this.state.contributions}
-                
+                data = {this.state.data}
+                modifyQuestion = {this.modifyingQuestion}
                 />
             )
         }
@@ -46,6 +49,15 @@ export default class QuestionManagement extends React.Component {
             'active': page
         })
     }
+
+
+    // event handler to set the question to modify
+    modifyingQuestion = (obj) => {
+        this.setState({
+            "modifyingCurrentQuestion": obj
+        })
+    }
+
 
     render() {
         return (

@@ -2,7 +2,7 @@ import React from 'react'
 import axios from "axios"
 
 
-export default class QuestionForm extends React.Component {
+export default class AddQuestion extends React.Component {
     state = {
         "data": [],
         "levelObj": {},

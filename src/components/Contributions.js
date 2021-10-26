@@ -11,13 +11,19 @@ export default function Contributions(props) {
             <Accordion defaultActiveKey="0">
                 {searchResultsArray.map(function (question) {
                     return (
-                        <Accordion.Item eventKey={question._id}>
+                        <Accordion.Item eventKey={question._id}
+                                        value={question._id}
+                                        onClick={() => {
+                                            props.modifyQuestion(question)
+                                            
+                                        }}
+                                        >
                             <Accordion.Header>
                                 <Badge pill bg="success">Approved</Badge>
                                 {question.prompt}
                             </Accordion.Header>
                             <Accordion.Body>
-                                <EditForm question={question}/>
+                                <EditForm question={question} data={props.data}/>
                             </Accordion.Body>
                         </Accordion.Item>
                     )
