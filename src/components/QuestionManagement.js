@@ -42,12 +42,14 @@ export default class QuestionManagement extends React.Component {
                     currentQuestion={this.state.modifyingCurrentQuestion}
                     levelObj={this.props.levelObj}
                     renderEditForm={this.renderEditForm}
+                    updatingQuestion={this.updatingQuestion}
+                    updateQuestion={this.updateQuestion}
                 />
             )
         }
     }
 
-
+    // function to set the active page to show (addnew or contributions)
     setActive = (page) => {
         this.setState({
             'active': page
@@ -64,7 +66,23 @@ export default class QuestionManagement extends React.Component {
 
 
 
+    // event handler to store update (prompt & answer)
+    updatingQuestion = (evt) => {
+        this.setState({
+            [evt.target.name]: evt.target.value
+        })
+    }
 
+
+    // event handler to put update to API
+    updateQuestion = async () => {
+        let questionId = this.state.modifyingCurrentQuestion._id
+        await axios.put(this.url + "update/" + questionId, {
+            "prompt": this.state.modifiedPrompt,
+            "answer": this.state.modifiedAnswer
+        })
+        return(console.log("Question Updated"))
+    }
 
     render() {
         return (

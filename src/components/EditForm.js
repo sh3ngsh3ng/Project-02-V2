@@ -69,6 +69,7 @@ export default function EditForm(props) {
                         <textarea className="form-control"
                                 name="modifiedPrompt"
                                 defaultValue={props.currentQuestion.prompt}
+                                onChange={props.updatingQuestion}
                         >
                         </textarea>
                     </div>
@@ -78,14 +79,16 @@ export default function EditForm(props) {
                 <div className="mb-3">
                     <div className="input-group">
                         <span className="input-group-text">Answer: </span>
-                        <textarea className="form-control" 
+                        <textarea className="form-control"
+                        name="modifiedAnswer" 
                         defaultValue={props.currentQuestion.suggested_answer}
+                        onChange={props.updatingQuestion}
                         >
                         </textarea>
                     </div>
                 </div>
             </div>
-            <button className="btn btn-secondary">Update</button>
+            <button className="btn btn-secondary" onClick={props.updateQuestion}>Update</button>
             <button className="btn btn-danger">Delete</button>
         </React.Fragment>
 

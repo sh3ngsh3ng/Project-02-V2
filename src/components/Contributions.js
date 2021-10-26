@@ -28,7 +28,8 @@ export default function Contributions(props) {
                                             data={props.data}
                                             currentQuestion = {props.currentQuestion}
                                             levelObj = {props.levelObj}
-
+                                            updatingQuestion = {props.updatingQuestion}
+                                            updateQuestion = {props.updateQuestion}
                                 />
                                 }
                             </Accordion.Body>
