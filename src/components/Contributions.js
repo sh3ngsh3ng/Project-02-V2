@@ -1,4 +1,5 @@
 import React from "react"
+import EditForm from "./EditForm"
 import Accordion from "react-bootstrap/Accordion"
 
 
@@ -15,6 +16,7 @@ export default function Contributions(props) {
                                 {question.prompt}
                             </Accordion.Header>
                             <Accordion.Body>
+                                <EditForm />
                                 <span>Answer: {question.suggested_answer} </span>
                             </Accordion.Body>
                         </Accordion.Item>
