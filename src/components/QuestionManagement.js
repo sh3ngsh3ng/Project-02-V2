@@ -44,6 +44,7 @@ export default class QuestionManagement extends React.Component {
                     renderEditForm={this.renderEditForm}
                     updatingQuestion={this.updatingQuestion}
                     updateQuestion={this.updateQuestion}
+                    deleteQuestion={this.deleteQuestion}
                 />
             )
         }
@@ -74,7 +75,7 @@ export default class QuestionManagement extends React.Component {
     }
 
 
-    // event handler to put update to API
+    // (API) event handler to update question
     updateQuestion = async () => {
         let questionId = this.state.modifyingCurrentQuestion._id
         await axios.put(this.url + "update/" + questionId, {
@@ -83,6 +84,14 @@ export default class QuestionManagement extends React.Component {
         })
         return(console.log("Question Updated"))
     }
+
+    // (API) event handler to delete question
+    deleteQuestion = async () => {
+        let questionId = this.state.modifyingCurrentQuestion._id
+        await axios.delete(this.url + "delete/" + questionId)
+        return(console.log("Question Deleted"))
+    }
+
 
     render() {
         return (

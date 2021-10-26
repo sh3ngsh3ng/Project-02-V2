@@ -32,7 +32,7 @@ export default class AddQuestion extends React.Component {
     }
 
     // API URL
-    url = "https://3000-olive-rooster-dsty3hak.ws-us17.gitpod.io/"
+    url = "https://3000-maroon-whale-lsdblj2a.ws-us17.gitpod.io/"
 
     // event handler to update state
     updateFormField = (evt) => {
@@ -176,7 +176,7 @@ export default class AddQuestion extends React.Component {
     }
 
 
-    // submit newQuestion function
+    // (API) submit new question
     submitNewQuestion = async () => {
         let newQuestion = await axios.post(this.url + `addquestion`, {
                 "level": this.state.submitLevel,
@@ -186,7 +186,7 @@ export default class AddQuestion extends React.Component {
                 "prompt": this.state.submitPrompt,
                 "answer": this.state.submitAnswer
         })
-        console.log(newQuestion)
+        console.log("Question Added")
     }
 
     render() {

@@ -89,7 +89,7 @@ export default function EditForm(props) {
                 </div>
             </div>
             <button className="btn btn-secondary" onClick={props.updateQuestion}>Update</button>
-            <button className="btn btn-danger">Delete</button>
+            <button className="btn btn-danger" onClick={props.deleteQuestion}>Delete</button>
         </React.Fragment>
 
 

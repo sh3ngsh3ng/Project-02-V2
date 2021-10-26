@@ -30,6 +30,7 @@ export default function Contributions(props) {
                                             levelObj = {props.levelObj}
                                             updatingQuestion = {props.updatingQuestion}
                                             updateQuestion = {props.updateQuestion}
+                                            deleteQuestion={props.deleteQuestion}
                                 />
                                 }
                             </Accordion.Body>
