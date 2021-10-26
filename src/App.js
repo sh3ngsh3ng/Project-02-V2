@@ -65,6 +65,12 @@ export default class App extends React.Component {
     })
   }
 
+  // event handler to questionmanagement
+  changeToQuestionManagement = () => {
+    this.setState({
+      'active': "questionmanage"
+    })
+  }
 
 
   // recursion function to find object of selected level
@@ -109,8 +115,9 @@ export default class App extends React.Component {
                       updateFormField = {this.updateFormField}
                       searchResults = {this.state.searchResults}
                       />
-        
       )
+    } else if (this.state.active === "questionmanage") {
+      return ("hi")
     }
   }
 
@@ -118,7 +125,7 @@ export default class App extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <NavBar />
+        <NavBar login={this.changeToQuestionManagement}/>
         {this.renderContent()}
       </React.Fragment>
     )
