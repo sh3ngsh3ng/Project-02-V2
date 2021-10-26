@@ -38,6 +38,18 @@ export default function EditForm (props) {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Subject: </label>
+                    {levelObj.subjects.map(function(subject){
+                        return(
+                            <button type="button"
+                                    key = {subject}
+                                    className = {`btn btn-outline-primary 
+                                                ${props.currentQuestion.subject == subject.toLowerCase() ? "active": "disabled"}`}
+                                    >
+                                        {subject}
+                                    </button>
+                        )
+
+                    })}
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Topic: </label>
