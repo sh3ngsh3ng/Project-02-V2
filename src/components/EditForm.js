@@ -3,11 +3,13 @@ import React from 'react'
 
 export default function EditForm (props) {
     let levelObj = props.levelObj(props.data, props.currentQuestion.level)
+    
 
     return (
         
         <React.Fragment>
             <div>
+                {/* LevelDropdown */}
                 <div className="mb-3">
                     <label className="form-label">Level: </label>
                     <select value = {props.currentQuestion.level} 
@@ -21,6 +23,7 @@ export default function EditForm (props) {
                         })}
                     </select>
                 </div>
+                {/* GradeRadioBtn */}
                 <div className="mb-3">
                     <label className="form-label">Grade: </label>
                     {levelObj.grade.map(function(grade) {
@@ -36,6 +39,7 @@ export default function EditForm (props) {
                         )
                     })}
                 </div>
+                {/* SubjectBtn */}
                 <div className="mb-3">
                     <label className="form-label">Subject: </label>
                     {levelObj.subjects.map(function(subject){
@@ -51,8 +55,22 @@ export default function EditForm (props) {
 
                     })}
                 </div>
+                {/* TopicsDropdown */}
                 <div className="mb-3">
                     <label className="form-label">Topic: </label>
+                    <select value={props.currentQuestion.topic} 
+                            disabled
+                            className="form-control"
+                            >
+                        {levelObj[props.currentQuestion.subject].map(function(topic){
+                            let topicSmallCase = topic.toLowerCase()
+                            return(
+                                <option value={topicSmallCase}>
+                                    {topic}
+                                </option>
+                            )
+                        })}
+                    </select>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Prompt: </label>
