@@ -144,19 +144,29 @@ export default class QuestionForm extends React.Component {
         }
     }
 
+
     // conditional rendering of question prompt and suggested answer function
     renderQnA = () => {
         if (this.state.submitTopic !== "") {
             return (
-                <React.Fragment>
-                        
+                <React.Fragment>   
                     <div className="input-group">
-                        <span className="input-group-text">Enter Question Prompt:</span>
-                        <textarea className="form-control" aria-label="With textarea"></textarea>
+                        <span className="input-group-text" >Enter Question Prompt:</span>
+                        <textarea className="form-control" 
+                                    aria-label="With textarea" 
+                                    name="submitPrompt" 
+                                    onChange={this.updateFormField}
+                                    value={this.state.submitPrompt}
+                                    ></textarea>
                     </div>
                     <div className="input-group">
                         <span className="input-group-text">Suggested Answer:</span>
-                        <textarea className="form-control" aria-label="With textarea"></textarea>
+                        <textarea className="form-control" 
+                                    aria-label="With textarea" 
+                                    name="submitAnswer" 
+                                    onChange={this.updateFormField}
+                                    value={this.state.submitAnswer}
+                        ></textarea>
                     </div>
                 </React.Fragment>
             )
