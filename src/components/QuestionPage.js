@@ -21,9 +21,6 @@ export default function QuestionPage (props) {
                         />
             <BackBtn changePage={props.changePage} />
             <br/>
-            <QuestionForm levelObj={props.levelObj}
-                          />
-            <br/>
             <QuestionDisplay searchResults = {props.searchResults}/>
         </React.Fragment>
     )
