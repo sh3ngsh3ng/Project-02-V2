@@ -4,21 +4,6 @@ import {motion} from "framer-motion"
 export default function GradeRadioBtn (props) {
     let levelObj = props.levelObj(props.data, props.selectedLevel)
 
-    const variants = {
-        animate: {
-            x:0,
-            opacity: 1
-        },
-        initial: {
-            x: "200%",
-            opacity: 0.5
-        },
-        transition: {
-            type: "spring",
-            stiffness: 50,
-        }
-    }
-
     return (
         <React.Fragment>
             <label>{levelObj.level}: </label>
@@ -30,12 +15,12 @@ export default function GradeRadioBtn (props) {
                                 value={grade} 
                                 checked={props.selectedGrade == grade}
                                 onChange = {props.updateFormField}
-                                variants = {variants}
+                                variants = {props.variants}
                                 animate = "animate"
                                 initial = "initial"
                                 transition = "transition"
                                 />
-                        <motion.span variants={variants}
+                        <motion.span variants={props.variants}
                                         animate ="animate"
                                         initial = "initial"
                                         transiition = "transition"
