@@ -6,7 +6,7 @@ export default function LandingPage (props) {
     return (
         <React.Fragment>
             <div>
-                <button onClick={props.changePage}>Find Questions</button>
+                <button id="start-btn" onClick={props.changePage}>Find Questions</button>
             </div>
         </React.Fragment>
 
