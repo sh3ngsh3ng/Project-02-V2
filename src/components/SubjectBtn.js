@@ -1,4 +1,5 @@
 import React from "react"
+import {motion} from "framer-motion"
 
 export default function SubjectBtn (props) {
     // find object that matches the level selected
@@ -6,16 +7,26 @@ export default function SubjectBtn (props) {
 
     return (
         <React.Fragment>
-            {levelObj.subjects.map(function(subject) {
+            {levelObj.subjects.map(function(subject, i) {
                 let smallCaseValue = subject.toLowerCase()
                 return (
-                    <button type="button"
+                    <motion.button type="button"
                             key = {subject} 
                             className="btn btn-outline-primary"
                             value = {smallCaseValue}
                             name = "selectedSubject"
                             onClick = {props.updateFormField}
-                            >{subject}</button>
+                            variants={props.variants}
+                            animate="animate1"
+                            initial="initial1"
+                            transition= {{
+                                type:"spring",
+                                stiffness: 50,
+                                delay: i * 0.03
+                            }}
+                            >
+                                {subject}
+                            </motion.button>
                 )
             })}
 

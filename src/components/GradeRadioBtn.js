@@ -7,7 +7,7 @@ export default function GradeRadioBtn (props) {
     return (
         <React.Fragment>
             <label>{levelObj.level}: </label>
-            {levelObj.grade.map(function(grade){
+            {levelObj.grade.map(function(grade, i){
                 return (
                     <React.Fragment>
                         <motion.input type="radio" 
@@ -16,14 +16,23 @@ export default function GradeRadioBtn (props) {
                                 checked={props.selectedGrade == grade}
                                 onChange = {props.updateFormField}
                                 variants = {props.variants}
-                                animate = "animate"
-                                initial = "initial"
-                                transition = "transition"
+                                animate = "animate1"
+                                initial = "initial1"
+                                transition = {{
+                                    type:"spring",
+                                    stiffness: 50,
+                                    delay: i * 0.03
+                                }}
                                 />
                         <motion.span variants={props.variants}
-                                        animate ="animate"
-                                        initial = "initial"
-                                        transiition = "transition"
+                                        animate ="animate1"
+                                        initial = {{
+                                            x: "10000%",
+                                            opacity: 0
+                                        }}
+                                        transition = {{
+                                            delay: 0.5
+                                        }}
                         >{grade}</motion.span>
                     </React.Fragment>
 

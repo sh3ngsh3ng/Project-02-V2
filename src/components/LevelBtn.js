@@ -11,14 +11,9 @@ export default function LevelBtn (props) {
                             className="btn btn-primary"
                             name = "selectedLevel"
                             onClick = {props.updateFormField}
-                            animate={{
-                                x:0,
-                                opacity: 1
-                            }}
-                            initial={{
-                                x:"200%",
-                                opacity: 0.5
-                            }}
+                            variants = {props.variants}
+                            animate="animate1"
+                            initial="initial1"
                             transition={{
                                 type:"spring",
                                 stiffness: 50,

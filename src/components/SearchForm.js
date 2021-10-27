@@ -8,23 +8,26 @@ import LevelBtn from "./LevelBtn"
 export default function SearchForm (props) {
 
     const variants = {
-        animate: {
+        animate1: {
             x:0,
             opacity: 1
         },
-        initial: {
+        initial1: {
             x: "200%",
             opacity: 0.5
         },
-        transition: {
+        transition1: {
             type: "spring",
             stiffness: 50,
-        }
+        },
+
     }
 
         return (
             <React.Fragment>
-                <LevelBtn data={props.data} updateFormField = {props.updateFormField}/>
+                <LevelBtn data={props.data} 
+                            updateFormField = {props.updateFormField}
+                            variants={variants}/>
                 <br/>
                 <GradeRadioBtn data={props.data} 
                                 selectedLevel = {props.selectedLevel}
@@ -38,6 +41,7 @@ export default function SearchForm (props) {
                              selectedLevel = {props.selectedLevel}
                              updateFormField = {props.updateFormField}
                              levelObj = {props.levelObj}
+                             variants={variants}
                              />
                 <br/>
                 <TopicList data={props.data}
@@ -46,6 +50,7 @@ export default function SearchForm (props) {
                             selectedSubject = {props.selectedSubject}
                             updateFormField = {props.updateFormField}
                             selectTopic = {props.selectTopic}
+                            variants = {variants}
                             />
                 <SearchBtn searchQuestions = {props.searchQuestions}/>
             </React.Fragment>
