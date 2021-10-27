@@ -20,7 +20,7 @@ export default class App extends React.Component {
 
 
   // API url
-  url = "https://3000-maroon-whale-lsdblj2a.ws-us17.gitpod.io/"
+  url = "https://3000-maroon-whale-lsdblj2a.ws-us18.gitpod.io/"
 
   // event handler to search questions in searchForm
   searchQuestions = async () => {

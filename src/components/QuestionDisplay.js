@@ -1,12 +1,25 @@
 import React from "react"
+import {motion} from "framer-motion"
 
 export default function QuestionDisplay(props) {
     let searchResultsArray = props.searchResults
     return (
         <React.Fragment>
-            {searchResultsArray.map(function(question) {
+            {searchResultsArray.map(function(question, i) {
                 return (
-                   <div className="card mb-3" >
+                   <motion.div className="card mb-3"
+                                animate={{
+                                    x: 0
+                                }}
+                                initial={{
+                                    x: "-100%"
+                                }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 50,
+                                    delay: i * 0.05
+                                }}
+                   >
                         <div className="row g-0">
                             <div className="col-md-4">
                                 <img src="..." className="img-fluid rounded-start" alt="..."/>
@@ -19,7 +32,7 @@ export default function QuestionDisplay(props) {
                                 </div>
                             </div>
                         </div>
-                    </div>                   
+                    </motion.div>                   
                 )
             })}
 

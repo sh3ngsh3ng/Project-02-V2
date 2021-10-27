@@ -14,7 +14,7 @@ export default class QuestionManagement extends React.Component {
         "modifiedAnswer": ""
     }
 
-    url = "https://3000-maroon-whale-lsdblj2a.ws-us17.gitpod.io/"
+    url = "https://3000-maroon-whale-lsdblj2a.ws-us18.gitpod.io/"
 
 
     fetchData = async () => {
