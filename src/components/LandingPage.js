@@ -13,6 +13,7 @@ export default function LandingPage (props) {
                         transition={{
                             type:"spring",
                             stiffness:50,
+                            delay: 0.05
                         }}
                 >Find Questions
                 </motion.button>
