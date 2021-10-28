@@ -1,8 +1,21 @@
 
 /* Landing Page */
+#landing-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+#start-btn-div {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+}
 
 #start-btn {
+  position: relative;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: black solid 2px;
@@ -30,3 +43,7 @@
   font-size: 20px
 }
 
+#nav-bar {
+  background-color: rgb(55, 64, 146)!important;
+  opacity: 0.8;
+}

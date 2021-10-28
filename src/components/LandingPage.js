@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function LandingPage(props) {
     return (
         <React.Fragment>
-
+            <div id="landing-page">
             {/* Landing Page Text 1 */}
             <div>
                 {props.animateLetters("Practice Makes Perfect")}
@@ -30,7 +30,7 @@ export default function LandingPage(props) {
             </div>
 
             {/* Start button */}
-            <div>
+            <div id="start-btn-div">
                 <motion.button id="start-btn"
                     onClick={props.changePage}
                     animate={{ x: 0 }}
@@ -43,7 +43,7 @@ export default function LandingPage(props) {
                 >Start Here
                 </motion.button>
             </div>
-
+            </div>
         </React.Fragment>
 
     )

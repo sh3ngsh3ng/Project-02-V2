@@ -4,7 +4,8 @@ import {motion} from "framer-motion"
 export default function NavBar(props) {
     return (
         <React.Fragment>
-            <motion.nav className="navbar navbar-light bg-light"
+            <motion.nav id="nav-bar"
+                        className="navbar navbar-light bg-light"
                         animate={{y:0}}
                         initial={{y:"-100%"}}
                         transition={{
