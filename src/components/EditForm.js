@@ -12,7 +12,7 @@ export default function EditForm(props) {
             <div class="edit-form">
                 {/* LevelDropdown */}
                 <div className="mb-1">
-                    <label className="form-label">Level: </label>
+                    <label class="edit-form-label">Level: </label>
                     <select value={props.currentQuestion.level}
                         class="edit-level-dropdown"
                         disabled>
@@ -26,7 +26,7 @@ export default function EditForm(props) {
                 </div>
                 {/* GradeRadioBtn */}
                 <div className="mb-1">
-                    <label className="form-label">Grade: </label>
+                    <label class="edit-form-label">Grade: </label>
                     {levelObj.grade.map(function (grade) {
                         return (
                             <React.Fragment>
@@ -44,7 +44,7 @@ export default function EditForm(props) {
 
                 {/* SubjectBtn */}
                 <div className="mb-1">
-                    <label className="edit-form-subject-label form-label">Subject: </label>
+                    <label class="edit-form-label">Subject: </label>
                     {levelObj.subjects.map(function (subject) {
                         return (
                             <button type="button"
@@ -58,10 +58,11 @@ export default function EditForm(props) {
 
                     })}
                 </div>
+
                 {/* TopicsDropdown */}
                 <div className="mb-1">
-                    <label className="form-label">Topic: </label>
-                    {props.currentQuestion.topic}
+                    <label class="edit-form-label">Topic: </label>
+                    <span className="badge bg-light edit-form-topic">{props.currentQuestion.topic}</span>
                 </div>
 
                 {/* Question Prompt Text */}
