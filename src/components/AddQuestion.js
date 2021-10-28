@@ -7,7 +7,7 @@ export default class AddQuestion extends React.Component {
         "data": [],
         "levelObj": {},
         "submitLevel": "",
-        "submitGrade":"",
+        "submitGrade": "",
         "submitSubject": "",
         "submitTopic": "",
         "submitPrompt": "",
@@ -18,7 +18,7 @@ export default class AddQuestion extends React.Component {
     baseState = {
         "levelObj": {},
         "submitLevel": "",
-        "submitGrade":"",
+        "submitGrade": "",
         "submitSubject": "",
         "submitTopic": "",
         "submitPrompt": "",
@@ -69,11 +69,11 @@ export default class AddQuestion extends React.Component {
                 gradeJSX.push(
                     <React.Fragment>
                         <input type="radio"
-                                class="add-grade-btn" 
-                                name = "submitGrade"
-                                value = {grade}
-                                checked = {this.state.submitGrade == grade}
-                                onChange = {this.updateFormField}
+                            class="add-grade-btn"
+                            name="submitGrade"
+                            value={grade}
+                            checked={this.state.submitGrade == grade}
+                            onChange={this.updateFormField}
                         />
                         <span class="add-grade-label">{grade}</span>
                     </React.Fragment>
@@ -101,11 +101,11 @@ export default class AddQuestion extends React.Component {
             for (let subject of this.state.levelObj.subjects) {
                 subjectJSX.push(
                     <button type="button"
-                            className="btn btn-outline-primary add-subject-btn "
-                            value={subject.toLowerCase()}
-                            name="submitSubject"
-                            onClick = {this.updateFormField}
-                    
+                        className="btn btn-outline-primary add-subject-btn "
+                        value={subject.toLowerCase()}
+                        name="submitSubject"
+                        onClick={this.updateFormField}
+
                     >{subject}</button>
                 )
             }
@@ -126,17 +126,17 @@ export default class AddQuestion extends React.Component {
             let topicsJSX = []
             let subjectChosen = this.state.submitSubject
             let topics = this.state.levelObj[subjectChosen.toLowerCase()]
-            for(let topic of topics) {
+            for (let topic of topics) {
                 let topicSmallCase = topic.toLowerCase()
                 topicsJSX.push(<option value={topicSmallCase}
-                        >{topic}</option>)
+                >{topic}</option>)
             }
             return (
                 <React.Fragment>
                     <span class="add-form-label">Topics: </span>
                     <select name="submitTopic"
-                            class="add-form-topic-dropdown"
-                            onChange = {this.updateFormField}>
+                        class="add-form-topic-dropdown"
+                        onChange={this.updateFormField}>
                         <option value="" selected disabled>Please Choose a Topic</option>
                         {topicsJSX}
                     </select>
@@ -152,28 +152,46 @@ export default class AddQuestion extends React.Component {
     renderQnA = () => {
         if (this.state.submitTopic !== "") {
             return (
-                <React.Fragment>   
+                <React.Fragment>
                     <div className="input-group mb-2">
                         <span className="input-group-text">
                             <span class="add-form-label">Question Prompt:</span>
                         </span>
-                        <textarea className="form-control" 
-                                    aria-label="With textarea" 
-                                    name="submitPrompt" 
-                                    onChange={this.updateFormField}
-                                    value={this.state.submitPrompt}
-                                    ></textarea>
+                        <textarea className="form-control"
+                            aria-label="With textarea"
+                            name="submitPrompt"
+                            onChange={this.updateFormField}
+                            value={this.state.submitPrompt}
+                        ></textarea>
                     </div>
                     <div className="input-group">
                         <span className="input-group-text">
                             <span class="add-form-label">Suggested Answer:</span>
                         </span>
-                        <textarea className="form-control" 
-                                    aria-label="With textarea" 
-                                    name="submitAnswer" 
-                                    onChange={this.updateFormField}
-                                    value={this.state.submitAnswer}
+                        <textarea className="form-control"
+                            aria-label="With textarea"
+                            name="submitAnswer"
+                            onChange={this.updateFormField}
+                            value={this.state.submitAnswer}
                         ></textarea>
+                    </div>
+                </React.Fragment>
+            )
+        } else {
+            return null
+        }
+    }
+
+    // conditional rendering of submit and reset button
+    renderBtns = () => {
+        if (this.state.submitPrompt && this.state.submitAnswer !== "") {
+            return (
+                <React.Fragment>
+                    <div>
+                        {/* Submit Question */}
+                        <button id="add-new-submit-btn" onClick={this.submitNewQuestion}>Submit</button>
+                        {/* Reset Button Temp*/}
+                        <button id="add-new-reset-btn" onClick={this.resetState}>Reset</button>
                     </div>
                 </React.Fragment>
             )
@@ -186,12 +204,12 @@ export default class AddQuestion extends React.Component {
     // (API) submit new question
     submitNewQuestion = async () => {
         let newQuestion = await axios.post(this.url + `addquestion`, {
-                "level": this.state.submitLevel,
-                "grade": this.state.submitGrade,
-                "subject": this.state.submitSubject,
-                "topic": this.state.submitTopic,
-                "prompt": this.state.submitPrompt,
-                "answer": this.state.submitAnswer
+            "level": this.state.submitLevel,
+            "grade": this.state.submitGrade,
+            "subject": this.state.submitSubject,
+            "topic": this.state.submitTopic,
+            "prompt": this.state.submitPrompt,
+            "answer": this.state.submitAnswer
         })
         console.log("Question Added")
     }
@@ -208,15 +226,15 @@ export default class AddQuestion extends React.Component {
                     <div className="mb-3">
                         <span class="add-form-label">Level: </span>
                         <select name="submitLevel"
-                                id="add-level-dropdown" 
-                                onChange={this.selectLevel}>
-                        <option value="" selected disabled>Please Select a Level</option>
-                        {this.state.data.map(function(obj) {
-                            return (
-                                <option value = {obj.value}
-                                >{obj.level}</option>
-                            )
-                        })}
+                            id="add-level-dropdown"
+                            onChange={this.selectLevel}>
+                            <option value="" selected disabled>Please Select a Level</option>
+                            {this.state.data.map(function (obj) {
+                                return (
+                                    <option value={obj.value}
+                                    >{obj.level}</option>
+                                )
+                            })}
                         </select>
                     </div>
 
@@ -240,13 +258,11 @@ export default class AddQuestion extends React.Component {
                         {this.renderQnA()}
                     </div>
 
-                    {/* Submit Question */}
                     <div>
-                        <button onClick={this.submitNewQuestion}>Submit Question</button>
+                        {this.renderBtns()}
                     </div>
 
-                    {/* Reset Button Temp*/}
-                    <button onClick={this.resetState}>Reset</button>
+
                 </div>
             </React.Fragment>
         )
