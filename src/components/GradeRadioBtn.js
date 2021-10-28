@@ -13,7 +13,7 @@ export default function GradeRadioBtn (props) {
                         <motion.input type="radio" 
                                 name="selectedGrade" 
                                 value={grade} 
-                                class="find-grade-btn"
+                                class="search-grade-btn"
                                 checked={props.selectedGrade == grade}
                                 onChange = {props.updateFormField}
                                 variants = {props.variants}
@@ -27,7 +27,7 @@ export default function GradeRadioBtn (props) {
                                 // disabled={props.selectedGrade == "" ? false: true}
                                 />
                         <motion.span variants={props.variants}
-                                        class="find-grade-number"
+                                        class="search-grade-number"
                                         animate ="animate1"
                                         initial = {{
                                             x: "10000%",

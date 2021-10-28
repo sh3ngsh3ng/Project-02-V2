@@ -12,7 +12,7 @@ export default function SubjectBtn (props) {
                 return (
                     <motion.button type="button"
                             key = {subject} 
-                            className={`btn find-subject-btn
+                            className={`btn search-subject-btn
                             ${props.selectedSubject == smallCaseSubject ? "btn-success": "btn-outline-primary"}
                             `}
                             value = {smallCaseSubject}

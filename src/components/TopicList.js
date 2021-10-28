@@ -8,13 +8,13 @@ export default function TopicList (props) {
 
     if (selectedSubject === "") {
         return (
-            <select class="find-level-dropdown">
+            <select class="search-topic-dropdown">
                 <option>Please Choose a Subject</option>
             </select>
         )
     } else {
         return (
-            <select class="find-level-dropdown"
+            <select class="search-topic-dropdown"
                     onChange={props.updateFormField} 
                     name ="selectedTopic">
                 <option value="">Please Choose a Topic</option>
