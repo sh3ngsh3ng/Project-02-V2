@@ -1,5 +1,5 @@
 
-/* Landing Page */
+/* start of landing page */
 #landing-page {
   width: 100vw;
   height: 100vh;
@@ -58,7 +58,51 @@
   font-size: 15px
 }
 
+/* end of landing page */
+
+
+/* nav-bar */
 #nav-bar {
   background-color: rgb(55, 64, 146)!important;
   opacity: 0.8;
+}
+
+/* end of nav-bar */
+
+
+/* start of QuestionManagement page */
+#question-management-div {
+  height: 100vh;
+  background-image: url("background-repeat.png")
+}
+
+.question-title {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.badge-text {
+  font-weight: 500;
+}
+
+.accordion-body {
+  background-color: rgb(225, 247, 255);
+  padding: 10px;
+}
+
+.edit-form {
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px #c2b9b9;
+}
+
+.update-btn {
+  background-color: rgb(17, 224, 110);
+  border-radius: 10px;
+}
+
+.delete-btn {
+  margin-left: 5px;
+  background-color: red;
+  border-radius: 10px;
 }

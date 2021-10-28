@@ -9,7 +9,7 @@ export default function EditForm(props) {
     return (
 
         <React.Fragment>
-            <div>
+            <div class="edit-form">
                 {/* LevelDropdown */}
                 <div className="mb-3">
                     <label className="form-label">Level: </label>
@@ -87,16 +87,19 @@ export default function EditForm(props) {
                         </textarea>
                     </div>
                 </div>
-            </div>
-            <button className="btn btn-secondary" onClick={async () => {
+                <div>
+                <button class="update-btn" onClick={async () => {
                                                 await props.updateQuestion()
                                                 props.reloadQuestions()
                                                 }}
                                                 >Update</button>
-            <button className="btn btn-danger" onClick={async () => {
-                                                await props.deleteQuestion()
-                                                props.reloadQuestions()
-                                                }}>Delete</button>
+                <button class="delete-btn" onClick={async () => {
+                                                    await props.deleteQuestion()
+                                                    props.reloadQuestions()
+                                                    }}>Delete</button>
+                </div>
+            </div>
+
         </React.Fragment>
 
 

@@ -25,8 +25,10 @@ export default function Contributions(props) {
                                         }}
                                         >
                             <Accordion.Header>
-                                <Badge pill bg="success">Approved</Badge>
-                                {question.prompt}
+                                <Badge pill bg="success">
+                                    <span class="badge-text">Approved</span>
+                                    </Badge>
+                                <span class="question-title">{question.prompt}</span>
                             </Accordion.Header>
                             <Accordion.Body>
                                 {props.currentQuestion == {} ? null :
