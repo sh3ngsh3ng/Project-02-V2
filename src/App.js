@@ -6,6 +6,7 @@ import LandingPage from "./components/LandingPage"
 import QuestionManagement from "./components/QuestionManagement"
 import AnimatedLetterV1 from "./components/AnimatedLetterV1"
 import axios from "axios"
+import {motion} from "framer-motion"
 import "./App.css"
 
 export default class App extends React.Component {
@@ -113,7 +114,17 @@ export default class App extends React.Component {
   questionAnswer = (answer, id) => {
     if (this.state.revealAnswer && (id == this.state.selectedQuestionId)) {
       return (
-        <div>{answer}</div>
+        <motion.div animate={{
+                      opacity: 1
+                    }}
+                    initial = {{
+                      opacity: 0
+                    }}
+                    transition= {{
+                      duration: 1
+                    }}
+        
+        >Answer: {answer}</motion.div>
       )
     } else {
       return null
