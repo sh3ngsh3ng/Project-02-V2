@@ -8,19 +8,22 @@ export default function QuestionPage (props) {
 
     return (
         <React.Fragment>
-            <SearchForm data={props.data} 
-                        selectedLevel = {props.selectedLevel}
-                        levelObj = {props.levelObj}
-                        selectSubject = {props.selectSubject}
-                        selectedSubject = {props.selectedSubject}
-                        selectedGrade = {props.selectedGrade}
-                        selectTopic = {props.selectTopic}
-                        searchQuestions = {props.searchQuestions}
-                        updateFormField = {props.updateFormField}
-                        />
+            <div>
+                <SearchForm data={props.data} 
+                            selectedLevel = {props.selectedLevel}
+                            levelObj = {props.levelObj}
+                            selectSubject = {props.selectSubject}
+                            selectedSubject = {props.selectedSubject}
+                            selectedGrade = {props.selectedGrade}
+                            selectTopic = {props.selectTopic}
+                            searchQuestions = {props.searchQuestions}
+                            updateFormField = {props.updateFormField}
+                            />
+            </div>
             <BackBtn changePage={props.changePage} />
-            <br/>
-            <QuestionDisplay searchResults = {props.searchResults}/>
+            <div>
+                <QuestionDisplay searchResults = {props.searchResults}/>
+            </div>
         </React.Fragment>
     )
 

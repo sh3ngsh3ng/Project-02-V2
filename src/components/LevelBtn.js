@@ -8,7 +8,8 @@ export default function LevelBtn (props) {
                 return <motion.button type="button"
                             key = {obj.id} 
                             value={obj.value}
-                            className="btn btn-primary"
+                            className={`btn 
+                            ${props.selectedLevel == obj.value ? "btn-success": "btn-outline-primary"}`}
                             name = "selectedLevel"
                             onClick = {props.updateFormField}
                             variants = {props.variants}

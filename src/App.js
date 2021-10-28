@@ -106,8 +106,6 @@ export default class App extends React.Component {
     )
   }
 
-  // function for AnimatedLettersV2
-  animateLettersV2
 
   // function for conditional rendering of pages (landing & question)
   renderContent() {
@@ -141,6 +139,8 @@ export default class App extends React.Component {
     }
   }
 
+
+  
 
   render () {
     return (

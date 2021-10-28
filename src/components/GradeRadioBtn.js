@@ -23,6 +23,7 @@ export default function GradeRadioBtn (props) {
                                     stiffness: 50,
                                     delay: i * 0.03
                                 }}
+                                // disabled={props.selectedGrade == "" ? false: true}
                                 />
                         <motion.span variants={props.variants}
                                         animate ="animate1"
