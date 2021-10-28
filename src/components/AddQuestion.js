@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import {motion} from "framer-motion"
 
 
 export default class AddQuestion extends React.Component {
@@ -29,6 +30,23 @@ export default class AddQuestion extends React.Component {
         this.setState({
             ...this.baseState
         })
+    }
+
+    variants = {
+        animate1: {
+            opacity: 1
+        },
+        initial1: {
+            opacity: 0
+        },
+        transition1: {
+            type: "tween",
+            duration: 1.5
+        },
+        trannsition2: {
+            type: "tween",
+            duration: 1
+        }
     }
 
     // API URL
@@ -82,9 +100,15 @@ export default class AddQuestion extends React.Component {
 
             return (
                 <React.Fragment>
+                    <motion.div variants={this.variants}
+                                animate="animate1"
+                                initial="initial1"
+                                transition={this.variants.transition2}
+                    >
                     <span class="add-form-label">Grade: </span>
                     {/* Grade List Rendering (map can't use due to closure) */}
                     {gradeJSX}
+                    </motion.div>
                 </React.Fragment>
             )
         } else {
@@ -113,8 +137,14 @@ export default class AddQuestion extends React.Component {
             }
             return (
                 <React.Fragment>
+                    <motion.div variants={this.variants}
+                                animate="animate1"
+                                initial="initial1"
+                                transition={this.variants.transition2}
+                    >
                     <span class="add-form-label">Subject:</span>
                     {subjectJSX}
+                    </motion.div>
                 </React.Fragment>
             )
         } else {
@@ -135,6 +165,11 @@ export default class AddQuestion extends React.Component {
             }
             return (
                 <React.Fragment>
+                    <motion.div variants={this.variants}
+                                animate="animate1"
+                                initial="initial1"
+                                transition={this.variants.transition2}
+                                >
                     <span class="add-form-label">Topics: </span>
                     <select name="submitTopic"
                         class="add-form-topic-dropdown"
@@ -142,6 +177,7 @@ export default class AddQuestion extends React.Component {
                         <option value="" selected disabled>Please Choose a Topic</option>
                         {topicsJSX}
                     </select>
+                    </motion.div>
                 </React.Fragment>
             )
         } else {
@@ -155,7 +191,12 @@ export default class AddQuestion extends React.Component {
         if (this.state.submitTopic !== "") {
             return (
                 <React.Fragment>
-                    <div className="input-group mb-2">
+                    <motion.div className="input-group mb-2"
+                                variants={this.variants}
+                                animate="animate1"
+                                initial="initial1"
+                                transition={this.variants.transition2}
+                    >
                         <span className="input-group-text">
                             <span class="add-form-label">Question Prompt:</span>
                         </span>
@@ -165,8 +206,13 @@ export default class AddQuestion extends React.Component {
                             onChange={this.updateFormField}
                             value={this.state.submitPrompt}
                         ></textarea>
-                    </div>
-                    <div className="input-group">
+                    </motion.div>
+                    <motion.div className="input-group"
+                                variants={this.variants}
+                                animate="animate1"
+                                initial="initial1"
+                                transition={this.variants.transition1}
+                                >
                         <span className="input-group-text">
                             <span class="add-form-label">Suggested Answer:</span>
                         </span>
@@ -176,7 +222,7 @@ export default class AddQuestion extends React.Component {
                             onChange={this.updateFormField}
                             value={this.state.submitAnswer}
                         ></textarea>
-                    </div>
+                    </motion.div>
                 </React.Fragment>
             )
         } else {
@@ -225,7 +271,12 @@ export default class AddQuestion extends React.Component {
                         <h1 id="addnew-title">Submit Question</h1>
                     </div>
                     {/* Level Input */}
-                    <div className="mb-3">
+                    <motion.div className="mb-3"
+                                variants={this.variants}
+                                animate="animate1"
+                                initial="initial1"
+                                transition={this.variants.transition1}
+                    >
                         <span class="add-form-label">Level: </span>
                         <select name="submitLevel"
                             id="add-level-dropdown"
@@ -238,7 +289,7 @@ export default class AddQuestion extends React.Component {
                                 )
                             })}
                         </select>
-                    </div>
+                    </motion.div>
 
                     {/* Grade Input */}
                     <div className="mb-3">
