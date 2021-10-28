@@ -172,3 +172,23 @@
   font-weight: 500;
   font-size: 15px;
 }
+
+#add-level-dropdown {
+  border-radius: 10px;
+  text-align-last: center;
+  width: 50%
+}
+
+.add-grade-label {
+  margin-left: 2px;
+}
+
+.add-grade-btn {
+  margin-left: 3px;
+}
+
+/* .edit-subject-btn {
+  margin-left: 3px;
+  padding: 5px;
+  font-size: 10px;
+} */

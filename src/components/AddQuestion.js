@@ -68,13 +68,14 @@ export default class AddQuestion extends React.Component {
             for (let grade of this.state.levelObj.grade) {
                 gradeJSX.push(
                     <React.Fragment>
-                        <input type="radio" 
+                        <input type="radio"
+                                class="add-grade-btn" 
                                 name = "submitGrade"
                                 value = {grade}
                                 checked = {this.state.submitGrade == grade}
                                 onChange = {this.updateFormField}
                         />
-                        <span>{grade}</span>
+                        <span class="add-grade-label">{grade}</span>
                     </React.Fragment>
                 )
             }
@@ -205,7 +206,8 @@ export default class AddQuestion extends React.Component {
                     {/* Level Input */}
                     <div className="mb-1">
                         <span class="add-form-label">Level: </span>
-                        <select name="submitLevel" 
+                        <select name="submitLevel"
+                                id="add-level-dropdown" 
                                 onChange={this.selectLevel}>
                         <option value="" selected disabled>Please Select a Level</option>
                         {this.state.data.map(function(obj) {
