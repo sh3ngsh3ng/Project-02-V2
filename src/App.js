@@ -109,6 +109,7 @@ export default class App extends React.Component {
   }
 
   // conditional rendering of answer based on state
+  // id used as parameter to check. else all cards will reveal answer
   questionAnswer = (answer, id) => {
     if (this.state.revealAnswer && (id == this.state.selectedQuestionId)) {
       return (

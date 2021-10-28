@@ -25,8 +25,13 @@ export default function QuestionDisplay(props) {
                                 <div className="card-body">
                                     <h5 className="card-title">{question.prompt}</h5>
                                     <p className="card-text">just some text here</p>
-                                    <button className="btn btn-primary" onClick={props.revealAnswer} value={question._id}>Click</button>
                                     {props.questionAnswer(question.suggested_answer, question._id)}
+                                    <div class="reveal-btn-div">
+                                    <button className="btn btn-primary reveal-btn" 
+                                            onClick={props.revealAnswer} 
+                                            value={question._id}
+                                            >Answer</button>
+                                    </div>
                                     <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                                 </div>
                             </div>
