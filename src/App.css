@@ -147,10 +147,10 @@
 .edit-input-field {
   font-size: 12px;
 }
-/* end of submissions page */
+/* end of Submissions page */
 
 
-/* start of addnew page */
+/* start of AddQuestion page */
 #addnew-form {
   position:absolute;
   background-color: rgb(241, 215, 205);
@@ -390,12 +390,98 @@
     font-size: 16px;
   }
 
+  .edit-form-div {
+    margin-bottom: 15px!important;
+  }
+
+  .edit-subject-btn {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+
+  .edit-form-topic {
+    font-size: 15px;
+  }
+
+  .edit-input-field {
+    font-size: 15px;
+  }
   /* end of Submissions */
+
+  /* start of AddQuestion page*/
+  .add-form-label {
+    font-size: 20px;
+  }
+
+  #add-level-dropdown {
+    width: 25%;
+  }
+
+  .add-subject-btn {
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-left: 5px;
+  }
+
+  .add-form-topic-dropdown {
+    width: 35%;
+  }
+  /* end of AddQuestion page */
 
 
   /* start of QuestionPage */
+  .search-form-label {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .search-level-btn {
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-left: 5px;
+  }
+
+  .search-grade-number {
+    font-size: 16px;
+  }
+
+  .search-grade-btn {
+    height: 15px;
+    width: 15px;
+  }
+
+  .search-subject-btn {
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-left: 5px;
+  }
+
+  .search-topic-dropdown {
+    width: 32%;
+  }
+
+  .search-btn {
+    font-size: 18px;
+  }
 
   /* end of QuestionPage */
+
+  /* start of BackBtn */
+
+  .back-btn {
+    font-size: 20px;
+  }
+
+  /* end of BackBtn */
+
+  /* start of QuestionDisplay cards */
+  .reveal-btn {
+    font-size: 15px;
+    padding: 2px 8px;
+  }
+
+  /* end of QuestionDisplay cards */
+
 }
 
 

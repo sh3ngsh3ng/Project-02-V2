@@ -11,7 +11,7 @@ export default function EditForm(props) {
         <React.Fragment>
             <div class="edit-form">
                 {/* LevelDropdown */}
-                <div className="mb-1">
+                <div className="mb-1 edit-form-div">
                     <label class="edit-form-label">Level: </label>
                     <select value={props.currentQuestion.level}
                         class="edit-level-dropdown"
@@ -25,7 +25,7 @@ export default function EditForm(props) {
                     </select>
                 </div>
                 {/* GradeRadioBtn */}
-                <div className="mb-1">
+                <div className="mb-1 edit-form-div">
                     <label class="edit-form-label">Grade: </label>
                     {levelObj.grade.map(function (grade) {
                         return (
@@ -43,7 +43,7 @@ export default function EditForm(props) {
                 </div>
 
                 {/* SubjectBtn */}
-                <div className="mb-1">
+                <div className="mb-1 edit-form-div">
                     <label class="edit-form-label">Subject: </label>
                     {levelObj.subjects.map(function (subject) {
                         return (
@@ -60,13 +60,13 @@ export default function EditForm(props) {
                 </div>
 
                 {/* TopicsDropdown */}
-                <div className="mb-1">
+                <div className="mb-1 edit-form-div">
                     <label class="edit-form-label">Topic: </label>
                     <span className="badge bg-light edit-form-topic">{props.currentQuestion.topic}</span>
                 </div>
 
                 {/* Question Prompt Text */}
-                <div className="mb-1">
+                <div className="mb-1 edit-form-div">
                     <div className="input-group">
                         <span className="input-group-text" >
                             <span class="edit-form-label">Question Prompt:</span>
@@ -81,7 +81,7 @@ export default function EditForm(props) {
                 </div>
 
                 {/* Answer Text */}
-                <div className="mb-1">
+                <div className="mb-1 edit-form-div">
                     <div className="input-group">
                         <span className="input-group-text">
                             <span class="edit-form-label">
