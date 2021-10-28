@@ -237,18 +237,15 @@
   margin-bottom: 20px;
 }
 
-.level-btn-label {
+.search-form-label {
   margin-right: 5px;
 }
+
 
 .level-btn {
   margin-left: 3px;
   padding: 5px;
   font-size: 12px;
-}
-
-.find-grade-label {
-  margin-right: 3px;
 }
 
 .find-grade-number {
@@ -259,3 +256,22 @@
   margin-left: 5px;
 }
 
+.find-subject-btn {
+  margin-left: 3px;
+  margin-top: 2px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+/* .edit-level-dropdown {
+  margin-left: 5px;
+  border-radius: 10px;
+  text-align-last: center;
+  width: 35%;
+} */
+
+.find-level-dropdown {
+  border-radius: 10px;
+  text-align-last: center;
+  width: auto;
+}

@@ -6,7 +6,7 @@ export default function GradeRadioBtn (props) {
 
     return (
         <React.Fragment>
-            <label class="find-grade-label">{levelObj.level}: </label>
+            <label class="search-form-label">{levelObj.level}: </label>
             {levelObj.grade.map(function(grade, i){
                 return (
                     <React.Fragment>

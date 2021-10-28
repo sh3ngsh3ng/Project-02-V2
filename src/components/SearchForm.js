@@ -29,7 +29,7 @@ export default function SearchForm (props) {
                 <div id="search-form">
                     <div><h1 id="search-form-title">Find Questions</h1></div>
                     <div className="mb-2">
-                        <label class="level-btn-label">Level: </label>
+                        <label class="search-form-label">Level: </label>
                         <LevelBtn data={props.data} 
                                     updateFormField = {props.updateFormField}
                                     variants={variants}
@@ -45,7 +45,7 @@ export default function SearchForm (props) {
                                         variants={variants}/>
                         </div>
                     <div className="mb-2">
-                        <label>Subject: </label>
+                        <label class="search-form-label">Subject: </label>
                         <SubjectBtn data={props.data}
                                     selectSubject = {props.selectSubject}
                                     selectedSubject = {props.selectedSubject}
@@ -56,7 +56,7 @@ export default function SearchForm (props) {
                                     />
                     </div>
                     <div className="mb-2">
-                        <label>Topic: </label>
+                        <label class="search-form-label">Topic: </label>
                         <TopicList data={props.data}
                                     selectedLevel = {props.selectedLevel}
                                     levelObj = {props.levelObj}
