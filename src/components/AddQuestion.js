@@ -101,7 +101,7 @@ export default class AddQuestion extends React.Component {
             for (let subject of this.state.levelObj.subjects) {
                 subjectJSX.push(
                     <button type="button"
-                            className="btn btn-outline-primary"
+                            className="btn btn-outline-primary add-subject-btn "
                             value={subject.toLowerCase()}
                             name="submitSubject"
                             onClick = {this.updateFormField}
@@ -135,6 +135,7 @@ export default class AddQuestion extends React.Component {
                 <React.Fragment>
                     <span class="add-form-label">Topics: </span>
                     <select name="submitTopic"
+                            class="add-form-topic-dropdown"
                             onChange = {this.updateFormField}>
                         <option value="" selected disabled>Please Choose a Topic</option>
                         {topicsJSX}
@@ -152,9 +153,9 @@ export default class AddQuestion extends React.Component {
         if (this.state.submitTopic !== "") {
             return (
                 <React.Fragment>   
-                    <div className="input-group">
+                    <div className="input-group mb-2">
                         <span className="input-group-text">
-                            <span class="add-form-label">Enter Question Prompt:</span>
+                            <span class="add-form-label">Question Prompt:</span>
                         </span>
                         <textarea className="form-control" 
                                     aria-label="With textarea" 
@@ -204,7 +205,7 @@ export default class AddQuestion extends React.Component {
                         <h1 id="addnew-title">Submit Question</h1>
                     </div>
                     {/* Level Input */}
-                    <div className="mb-1">
+                    <div className="mb-3">
                         <span class="add-form-label">Level: </span>
                         <select name="submitLevel"
                                 id="add-level-dropdown" 
@@ -220,22 +221,22 @@ export default class AddQuestion extends React.Component {
                     </div>
 
                     {/* Grade Input */}
-                    <div className="mb-1">
+                    <div className="mb-3">
                         {this.renderGrade()}
                     </div>
 
                     {/* Subject Input */}
-                    <div className="mb-1">
+                    <div className="mb-3">
                         {this.renderSubjects()}
                     </div>
 
                     {/* Topic Input */}
-                    <div className="mb-1">
+                    <div className="mb-3">
                         {this.renderTopics()}
                     </div>
 
                     {/* Question Prompt & Suggested Answer*/}
-                    <div className="mb-1">
+                    <div className="mb-3">
                         {this.renderQnA()}
                     </div>
 

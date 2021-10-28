@@ -176,7 +176,7 @@
 #add-level-dropdown {
   border-radius: 10px;
   text-align-last: center;
-  width: 50%
+  width: 50%;
 }
 
 .add-grade-label {
@@ -187,8 +187,17 @@
   margin-left: 3px;
 }
 
-/* .edit-subject-btn {
-  margin-left: 3px;
+
+.add-subject-btn {
+  margin-left:3px;
+  margin-top: 3px;
   padding: 5px;
-  font-size: 10px;
-} */
+  font-size: 15px;
+}
+
+
+.add-form-topic-dropdown {
+  border-radius: 10px;
+  text-align-last: center;
+  width:65%;
+}
