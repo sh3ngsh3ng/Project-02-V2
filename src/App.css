@@ -221,4 +221,19 @@
 
 /* end of QuestionManagement page */
 
+/* start of QuestionPage */
+
+/* start of SearchForm */
+#search-form {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 10px #383535;
+}
+
+#search-form-title {
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 

@@ -8,13 +8,13 @@ export default function TopicList (props) {
 
     if (selectedSubject === "") {
         return (
-            <select className="form-select">
+            <select>
                 <option>Please Choose a Subject</option>
             </select>
         )
     } else {
         return (
-            <select className= "form-select" 
+            <select class=""
                     onChange={props.updateFormField} 
                     name ="selectedTopic">
                 <option value="">Please Choose a Topic</option>

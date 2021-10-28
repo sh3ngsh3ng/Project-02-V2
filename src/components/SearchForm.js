@@ -23,20 +23,20 @@ export default function SearchForm (props) {
 
     }
 
-
-
-        return (
-            <React.Fragment>
-                <div>
-                    <div><h1>Find Questions</h1></div>
-                    <div>
+    return (
+        <React.Fragment>
+            <div>
+                <div id="search-form">
+                    <div><h1 id="search-form-title">Find Questions</h1></div>
+                    <div className="mb-2">
+                        <label>Level: </label>
                         <LevelBtn data={props.data} 
                                     updateFormField = {props.updateFormField}
                                     variants={variants}
                                     selectedLevel={props.selectedLevel}
                                     />
                         </div>
-                    <div>
+                    <div className="mb-2">
                         <GradeRadioBtn data={props.data} 
                                         selectedLevel = {props.selectedLevel}
                                         selectedGrade = {props.selectedGrade}
@@ -44,7 +44,8 @@ export default function SearchForm (props) {
                                         levelObj = {props.levelObj}
                                         variants={variants}/>
                         </div>
-                    <div>
+                    <div className="mb-2">
+                        <label>Subject: </label>
                         <SubjectBtn data={props.data}
                                     selectSubject = {props.selectSubject}
                                     selectedSubject = {props.selectedSubject}
@@ -54,7 +55,8 @@ export default function SearchForm (props) {
                                     variants={variants}
                                     />
                     </div>
-                    <div>
+                    <div className="mb-2">
+                        <label>Topic: </label>
                         <TopicList data={props.data}
                                     selectedLevel = {props.selectedLevel}
                                     levelObj = {props.levelObj}
@@ -66,6 +68,7 @@ export default function SearchForm (props) {
                     </div>
                     <SearchBtn searchQuestions = {props.searchQuestions}/>
                 </div>
-            </React.Fragment>
-        )
+            </div>
+        </React.Fragment>
+    )
 }
