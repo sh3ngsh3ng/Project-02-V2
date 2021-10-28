@@ -81,7 +81,7 @@ export default class AddQuestion extends React.Component {
 
             return (
                 <React.Fragment>
-                    <label className="form-label">Grade: </label>
+                    <span class="add-form-label">Grade: </span>
                     {/* Grade List Rendering (map can't use due to closure) */}
                     {gradeJSX}
                 </React.Fragment>
@@ -110,7 +110,7 @@ export default class AddQuestion extends React.Component {
             }
             return (
                 <React.Fragment>
-                    <label className="form-label">Subject:</label>
+                    <span class="add-form-label">Subject:</span>
                     {subjectJSX}
                 </React.Fragment>
             )
@@ -132,7 +132,7 @@ export default class AddQuestion extends React.Component {
             }
             return (
                 <React.Fragment>
-                    <label className="form-label">Topics: </label>
+                    <span class="add-form-label">Topics: </span>
                     <select name="submitTopic"
                             onChange = {this.updateFormField}>
                         <option value="" selected disabled>Please Choose a Topic</option>
@@ -152,7 +152,9 @@ export default class AddQuestion extends React.Component {
             return (
                 <React.Fragment>   
                     <div className="input-group">
-                        <span className="input-group-text" >Enter Question Prompt:</span>
+                        <span className="input-group-text">
+                            <span class="add-form-label">Enter Question Prompt:</span>
+                        </span>
                         <textarea className="form-control" 
                                     aria-label="With textarea" 
                                     name="submitPrompt" 
@@ -161,7 +163,9 @@ export default class AddQuestion extends React.Component {
                                     ></textarea>
                     </div>
                     <div className="input-group">
-                        <span className="input-group-text">Suggested Answer:</span>
+                        <span className="input-group-text">
+                            <span class="add-form-label">Suggested Answer:</span>
+                        </span>
                         <textarea className="form-control" 
                                     aria-label="With textarea" 
                                     name="submitAnswer" 
@@ -193,13 +197,14 @@ export default class AddQuestion extends React.Component {
     render() {
         return (
             <React.Fragment>
-                    
+                <div id="addnew-form">
                     {/* Form Title */}
-                    <h1>Submit Question</h1>
-
+                    <div id="addnew-title-div">
+                        <h1 id="addnew-title">Submit Question</h1>
+                    </div>
                     {/* Level Input */}
-                    <div className="mb-3">
-                        <label className="form-label">Level: </label>
+                    <div className="mb-1">
+                        <span class="add-form-label">Level: </span>
                         <select name="submitLevel" 
                                 onChange={this.selectLevel}>
                         <option value="" selected disabled>Please Select a Level</option>
@@ -213,22 +218,22 @@ export default class AddQuestion extends React.Component {
                     </div>
 
                     {/* Grade Input */}
-                    <div className="mb-3">
+                    <div className="mb-1">
                         {this.renderGrade()}
                     </div>
 
                     {/* Subject Input */}
-                    <div className="mb-3">
+                    <div className="mb-1">
                         {this.renderSubjects()}
                     </div>
 
                     {/* Topic Input */}
-                    <div>
+                    <div className="mb-1">
                         {this.renderTopics()}
                     </div>
 
                     {/* Question Prompt & Suggested Answer*/}
-                    <div>
+                    <div className="mb-1">
                         {this.renderQnA()}
                     </div>
 
@@ -239,6 +244,7 @@ export default class AddQuestion extends React.Component {
 
                     {/* Reset Button Temp*/}
                     <button onClick={this.resetState}>Reset</button>
+                </div>
             </React.Fragment>
         )
     }

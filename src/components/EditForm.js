@@ -68,8 +68,10 @@ export default function EditForm(props) {
                 {/* Question Prompt Text */}
                 <div className="mb-1">
                     <div className="input-group">
-                        <span className="input-group-text" >Question Prompt:</span>
-                        <textarea className="form-control"
+                        <span className="input-group-text" >
+                            <span class="edit-form-label">Question Prompt:</span>
+                            </span>
+                        <textarea className="form-control edit-input-field"
                                 name="modifiedPrompt"
                                 defaultValue={props.currentQuestion.prompt}
                                 onChange={props.updatingQuestion}
@@ -81,8 +83,12 @@ export default function EditForm(props) {
                 {/* Answer Text */}
                 <div className="mb-1">
                     <div className="input-group">
-                        <span className="input-group-text">Answer: </span>
-                        <textarea className="form-control"
+                        <span className="input-group-text">
+                            <span class="edit-form-label">
+                                Answer: 
+                            </span>
+                        </span>
+                        <textarea className="form-control edit-input-field"
                         name="modifiedAnswer" 
                         defaultValue={props.currentQuestion.suggested_answer}
                         onChange={props.updatingQuestion}
