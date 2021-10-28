@@ -479,9 +479,67 @@
     font-size: 15px;
     padding: 2px 8px;
   }
-
   /* end of QuestionDisplay cards */
 
+}
+
+@media only screen and (min-width: 1024px) {
+  /* start of LandingPage */
+  #start-btn-div {
+    left: 62%;
+  }
+
+  #page-text-1-div {
+    top: 30%;
+    left: 12%;
+  }
+
+  .front-page-letters {
+    font-size: 70px;
+  }
+
+  #page-text-2-div {
+    top: 41%;
+    left: 53%;
+  }
+
+  .front-page-letters2 {
+    font-size: 21px;
+    font-weight: 100;
+  }
+  /* end of LandingPage */
+
+  /* start of AddQuestion page */
+
+  #addnew-form {
+    padding: 10px 50px;
+  }
+
+  #add-level-dropdown {
+    width: 20%;
+  }
+
+  .add-grade-btn {
+    height: 15px;
+    width: 15px;
+  }
+
+  .add-grade-label {
+    font-size: 15px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .add-subject-btn {
+    font-size: 18px;
+    padding: 2px 10px;
+  }
+
+  .add-form-topic-dropdown {
+    width: 25%;
+  }
+
+  /* end of AddQuestion page */
 }
 
 
