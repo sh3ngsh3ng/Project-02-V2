@@ -147,8 +147,10 @@
 .edit-input-field {
   font-size: 12px;
 }
-
 /* end of submissions page */
+
+
+/* start of addnew page */
 #addnew-form {
   position:absolute;
   background-color: rgb(241, 215, 205);
@@ -210,3 +212,9 @@
   text-align-last: center;
   width:65%;
 }
+
+/* end of addnew page */
+
+/* end of QuestionManagement page */
+
+
