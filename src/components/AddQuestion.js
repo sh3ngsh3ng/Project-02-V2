@@ -101,7 +101,9 @@ export default class AddQuestion extends React.Component {
             for (let subject of this.state.levelObj.subjects) {
                 subjectJSX.push(
                     <button type="button"
-                        className="btn btn-outline-primary add-subject-btn "
+                        className={`btn add-subject-btn
+                        ${this.state.submitSubject == (subject.toLowerCase()) ? "btn-primary" : "btn-outline-primary"}
+                        `}
                         value={subject.toLowerCase()}
                         name="submitSubject"
                         onClick={this.updateFormField}
