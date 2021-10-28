@@ -16,3 +16,19 @@
   cursor: pointer;
 }
 
+
+
+
+
+
+
+@media only screen and (min-width:375px) {
+
+  .front-page-letters {
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 50px;
+  }
+
+}
+

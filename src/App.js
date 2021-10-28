@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar"
 import QuestionPage from "./components/QuestionPage"
 import LandingPage from "./components/LandingPage"
 import QuestionManagement from "./components/QuestionManagement"
+import AnimatedLetterV1 from "./components/AnimatedLetterV1"
 import axios from "axios"
 import "./App.css"
 
@@ -20,7 +21,7 @@ export default class App extends React.Component {
 
 
   // API url
-  url = "https://3000-maroon-whale-lsdblj2a.ws-us18.gitpod.io/"
+  url = "https://3000-brown-lungfish-8yw5ewcn.ws-us18.gitpod.io/"
 
   // event handler to search questions in searchForm
   searchQuestions = async () => {
@@ -93,13 +94,27 @@ export default class App extends React.Component {
     })
   }
 
+  // function for AnimatedLettersV1
+  animateLettersV1 = (string) => {
+    let arrayOfLetters = Array.from(string)
+    return (
+      arrayOfLetters.map(function(letter, i) {
+        return(
+          <AnimatedLetterV1 letter={letter} delay={i}/>
+        )
+      })
+    )
+  }
 
+  // function for AnimatedLettersV2
+  animateLettersV2
 
   // function for conditional rendering of pages (landing & question)
   renderContent() {
     if (this.state.active === "landingpage") {
       return(
-        <LandingPage changePage={this.changeToQuestionPage}/>
+        <LandingPage changePage={this.changeToQuestionPage} 
+                      animateLetters={this.animateLettersV1}/>
       )
     } else if (this.state.active === "questionpage") {
       return (

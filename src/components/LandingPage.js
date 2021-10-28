@@ -18,6 +18,9 @@ export default function LandingPage (props) {
                 >Find Questions
                 </motion.button>
             </div>
+            <div>
+                {props.animateLetters("Practice Makes Perfect")}
+            </div>
         </React.Fragment>
 
     )

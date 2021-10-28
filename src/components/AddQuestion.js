@@ -32,7 +32,7 @@ export default class AddQuestion extends React.Component {
     }
 
     // API URL
-    url = "https://3000-maroon-whale-lsdblj2a.ws-us18.gitpod.io/"
+    url = "https://3000-brown-lungfish-8yw5ewcn.ws-us18.gitpod.io/"
 
     // event handler to update state
     updateFormField = (evt) => {
