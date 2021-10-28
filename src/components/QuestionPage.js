@@ -23,7 +23,10 @@ export default function QuestionPage (props) {
             </div>
                 <BackBtn changePage={props.changePage} />
             <div>
-                <QuestionDisplay searchResults = {props.searchResults}/>
+                <QuestionDisplay searchResults = {props.searchResults}
+                                    questionAnswer = {props.questionAnswer}
+                                    revealAnswer ={props.revealAnswer}
+                                />
             </div>
         </React.Fragment>
     )

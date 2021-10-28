@@ -16,7 +16,9 @@ export default class App extends React.Component {
     'selectedGrade': "",
     'selectedSubject': "",
     'selectedTopic': "",
-    'searchResults': []
+    'searchResults': [],
+    'revealAnswer': false,
+    'selectedQuestionId': ""
   }
 
 
@@ -66,7 +68,7 @@ export default class App extends React.Component {
     })
   }
 
-  // event handler to questionmanagement
+  // event handler to change page to questionmanagement
   changeToQuestionManagement = () => {
     this.setState({
       'active': "questionmanage"
@@ -106,8 +108,28 @@ export default class App extends React.Component {
     )
   }
 
+  // conditional rendering of answer based on state
+  questionAnswer = (answer, id) => {
+    if (this.state.revealAnswer && (id == this.state.selectedQuestionId)) {
+      return (
+        <div>{answer}</div>
+      )
+    } else {
+      return null
+    }
+  }
 
-  // function for conditional rendering of pages (landing & question)
+  // event handler to reveal function
+  revealAnswer = (evt) => {
+    this.setState({
+      selectedQuestionId: evt.target.value,
+      revealAnswer: !this.state.revealAnswer
+    })
+  }
+
+
+
+  // function for conditional rendering of pages (LandingPage & QuestionPage & QuestionManagementPage)
   renderContent() {
     if (this.state.active === "landingpage") {
       return(
@@ -127,6 +149,8 @@ export default class App extends React.Component {
                       searchQuestions = {this.searchQuestions}
                       updateFormField = {this.updateFormField}
                       searchResults = {this.state.searchResults}
+                      questionAnswer = {this.questionAnswer}
+                      revealAnswer = {this.revealAnswer}
                       />
       )
     } else if (this.state.active === "questionmanage") {
@@ -138,7 +162,6 @@ export default class App extends React.Component {
       )
     }
   }
-
 
   
 
