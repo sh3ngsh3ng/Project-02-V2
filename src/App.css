@@ -169,6 +169,10 @@
   margin-bottom: 20px;
 }
 
+#addnew-title {
+  text-decoration: underline;
+}
+
 .add-form-label {
   margin-right: 2px;
   font-weight: 500;
