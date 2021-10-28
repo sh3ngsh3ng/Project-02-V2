@@ -14,7 +14,7 @@ export default function EditForm(props) {
                 <div className="mb-3">
                     <label className="form-label">Level: </label>
                     <select value={props.currentQuestion.level}
-                        className="form-control"
+                        class="edit-level-dropdown"
                         disabled>
                         {props.data.map(function (obj) {
                             return (
