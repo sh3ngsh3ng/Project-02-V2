@@ -1,26 +1,49 @@
 import React from "react"
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 
 
-export default function LandingPage (props) {
+export default function LandingPage(props) {
     return (
         <React.Fragment>
-            <div>
-                <motion.button id="start-btn" 
-                        onClick={props.changePage}
-                        animate={{x:0}}
-                        initial={{x:"-100%"}}
-                        transition={{
-                            type:"spring",
-                            stiffness:50,
-                            delay: 0.05
-                        }}
-                >Find Questions
-                </motion.button>
-            </div>
+
+            {/* Landing Page Text 1 */}
             <div>
                 {props.animateLetters("Practice Makes Perfect")}
             </div>
+            {/* Landing Page Text 2 */}
+            <div>
+                <motion.span class="front-page-letters2"
+                    animate={{
+                        opacity: 1
+                    }}
+                    initial = {{
+                        opacity: 0
+                    }}
+                    transition= {{
+                        type: "tween",
+                        duration: 1.5,
+                        delay: 1
+                    }}
+                >
+                    Find More Practice Questions Here!
+                </motion.span>
+            </div>
+
+            {/* Start button */}
+            <div>
+                <motion.button id="start-btn"
+                    onClick={props.changePage}
+                    animate={{ x: 0 }}
+                    initial={{ x: "-100%" }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 50,
+                        delay: 0.05
+                    }}
+                >Start Here
+                </motion.button>
+            </div>
+
         </React.Fragment>
 
     )
