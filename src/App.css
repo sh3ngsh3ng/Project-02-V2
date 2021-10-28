@@ -237,3 +237,25 @@
   margin-bottom: 20px;
 }
 
+.level-btn-label {
+  margin-right: 5px;
+}
+
+.level-btn {
+  margin-left: 3px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.find-grade-label {
+  margin-right: 3px;
+}
+
+.find-grade-number {
+  margin-left: 2px;
+}
+
+.find-grade-btn {
+  margin-left: 5px;
+}
+
