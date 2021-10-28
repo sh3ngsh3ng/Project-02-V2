@@ -169,6 +169,7 @@ export default class App extends React.Component {
       return (
         <QuestionManagement levelObj = {this.findLevelObj}
                             editDone = {this.editDone}
+                            changePage = {this.changeToLandingPage}
         
         />
       )

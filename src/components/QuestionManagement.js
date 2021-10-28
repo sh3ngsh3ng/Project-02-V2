@@ -2,6 +2,7 @@ import axios from "axios"
 import React from "react"
 import AddQuestion from "./AddQuestion"
 import Contributions from "./Contributions"
+import BackBtn from "./BackBtn"
 
 
 export default class QuestionManagement extends React.Component {
@@ -120,6 +121,7 @@ export default class QuestionManagement extends React.Component {
                     </li>
                 </ul>
                 {this.renderContent()}
+                <BackBtn changePage={this.props.changePage} />
             </React.Fragment>
         )
     }
