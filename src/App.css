@@ -111,6 +111,14 @@
   margin-left: 5px;
   border-radius: 10px;
   text-align-last: center;
-
   width: 35%;
 }
+
+.edit-grade-btn {
+  margin-left: 8px;
+}
+
+.edit-grade-label {
+  margin-left: 2px;
+}
+

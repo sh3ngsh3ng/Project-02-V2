@@ -11,7 +11,7 @@ export default function EditForm(props) {
         <React.Fragment>
             <div class="edit-form">
                 {/* LevelDropdown */}
-                <div className="mb-3">
+                <div className="mb-1">
                     <label className="form-label">Level: </label>
                     <select value={props.currentQuestion.level}
                         class="edit-level-dropdown"
@@ -25,23 +25,24 @@ export default function EditForm(props) {
                     </select>
                 </div>
                 {/* GradeRadioBtn */}
-                <div className="mb-3">
+                <div className="mb-1">
                     <label className="form-label">Grade: </label>
                     {levelObj.grade.map(function (grade) {
                         return (
                             <React.Fragment>
                                 <input type="radio"
+                                    class = "edit-grade-btn"
                                     checked={props.currentQuestion.grade == grade}
                                     value={grade}
                                     disabled
                                 />
-                                <span>{grade}</span>
+                                <span class="edit-grade-label">{grade}</span>
                             </React.Fragment>
                         )
                     })}
                 </div>
                 {/* SubjectBtn */}
-                <div className="mb-3">
+                <div className="mb-1">
                     <label className="form-label">Subject: </label>
                     {levelObj.subjects.map(function (subject) {
                         return (
@@ -57,13 +58,13 @@ export default function EditForm(props) {
                     })}
                 </div>
                 {/* TopicsDropdown */}
-                <div className="mb-3">
+                <div className="mb-1">
                     <label className="form-label">Topic: </label>
                     {props.currentQuestion.topic}
                 </div>
 
                 {/* Question Prompt Text */}
-                <div className="mb-3">
+                <div className="mb-1">
                     <div className="input-group">
                         <span className="input-group-text" >Question Prompt:</span>
                         <textarea className="form-control"
@@ -76,7 +77,7 @@ export default function EditForm(props) {
                 </div>
 
                 {/* Answer Text */}
-                <div className="mb-3">
+                <div className="mb-1">
                     <div className="input-group">
                         <span className="input-group-text">Answer: </span>
                         <textarea className="form-control"
