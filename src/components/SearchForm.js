@@ -25,7 +25,7 @@ export default function SearchForm (props) {
 
     return (
         <React.Fragment>
-                <div id="search-form">
+                <div id="search-form" className="mb-2">
                     <div><h1 id="search-form-title">Find Questions</h1></div>
                     <div id="search-field-div">
                         <div className="mb-2">
