@@ -25,9 +25,9 @@ export default function SearchForm (props) {
 
     return (
         <React.Fragment>
-            <div>
                 <div id="search-form">
                     <div><h1 id="search-form-title">Find Questions</h1></div>
+                    <div id="search-field-div">
                     <div className="mb-2">
                         <label class="search-form-label">Level: </label>
                         <LevelBtn data={props.data} 
@@ -67,8 +67,8 @@ export default function SearchForm (props) {
                                     />
                     </div>
                     <SearchBtn searchQuestions = {props.searchQuestions}/>
+                    </div>
                 </div>
-            </div>
         </React.Fragment>
     )
 }
