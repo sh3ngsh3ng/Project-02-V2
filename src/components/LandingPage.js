@@ -7,11 +7,11 @@ export default function LandingPage(props) {
         <React.Fragment>
             <div id="landing-page">
             {/* Landing Page Text 1 */}
-            <div>
+            <div id="page-text-1-div">
                 {props.animateLetters("Practice Makes Perfect")}
             </div>
             {/* Landing Page Text 2 */}
-            <div>
+            <div id="page-text-2-div">
                 <motion.span class="front-page-letters2"
                     animate={{
                         opacity: 1
@@ -40,7 +40,7 @@ export default function LandingPage(props) {
                         stiffness: 50,
                         delay: 0.05
                     }}
-                >Start Here
+                >Start
                 </motion.button>
             </div>
             </div>

@@ -11,13 +11,16 @@
 #start-btn-div {
   position: absolute;
   top: 40%;
-  left: 60%;
+  left: 38%;
 }
 
 #start-btn {
   position: relative;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
   border: black solid 2px;
   background-color: rgb(29, 211, 99);
   opacity: 0.8;
@@ -31,16 +34,28 @@
   cursor: pointer;
 }
 
+#page-text-1-div {
+  position: absolute;
+  top: 20%;
+  left: 7%
+}
+
 .front-page-letters {
   font-family: 'Times New Roman', Times, serif;
-  color: black;
-  font-size: 50px;
+  color: rgb(76, 88, 90);
+  font-size: 35px;
+}
+
+#page-text-2-div {
+  position: absolute;
+  top: 27%;
+  left: 20%
 }
 
 .front-page-letters2 {
   font-family: 'Times New Roman', Times, serif;
   color: black;
-  font-size: 20px
+  font-size: 15px
 }
 
 #nav-bar {
