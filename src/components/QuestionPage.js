@@ -19,8 +19,9 @@ export default function QuestionPage (props) {
                             searchQuestions = {props.searchQuestions}
                             updateFormField = {props.updateFormField}
                             />
+                            
             </div>
-            <BackBtn changePage={props.changePage} />
+                <BackBtn changePage={props.changePage} />
             <div>
                 <QuestionDisplay searchResults = {props.searchResults}/>
             </div>

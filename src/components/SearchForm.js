@@ -28,45 +28,47 @@ export default function SearchForm (props) {
                 <div id="search-form">
                     <div><h1 id="search-form-title">Find Questions</h1></div>
                     <div id="search-field-div">
-                    <div className="mb-2">
-                        <label class="search-form-label">Level: </label>
-                        <LevelBtn data={props.data} 
-                                    updateFormField = {props.updateFormField}
-                                    variants={variants}
-                                    selectedLevel={props.selectedLevel}
-                                    />
-                        </div>
-                    <div className="mb-2">
-                        <GradeRadioBtn data={props.data} 
+                        <div className="mb-2">
+                            <label class="search-form-label">Level: </label>
+                            <LevelBtn data={props.data} 
+                                        updateFormField = {props.updateFormField}
+                                        variants={variants}
+                                        selectedLevel={props.selectedLevel}
+                                        />
+                            </div>
+                        <div className="mb-2">
+                            <GradeRadioBtn data={props.data} 
+                                            selectedLevel = {props.selectedLevel}
+                                            selectedGrade = {props.selectedGrade}
+                                            updateFormField = {props.updateFormField}
+                                            levelObj = {props.levelObj}
+                                            variants={variants}/>
+                            </div>
+                        <div className="mb-2">
+                            <label class="search-form-label">Subject: </label>
+                            <SubjectBtn data={props.data}
+                                        selectSubject = {props.selectSubject}
+                                        selectedSubject = {props.selectedSubject}
                                         selectedLevel = {props.selectedLevel}
-                                        selectedGrade = {props.selectedGrade}
                                         updateFormField = {props.updateFormField}
                                         levelObj = {props.levelObj}
-                                        variants={variants}/>
+                                        variants={variants}
+                                        />
                         </div>
-                    <div className="mb-2">
-                        <label class="search-form-label">Subject: </label>
-                        <SubjectBtn data={props.data}
-                                    selectSubject = {props.selectSubject}
-                                    selectedSubject = {props.selectedSubject}
-                                    selectedLevel = {props.selectedLevel}
-                                    updateFormField = {props.updateFormField}
-                                    levelObj = {props.levelObj}
-                                    variants={variants}
-                                    />
-                    </div>
-                    <div className="mb-2">
-                        <label class="search-form-label">Topic: </label>
-                        <TopicList data={props.data}
-                                    selectedLevel = {props.selectedLevel}
-                                    levelObj = {props.levelObj}
-                                    selectedSubject = {props.selectedSubject}
-                                    updateFormField = {props.updateFormField}
-                                    selectTopic = {props.selectTopic}
-                                    variants = {variants}
-                                    />
-                    </div>
-                    <SearchBtn searchQuestions = {props.searchQuestions}/>
+                        <div className="mb-2">
+                            <label class="search-form-label">Topic: </label>
+                            <TopicList data={props.data}
+                                        selectedLevel = {props.selectedLevel}
+                                        levelObj = {props.levelObj}
+                                        selectedSubject = {props.selectedSubject}
+                                        updateFormField = {props.updateFormField}
+                                        selectTopic = {props.selectTopic}
+                                        variants = {variants}
+                                        />
+                        </div>
+                        <div id="search-btn-div">
+                            <SearchBtn searchQuestions = {props.searchQuestions}/>
+                        </div>
                     </div>
                 </div>
         </React.Fragment>
