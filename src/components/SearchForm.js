@@ -47,6 +47,7 @@ export default function SearchForm (props) {
                     <div>
                         <SubjectBtn data={props.data}
                                     selectSubject = {props.selectSubject}
+                                    selectedSubject = {props.selectedSubject}
                                     selectedLevel = {props.selectedLevel}
                                     updateFormField = {props.updateFormField}
                                     levelObj = {props.levelObj}
