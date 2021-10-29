@@ -9,17 +9,6 @@ export default function AdvancedSearchForm(props) {
 
     return (
         <React.Fragment>
-            {/* <div className="search-form mb-2">
-                <div><h1 className="search-form-title">Advanced Search</h1></div>
-                <div className="search-field-div">
-                    <span>Search by Keywords:</span>
-                    <input type="text"></input>
-                </div>
-                <div>
-                    <AdvancedBtn changeSearchForm={props.changeSearchForm} />
-                    <SearchBtn />
-                </div>
-            </div> */}
             <div className="search-form mb-2">
                 <div><h1 className="search-form-title">Advanced Search</h1></div>
                 <div className="input-group mb-3">
@@ -41,7 +30,7 @@ export default function AdvancedSearchForm(props) {
                 </div>
                 <div>
                     <AdvancedBtn changeSearchForm={props.changeSearchForm} />
-                    <SearchBtn />
+                    <SearchBtn searchQuestions={props.advancedSearch}/>
                 </div>
             </div>
 

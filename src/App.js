@@ -23,7 +23,7 @@ export default class App extends React.Component {
     'revealAnswer': false,
     'selectedQuestionId': "",
     'advancedSearch': false,
-    'advancedSearchField': "fields",
+    'advancedSearchField': "level",
     'advancedSearchInput': ""
 
   }
@@ -42,6 +42,7 @@ export default class App extends React.Component {
         "topic": `${this.state.selectedTopic}`
       }
     })
+    
     // store results (array) in state
     this.setState({
       'searchResults': response.data
@@ -50,8 +51,15 @@ export default class App extends React.Component {
 
   // event handler to search questions in AdvancedSearchForm
   advancedSearch = async () => {
-    let response = await axios.get(this.url + "search/advanced/", {
-      // continue writing search
+    let response = await axios.get(this.url + "search/advanced/" + `${this.state.advancedSearchField}`, {
+      params: {
+        'keywords': this.state.advancedSearchInput
+      }
+    })
+    console.log("function called")
+    console.log(response.data)
+    this.setState({
+      'searchResults': response.data
     })
   }
   
@@ -178,6 +186,7 @@ export default class App extends React.Component {
                                   updateFormField = {this.updateFormField}
                                   advancedSearchInput = {this.state.advancedSearchInput}
                                   advancedSearchField = {this.state.advancedSearchField}
+                                  advancedSearch = {this.advancedSearch}
                                 />
     } else {
       return <SearchForm data={this.state.data} 
