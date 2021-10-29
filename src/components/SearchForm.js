@@ -67,7 +67,7 @@ export default function SearchForm (props) {
                                         variants = {variants}
                                         />
                         </div>
-                        <div id="search-btn-div">
+                        <div id="search-form-btns-div">
                             <AdvancedBtn changeSearchForm={props.changeSearchForm}/>
                             <SearchBtn searchQuestions = {props.searchQuestions}/>
                         </div>
