@@ -170,7 +170,7 @@
 /* start of AddQuestion page */
 #addnew-form {
   position:absolute;
-  background-color: rgb(241, 215, 205);
+  background-color: rgba(187, 201, 202, 0.301);
   border-radius: 20px;
   height: 100vh;
   width: 100vw;
@@ -437,7 +437,8 @@
   }
 
   #start-btn {
-    font-size: 30px;
+    font-size: 25px;
+    padding: 10px 30px;
   }
 
   #page-text-1-div {
@@ -475,9 +476,16 @@
     margin-bottom: 15px!important;
   }
 
+  .edit-level-dropdown {
+    font-size: 15px;
+    width: 30%;
+  }
+
   .edit-subject-btn {
     font-size: 15px;
-    padding: 5px 10px;
+    padding: 3px 12px;
+    margin-right: 3px;
+    margin-bottom: 8px;
   }
 
   .edit-form-topic {
@@ -486,6 +494,26 @@
 
   .edit-input-field {
     font-size: 15px;
+  }
+
+
+  .edit-form-btns-div {
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .update-btn {
+    font-size: 18px;
+    padding: 5px 15px;
+    margin-right: 40px;
+    
+  }
+
+  .delete-btn {
+    font-size: 18px;
+    padding: 5px 15px;
+    margin-left: 40px;
   }
   /* end of Submissions */
 
@@ -507,19 +535,39 @@
   .add-form-topic-dropdown {
     width: 35%;
   }
+
+  #add-form-btns-div {
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  #add-new-submit-btn {
+    font-size: 18px;
+    padding: 5px 15px;
+    margin-right: 40px;
+  }
+
+  #add-new-reset-btn {
+    font-size: 18px;
+    padding: 5px 15px;
+    margin-left: 40px;
+  }
+
+
   /* end of AddQuestion page */
 
 
   /* start of QuestionPage */
   .search-form-label {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
   }
 
   .search-level-btn {
     font-size: 15px;
-    padding: 5px 10px;
-    margin-left: 5px;
+    padding: 3px 15px;
+  
   }
 
   .search-grade-number {
@@ -533,19 +581,58 @@
 
   .search-subject-btn {
     font-size: 15px;
-    padding: 5px 10px;
-    margin-left: 5px;
+    padding: 3px 15px;
   }
 
   .search-topic-dropdown {
     width: 32%;
+    font-size: 15px;
+  }
+
+
+  #search-form-btns-div {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   .search-btn {
-    font-size: 18px;
+    font-size: 16px;
+    margin-right: 30px;
   }
 
+  .advanced-btn {
+    font-size: 16px;
+    margin-left: 30px;
+  }
+
+  /* start of AdvancedSearchForm */
+
+
+  .search-bar-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px!important;
+  }
+
+
+  .advanced-search-btns-div {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  .adv-search-field {
+    width: 20%
+  }
+
+  .adv-search-input {
+    width: 65%
+  }
+
+  /* end of AdvancedSearchForm */
+
   /* end of QuestionPage */
+
 
   /* start of BackBtn */
 

@@ -15,7 +15,7 @@ export default function AdvancedSearchForm(props) {
                 <div><h1 className="search-form-title">Advanced Search</h1></div>
                 <div class="advanced-search-field-div">
                     {/* Search Bar */}
-                    <motion.div className="input-group mb-3"
+                    <motion.div className="input-group mb-3 search-bar-div"
                                 animate= {{
                                     opacity: 1
                                 }}
