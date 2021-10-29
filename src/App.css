@@ -330,6 +330,15 @@
   padding: 2px 5px
 }
 
+.btn-close {
+  position: absolute;
+  right: 5%;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+
+
 /* end of QuestionDisplay cards */
 
 
@@ -541,5 +550,4 @@
 
   /* end of AddQuestion page */
 }
-
 

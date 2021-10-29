@@ -8,6 +8,8 @@ import BackBtn from "./BackBtn"
 export default class QuestionManagement extends React.Component {
     state = {
         'data': [],
+        // this pw is for demonstration purpose only
+        'adminPw': "rotiprata123",
         'active': "submissions",
         "contributions": [],
         "modifyingCurrentQuestion": {},
@@ -15,7 +17,7 @@ export default class QuestionManagement extends React.Component {
         "modifiedAnswer": ""
     }
 
-    url = "https://3000-crimson-heron-ggi9bdpf.ws-us18.gitpod.io/"
+    url = "https://3000-copper-tick-1aqczzix.ws-us18.gitpod.io/"
 
 
     fetchData = async () => {

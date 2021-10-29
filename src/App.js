@@ -30,7 +30,7 @@ export default class App extends React.Component {
 
 
   // API url
-  url = "https://3000-crimson-heron-ggi9bdpf.ws-us18.gitpod.io/"
+  url = "https://3000-copper-tick-1aqczzix.ws-us18.gitpod.io/"
 
   // event handler to search questions in SearchForm
   searchQuestions = async () => {
@@ -98,7 +98,7 @@ export default class App extends React.Component {
   }
 
 
-  // recursion function to find object of selected level
+  // recursive function to find object of selected level
   findLevelObj = (array, level) => {
     if (array.length === 1) {
       return array[0]
@@ -175,7 +175,8 @@ export default class App extends React.Component {
   // event handler to change SearchForm to AdvancedSearchForm
   changeSearchForm = () => {
     this.setState({
-      "advancedSearch": !this.state.advancedSearch
+      "advancedSearch": !this.state.advancedSearch,
+      'searchResults': []
     })
   }
 

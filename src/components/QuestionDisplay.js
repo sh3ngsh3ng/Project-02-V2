@@ -23,8 +23,10 @@ export default function QuestionDisplay(props) {
                         <div>
                             <div>
                                 <div className="card-body">
-                                    <h5 className="card-title">{question.prompt}</h5>
-                                    <div></div>
+                                    <div className="mb-4">
+                                    <span className="card-title">{question.prompt}</span>
+                                    <button type="button" className="btn-close" aria-label="Close"></button>
+                                    </div>
                                     {props.questionAnswer(question.suggested_answer, question._id)}
                                     <div class="reveal-btn-div">
                                     <button className="btn btn-primary reveal-btn" 
