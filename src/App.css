@@ -62,7 +62,7 @@
 
 /* nav-bar */
 #nav-bar {
-  background-color: rgb(55, 64, 146)!important;
+  background-color: rgba(6, 73, 85, 0.753)!important;
   opacity: 0.8;
   padding: 15px 10px;
 }
@@ -175,7 +175,7 @@
   height: 100vh;
   width: 100vw;
   padding: 20px;
-  box-shadow: inset 0 0 5px #c2b9b9;
+  box-shadow: inset 0 0 10px #c2b9b9;
 }
 
 #addnew-title-div {
@@ -258,7 +258,7 @@
 /* start of SearchForm */
 .search-form {
   padding: 20px 10px;
-  border-radius: 20px;
+  border-radius: 0 0 20px 20px;
   box-shadow: inset 0 0 10px #383535;
 }
 
@@ -355,7 +355,7 @@
 .adv-search-field {
   border-radius: 10px;
   text-align-last:center;
-  width: 30%;
+  width: 25%;
   border: 1px solid rgb(139, 126, 126);
   background-color:rgba(139, 126, 126, 0.521);
 }
@@ -363,7 +363,7 @@
 .adv-search-input {
   border-radius: 10px;
   text-align-last:center;
-  width: 70%;
+  width: 75%;
   border: 1px solid rgb(139, 126, 126);
   background-color:rgba(139, 126, 126, 0.192);
 }
