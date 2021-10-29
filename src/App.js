@@ -22,14 +22,17 @@ export default class App extends React.Component {
     'searchResults': [],
     'revealAnswer': false,
     'selectedQuestionId': "",
-    'advancedSearch': false
+    'advancedSearch': false,
+    'advancedSearchField': "",
+    'advancedSearchInput': ""
+
   }
 
 
   // API url
   url = "https://3000-crimson-heron-ggi9bdpf.ws-us18.gitpod.io/"
 
-  // event handler to search questions in searchForm
+  // event handler to search questions in SearchForm
   searchQuestions = async () => {
     // API call
     let response = await axios.get(this.url + "search/" + `${this.state.selectedLevel}`, {
@@ -42,6 +45,13 @@ export default class App extends React.Component {
     // store results (array) in state
     this.setState({
       'searchResults': response.data
+    })
+  }
+
+  // event handler to search questions in AdvancedSearchForm
+  advancedSearch = async () => {
+    let response = await axios.get(this.url + "search/advanced/", {
+      // continue writing search
     })
   }
   
@@ -164,7 +174,10 @@ export default class App extends React.Component {
   // conditional rendering of search forms (SearchForm & AdvancedSearchForm)
   renderSearchForm = () => {
     if (this.state.advancedSearch) {
-      return <AdvancedSearchForm changeSearchForm ={this.changeSearchForm}/>
+      return <AdvancedSearchForm changeSearchForm ={this.changeSearchForm}
+                                  updateFormField = {this.updateFormField}
+                                  advancedSearchInput = {this.state.advancedSearchInput}
+                                />
     } else {
       return <SearchForm data={this.state.data} 
                           selectedLevel = {this.state.selectedLevel}

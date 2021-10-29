@@ -35,7 +35,11 @@ export default function AdvancedSearchForm(props) {
                         <Dropdown.Item >Topic</Dropdown.Item>
                         <Dropdown.Item >Question</Dropdown.Item>
                     </DropdownButton>
-                    <input type="text" placeholder="Type Here!"/>
+                    <input type="text" 
+                            name="advancedSearchInput" 
+                            onChange={props.updateFormField} 
+                            value={props.advancedSearchInput} 
+                            placeholder="Type Here!"/>
                 </InputGroup>
                 <div>
                     <AdvancedBtn changeSearchForm={props.changeSearchForm} />
