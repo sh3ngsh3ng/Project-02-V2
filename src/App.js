@@ -32,7 +32,7 @@ export default class App extends React.Component {
   // event handler to search questions in searchForm
   searchQuestions = async () => {
     // API call
-    let response = await axios.get(this.url + `${this.state.selectedLevel}`, {
+    let response = await axios.get(this.url + "search/" + `${this.state.selectedLevel}`, {
       params: {
         "grade": `${this.state.selectedGrade}`,
         "subject": `${this.state.selectedSubject}`,
