@@ -32,7 +32,7 @@ export default function QuestionDisplay(props) {
                                             value={question._id}
                                             >Answer</button>
                                     </div>
-                                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                    <p className="card-text"><small className="text-muted">Date Added: {props.displayDate(question.datetime)}</small></p>
                                 </div>
                             </div>
                         </div>

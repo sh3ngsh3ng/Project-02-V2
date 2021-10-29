@@ -26,6 +26,7 @@ export default function QuestionPage (props) {
                 <QuestionDisplay searchResults = {props.searchResults}
                                     questionAnswer = {props.questionAnswer}
                                     revealAnswer ={props.revealAnswer}
+                                    displayDate = {props.displayDate}
                                 />
             </div>
         </React.Fragment>

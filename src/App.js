@@ -24,7 +24,7 @@ export default class App extends React.Component {
 
 
   // API url
-  url = "https://3000-brown-lungfish-8yw5ewcn.ws-us18.gitpod.io/"
+  url = "https://3000-crimson-heron-ggi9bdpf.ws-us18.gitpod.io/"
 
   // event handler to search questions in searchForm
   searchQuestions = async () => {
@@ -97,7 +97,7 @@ export default class App extends React.Component {
     })
   }
 
-  // function for AnimatedLettersV1
+  // function for AnimatedLettersV1 (list rendering of strings)
   animateLettersV1 = (string) => {
     let arrayOfLetters = Array.from(string)
     return (
@@ -139,6 +139,17 @@ export default class App extends React.Component {
     })
   }
 
+  // function to display date in DD/MM/YY
+  displayDate = (date) => {
+    if (date !== undefined) {
+      let editedDate = date.slice(0, 9)
+      let dateArray = editedDate.split("-")
+      let dateDisplay = dateArray[2] + "/" + dateArray[1] + "/" + dateArray[0]
+      return dateDisplay
+    } else {
+      return "Unknown"
+    }
+  }
 
 
   // function for conditional rendering of pages (LandingPage & QuestionPage & QuestionManagementPage)
@@ -163,6 +174,7 @@ export default class App extends React.Component {
                       searchResults = {this.state.searchResults}
                       questionAnswer = {this.questionAnswer}
                       revealAnswer = {this.revealAnswer}
+                      displayDate = {this.displayDate}
                       />
       )
     } else if (this.state.active === "questionmanage") {
@@ -170,6 +182,7 @@ export default class App extends React.Component {
         <QuestionManagement levelObj = {this.findLevelObj}
                             editDone = {this.editDone}
                             changePage = {this.changeToLandingPage}
+                            
         
         />
       )
