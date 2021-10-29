@@ -22,13 +22,14 @@ export default function AdvancedSearchForm(props) {
             </div> */}
             <div className="search-form mb-2">
                 <div><h1 className="search-form-title">Advanced Search</h1></div>
-                <div className="input-group">
+                <div className="input-group mb-3">
                     <select class="adv-search-field"
                             name="advancedSearchField"
                             onChange={props.updateFormField}
+                            value={props.advancedSearchField}
                     >
-                        <option value="level">Level</option>
-                        <option value="subject">Subject</option>
+                        <option value="level" >Level</option>
+                        <option value="subject" >Subject</option>
                         <option value="topic">Topic</option>
                         <option value="prompt">Prompt</option>
                     </select>
