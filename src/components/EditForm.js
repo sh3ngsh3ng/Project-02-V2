@@ -96,6 +96,7 @@ export default function EditForm(props) {
                         </textarea>
                     </div>
                 </div>
+                {/* Delete and Update Btns */}
                 <div class="edit-form-btns-div">
                 <button class="delete-btn" onClick={async () => {
                                                     await props.deleteQuestion()

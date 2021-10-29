@@ -341,6 +341,34 @@
 
 /* end of SearchForm */
 
+/* start of AdvancedSearchForm */
+
+.advanced-search-field-div {
+  padding: 0 12px;
+}
+
+.advanced-search-btns-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adv-search-field {
+  border-radius: 10px;
+  text-align-last:center;
+  width: 30%;
+  border: 1px solid rgb(139, 126, 126);
+  background-color:rgba(139, 126, 126, 0.521);
+}
+
+.adv-search-input {
+  border-radius: 10px;
+  text-align-last:center;
+  width: 70%;
+  border: 1px solid rgb(139, 126, 126);
+  background-color:rgba(139, 126, 126, 0.192);
+}
+
+/* end of AdvancedSearchForm */
 
 /* start of BackBtn */
 #back-btn-div {
