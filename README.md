@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Project: QShare
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Introduction
+<br/>
+<p align="center">"Education is the most powerful weapon we can use to change the world"</p>
+<p align="center">- Nelson Mandela</p>
+<br />
 
-In the project directory, you can run:
+With the advent of technology, education has become more available than ever. Information and knowledge are now literally just one search away. 
 
-### `yarn start`
+<br/>
+However, all of these wouldn't have been possible if none of us "share" in the first place. For example, can you imagine a world where no one is answering questions on StackOverFlow? Bizarre, right?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br
+/>
+However, not everyone of us 
+We are learning and improving 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Various organizations have also contributed to 
 
-### `yarn test`
+For example, various resources such as Khan Academy, Coursera, MIT OpenCourseWare
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As such, this project was planned with the intention to add .........
 
-### `yarn build`
+As a tutor myself, 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**QShare** is the short-form derived from Question Sharing. **QShare** provides the convenience for students to find practice questions to get more practice. Furthermore, it allows contributors to add to this pool of question database to share with others.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Let's make educational resources more avaialbe....
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## First Look
+<p align="center" style="font-weight:bold">Landing Page</p>
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="center" style="font-weight:bold">Question Page</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p align="center" style="font-weight:bold">Contributions</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+<p align="center" style="font-weight:bold">Add New Questions</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## QuickStart
+- Deployed Link:
+    - deployed link
+- User Guide for Application:
+    - 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Technologies Used
+- HTML & CSS
+- Javascript
+- Node.JS
+- MongoDB
+- React.JS
+- Framer Motion
+- Bootstrap (v5.1)
+    - Native 
+    - React Version
+- axios
+- RESTful APIs
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Features
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# UI/UX
+For more details of the planning behind the UI/UX, please refer to: 
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Mobile Responsiveness
+From the painful experience of Project 1, the strategy for mobile responsiveness this time is to adopt a mobile-first strategy. After the functionality were coded, all the components were styled and adjusted to fit mobile sizing [iPhone X (375px) used as base]. After which, media query was used to adjust the sizing of the elements to fit all the larger resolution devices. 
 
-### Deployment
+Below are the devices that can be supported:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Test Cases
+Testing is done using test cases. The focus for testing is to......
+
+
+
+
+# Bugs
+
+
+
+
+# Incomplete + Possible Improvements
+- (incomplete)
+- Addition of 
+
+
+
+
+# Credits & Acknowledgements
+I would like to acknowledge the lead instructor Mr Paul, teaching assistant Haryati and John, as well as all my classmates for the guidance and emotional support during the duration of this project.
+
+Background image.........
+
+
+Last but not least, I would like to thank Google and StackOverflow for their continuous unwavering 24/7 support in this project as well.
+
+# Disclaimer
+This project is for educational purposes only. Other than the idea/concept/mock questions of the project, all media files and technologies used in this project belongs to their respective owners and I do not claim any right over them.
+
+
+
