@@ -8,6 +8,8 @@ import AnimatedLetterV1 from "./components/AnimatedLetterV1"
 import axios from "axios"
 import {motion} from "framer-motion"
 import "./App.css"
+import AdvancedSearchForm from "./components/AdvancedSearchForm"
+import SearchForm from "./components/SearchForm"
 
 export default class App extends React.Component {
   state = {
@@ -19,7 +21,8 @@ export default class App extends React.Component {
     'selectedTopic': "",
     'searchResults': [],
     'revealAnswer': false,
-    'selectedQuestionId': ""
+    'selectedQuestionId': "",
+    'advancedSearch': false
   }
 
 
@@ -151,6 +154,33 @@ export default class App extends React.Component {
     }
   }
 
+  // event handler to change SearchForm to AdvancedSearchForm
+  changeSearchForm = () => {
+    this.setState({
+      "advancedSearch": !this.state.advancedSearch
+    })
+  }
+
+  // conditional rendering of search forms (SearchForm & AdvancedSearchForm)
+  renderSearchForm = () => {
+    if (this.state.advancedSearch) {
+      return <AdvancedSearchForm changeSearchForm ={this.changeSearchForm}/>
+    } else {
+      return <SearchForm data={this.state.data} 
+                          selectedLevel = {this.state.selectedLevel}
+                          levelObj = {this.findLevelObj}
+                          selectSubject = {this.selectSubject}
+                          selectedSubject = {this.state.selectedSubject}
+                          selectedGrade = {this.state.selectedGrade}
+                          selectTopic = {this.selectTopic}
+                          searchQuestions = {this.searchQuestions}
+                          updateFormField = {this.updateFormField}
+                          changeSearchForm ={this.changeSearchForm}
+                          advancedSearch ={this.state.advancedSearch}
+                          />
+    }
+  }
+
 
   // function for conditional rendering of pages (LandingPage & QuestionPage & QuestionManagementPage)
   renderContent() {
@@ -175,6 +205,8 @@ export default class App extends React.Component {
                       questionAnswer = {this.questionAnswer}
                       revealAnswer = {this.revealAnswer}
                       displayDate = {this.displayDate}
+                      changeSearchForm = {this.changeSearchForm}
+                      renderSearchForm = {this.renderSearchForm}
                       />
       )
     } else if (this.state.active === "questionmanage") {

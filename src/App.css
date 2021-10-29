@@ -224,17 +224,17 @@
 /* start of QuestionPage */
 
 /* start of SearchForm */
-#search-form {
+.search-form {
   padding: 20px;
   border-radius: 20px;
   box-shadow: inset 0 0 10px #383535;
 }
 
-#search-field-div {
+.search-field-div {
   padding-left: 20px;
 }
 
-#search-form-title {
+.search-form-title {
   text-decoration: underline;
   display: flex;
   justify-content: center;

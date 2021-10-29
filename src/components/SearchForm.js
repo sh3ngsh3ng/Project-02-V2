@@ -4,6 +4,7 @@ import TopicList from "./TopicList"
 import SubjectBtn from "./SubjectBtn"
 import SearchBtn from "./SearchBtn"
 import LevelBtn from "./LevelBtn"
+import AdvancedBtn from "./AdvancedBtn"
 
 export default function SearchForm (props) {
 
@@ -25,9 +26,9 @@ export default function SearchForm (props) {
 
     return (
         <React.Fragment>
-                <div id="search-form" className="mb-2">
-                    <div><h1 id="search-form-title">Find Questions</h1></div>
-                    <div id="search-field-div">
+                <div className="search-form mb-2">
+                    <div><h1 class="search-form-title">Find Questions</h1></div>
+                    <div class="search-field-div">
                         <div className="mb-2">
                             <label class="search-form-label">Level: </label>
                             <LevelBtn data={props.data} 
@@ -67,6 +68,7 @@ export default function SearchForm (props) {
                                         />
                         </div>
                         <div id="search-btn-div">
+                            <AdvancedBtn changeSearchForm={props.changeSearchForm}/>
                             <SearchBtn searchQuestions = {props.searchQuestions}/>
                         </div>
                     </div>
