@@ -96,16 +96,16 @@ export default function EditForm(props) {
                         </textarea>
                     </div>
                 </div>
-                <div>
+                <div class="edit-form-btns-div">
+                <button class="delete-btn" onClick={async () => {
+                                                    await props.deleteQuestion()
+                                                    props.reloadQuestions()
+                                                    }}>Delete</button>
                 <button class="update-btn" onClick={async () => {
                                                 await props.updateQuestion()
                                                 props.reloadQuestions()
                                                 }}
                                                 >Update</button>
-                <button class="delete-btn" onClick={async () => {
-                                                    await props.deleteQuestion()
-                                                    props.reloadQuestions()
-                                                    }}>Delete</button>
                 </div>
             </div>
 

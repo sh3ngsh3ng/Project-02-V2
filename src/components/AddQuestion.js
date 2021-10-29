@@ -50,7 +50,7 @@ export default class AddQuestion extends React.Component {
     }
 
     // API URL
-    url = "https://3000-copper-tick-1aqczzix.ws-us18.gitpod.io/"
+    url = "https://3000-crimson-rat-mjdeddj3.ws-us18.gitpod.io/"
 
     // event handler to update state
     updateFormField = (evt) => {
@@ -235,11 +235,11 @@ export default class AddQuestion extends React.Component {
         if (this.state.submitPrompt && this.state.submitAnswer !== "") {
             return (
                 <React.Fragment>
-                    <div>
+                    <div id="add-form-btns-div">
+                        {/* Reset Button Temp*/}
+                        <button id="add-new-reset-btn" onClick={this.resetState}>Clear</button>
                         {/* Submit Question */}
                         <button id="add-new-submit-btn" onClick={this.submitNewQuestion}>Submit</button>
-                        {/* Reset Button Temp*/}
-                        <button id="add-new-reset-btn" onClick={this.resetState}>Reset</button>
                     </div>
                 </React.Fragment>
             )
