@@ -1,9 +1,7 @@
 import React from "react"
 import AdvancedBtn from "./AdvancedBtn"
 import SearchBtn from "./SearchBtn"
-import InputGroup from "react-bootstrap/InputGroup"
-import DropdownButton from "react-bootstrap/DropdownButton"
-import Dropdown from "react-bootstrap/Dropdown"
+
 
 
 export default function AdvancedSearchForm(props) {
@@ -24,23 +22,22 @@ export default function AdvancedSearchForm(props) {
             </div> */}
             <div className="search-form mb-2">
                 <div><h1 className="search-form-title">Advanced Search</h1></div>
-                <InputGroup className="mb-3">
-                    <DropdownButton
-                        variant="outline-secondary"
-                        title="Fields"
-                        id="input-group-dropdown-1"
+                <div className="input-group">
+                    <select class="adv-search-field"
+                            name="advancedSearchField"
+                            onChange={props.updateFormField}
                     >
-                        <Dropdown.Item >Level</Dropdown.Item>
-                        <Dropdown.Item >Subject</Dropdown.Item>
-                        <Dropdown.Item >Topic</Dropdown.Item>
-                        <Dropdown.Item >Question</Dropdown.Item>
-                    </DropdownButton>
+                        <option value="level">Level</option>
+                        <option value="subject">Subject</option>
+                        <option value="topic">Topic</option>
+                        <option value="prompt">Prompt</option>
+                    </select>
                     <input type="text" 
-                            name="advancedSearchInput" 
-                            onChange={props.updateFormField} 
-                            value={props.advancedSearchInput} 
-                            placeholder="Type Here!"/>
-                </InputGroup>
+                                name="advancedSearchInput" 
+                                onChange={props.updateFormField} 
+                                value={props.advancedSearchInput} 
+                                placeholder="Type Here!"/>
+                </div>
                 <div>
                     <AdvancedBtn changeSearchForm={props.changeSearchForm} />
                     <SearchBtn />

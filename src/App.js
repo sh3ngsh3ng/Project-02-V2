@@ -23,7 +23,7 @@ export default class App extends React.Component {
     'revealAnswer': false,
     'selectedQuestionId': "",
     'advancedSearch': false,
-    'advancedSearchField': "",
+    'advancedSearchField': "fields",
     'advancedSearchInput': ""
 
   }
@@ -177,6 +177,7 @@ export default class App extends React.Component {
       return <AdvancedSearchForm changeSearchForm ={this.changeSearchForm}
                                   updateFormField = {this.updateFormField}
                                   advancedSearchInput = {this.state.advancedSearchInput}
+                                  advancedSearchField = {this.state.advancedSearchField}
                                 />
     } else {
       return <SearchForm data={this.state.data} 
