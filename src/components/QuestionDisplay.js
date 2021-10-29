@@ -25,7 +25,14 @@ export default function QuestionDisplay(props) {
                                 <div className="card-body">
                                     <div className="mb-4">
                                     <span className="card-title">{question.prompt}</span>
-                                    <button type="button" className="btn-close" aria-label="Close"></button>
+                                    <button type="button" 
+                                            key = {i + 5}
+                                            className="btn-close" 
+                                            aria-label="Close"
+                                            onClick ={() => {
+                                                props.removeQuestionCard(question)
+                                            }}
+                                            ></button>
                                     </div>
                                     {props.questionAnswer(question.suggested_answer, question._id)}
                                     <div class="reveal-btn-div">

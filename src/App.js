@@ -180,6 +180,22 @@ export default class App extends React.Component {
     })
   }
 
+
+  // event handler to remove question cards (deleting from array)
+  removeQuestionCard = (questionToDelete) => {
+    let indexToRemove = this.state.searchResults.findIndex(question => question._id == questionToDelete._id)
+  
+    let clonedSearchResults = [
+      ...this.state.searchResults.slice(0, indexToRemove),
+      ...this.state.searchResults.slice(indexToRemove + 1)
+    ]
+
+    this.setState({
+      'searchResults': clonedSearchResults
+    })
+  }
+
+
   // conditional rendering of search forms (SearchForm & AdvancedSearchForm)
   renderSearchForm = () => {
     if (this.state.advancedSearch) {
@@ -204,6 +220,10 @@ export default class App extends React.Component {
                           />
     }
   }
+
+
+
+
 
 
   // function for conditional rendering of pages (LandingPage & QuestionPage & QuestionManagementPage)
@@ -231,6 +251,7 @@ export default class App extends React.Component {
                       displayDate = {this.displayDate}
                       changeSearchForm = {this.changeSearchForm}
                       renderSearchForm = {this.renderSearchForm}
+                      removeQuestionCard = {this.removeQuestionCard}
                       />
       )
     } else if (this.state.active === "questionmanage") {
@@ -245,7 +266,6 @@ export default class App extends React.Component {
     }
   }
 
-  
 
   render () {
     return (

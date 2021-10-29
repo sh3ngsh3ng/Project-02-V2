@@ -18,6 +18,7 @@ export default function QuestionPage (props) {
                                     questionAnswer = {props.questionAnswer}
                                     revealAnswer ={props.revealAnswer}
                                     displayDate = {props.displayDate}
+                                    removeQuestionCard = {props.removeQuestionCard}
                                 />
             </div>
         </React.Fragment>
