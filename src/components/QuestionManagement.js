@@ -8,8 +8,6 @@ import BackBtn from "./BackBtn"
 export default class QuestionManagement extends React.Component {
     state = {
         'data': [],
-        // this pw is for demonstration purpose only
-        'adminPw': "rotiprata123",
         'active': "submissions",
         "contributions": [],
         "modifyingCurrentQuestion": {},

@@ -60,7 +60,7 @@ export default class AddQuestion extends React.Component {
     }
 
 
-    // select subject event handler 
+    // select level event handler 
     selectLevel = (evt) => {
         this.resetState()
         let levelObj = this.props.levelObj(this.state.data, evt.target.value)
@@ -70,6 +70,14 @@ export default class AddQuestion extends React.Component {
         this.updateFormField(evt)
     }
 
+    // select subject event handler 
+    selectSubject = (evt) => {
+        let newDefaultTopic = this.state.levelObj[evt.target.value][0].toLowerCase()
+        this.setState({
+            'submitTopic': newDefaultTopic,
+            [evt.target.name]: evt.target.value
+        })
+    }
 
     // fetch data.json upon component mount
     async componentDidMount() {
@@ -130,7 +138,7 @@ export default class AddQuestion extends React.Component {
                         `}
                         value={subject.toLowerCase()}
                         name="submitSubject"
-                        onClick={this.updateFormField}
+                        onClick={this.selectSubject}
 
                     >{subject}</button>
                 )
@@ -158,11 +166,13 @@ export default class AddQuestion extends React.Component {
             let topicsJSX = []
             let subjectChosen = this.state.submitSubject
             let topics = this.state.levelObj[subjectChosen.toLowerCase()]
+            // to insert JSX into array
             for (let topic of topics) {
                 let topicSmallCase = topic.toLowerCase()
                 topicsJSX.push(<option value={topicSmallCase}
                 >{topic}</option>)
             }
+            
             return (
                 <React.Fragment>
                     <motion.div variants={this.variants}
@@ -173,7 +183,9 @@ export default class AddQuestion extends React.Component {
                     <span class="add-form-label">Topics: </span>
                     <select name="submitTopic"
                         class="add-form-topic-dropdown"
-                        onChange={this.updateFormField}>
+                        onChange={this.updateFormField}
+                        value = {this.state.submitTopic}
+                        >
                         <option value="" selected disabled>Please Choose a Topic</option>
                         {topicsJSX}
                     </select>
