@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from "axios"
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 import AlertNotif from "./AlertNotif"
 
 export default class AddQuestion extends React.Component {
@@ -110,13 +110,13 @@ export default class AddQuestion extends React.Component {
             return (
                 <React.Fragment>
                     <motion.div variants={this.variants}
-                                animate="animate1"
-                                initial="initial1"
-                                transition={this.variants.transition2}
+                        animate="animate1"
+                        initial="initial1"
+                        transition={this.variants.transition2}
                     >
-                    <span class="add-form-label">Grade: </span>
-                    {/* Grade List Rendering (map can't use due to closure) */}
-                    {gradeJSX}
+                        <span class="add-form-label">Grade: </span>
+                        {/* Grade List Rendering (map can't use due to closure) */}
+                        {gradeJSX}
                     </motion.div>
                 </React.Fragment>
             )
@@ -147,12 +147,12 @@ export default class AddQuestion extends React.Component {
             return (
                 <React.Fragment>
                     <motion.div variants={this.variants}
-                                animate="animate1"
-                                initial="initial1"
-                                transition={this.variants.transition2}
+                        animate="animate1"
+                        initial="initial1"
+                        transition={this.variants.transition2}
                     >
-                    <span class="add-form-label">Subject:</span>
-                    {subjectJSX}
+                        <span class="add-form-label">Subject:</span>
+                        {subjectJSX}
                     </motion.div>
                 </React.Fragment>
             )
@@ -173,23 +173,23 @@ export default class AddQuestion extends React.Component {
                 topicsJSX.push(<option value={topicSmallCase}
                 >{topic}</option>)
             }
-            
+
             return (
                 <React.Fragment>
                     <motion.div variants={this.variants}
-                                animate="animate1"
-                                initial="initial1"
-                                transition={this.variants.transition2}
-                                >
-                    <span class="add-form-label">Topics: </span>
-                    <select name="submitTopic"
-                        class="add-form-topic-dropdown"
-                        onChange={this.updateFormField}
-                        value = {this.state.submitTopic}
+                        animate="animate1"
+                        initial="initial1"
+                        transition={this.variants.transition2}
+                    >
+                        <span class="add-form-label">Topics: </span>
+                        <select name="submitTopic"
+                            class="add-form-topic-dropdown"
+                            onChange={this.updateFormField}
+                            value={this.state.submitTopic}
                         >
-                        <option value="" selected disabled>Please Choose a Topic</option>
-                        {topicsJSX}
-                    </select>
+                            <option value="" selected disabled>Please Choose a Topic</option>
+                            {topicsJSX}
+                        </select>
                     </motion.div>
                 </React.Fragment>
             )
@@ -205,10 +205,10 @@ export default class AddQuestion extends React.Component {
             return (
                 <React.Fragment>
                     <motion.div className="input-group mb-2"
-                                variants={this.variants}
-                                animate="animate1"
-                                initial="initial1"
-                                transition={this.variants.transition2}
+                        variants={this.variants}
+                        animate="animate1"
+                        initial="initial1"
+                        transition={this.variants.transition2}
                     >
                         <span className="input-group-text">
                             <span class="add-form-label">Question Prompt:</span>
@@ -221,11 +221,11 @@ export default class AddQuestion extends React.Component {
                         ></textarea>
                     </motion.div>
                     <motion.div className="input-group"
-                                variants={this.variants}
-                                animate="animate1"
-                                initial="initial1"
-                                transition={this.variants.transition1}
-                                >
+                        variants={this.variants}
+                        animate="animate1"
+                        initial="initial1"
+                        transition={this.variants.transition1}
+                    >
                         <span className="input-group-text">
                             <span class="add-form-label">Suggested Answer:</span>
                         </span>
@@ -255,8 +255,8 @@ export default class AddQuestion extends React.Component {
                         <button id="add-new-submit-btn" onClick={async () => {
                             await this.submitNewQuestion()
                             this.resetState()
-                            }}
-                            >Submit</button>
+                        }}
+                        >Submit</button>
                     </div>
                 </React.Fragment>
             )
@@ -285,7 +285,7 @@ export default class AddQuestion extends React.Component {
 
     // function to close AlertNotif after set amount of time
     closeAlertNotif = () => {
-        setTimeout(function(){
+        setTimeout(function () {
             this.setState({
                 "submitSuccess": ""
             })
@@ -295,77 +295,140 @@ export default class AddQuestion extends React.Component {
 
     // conditional rendering of AlertNotif
     submitNotif = () => {
-        if (this.state.submitSuccess) {
+        if (this.state.submitSuccess == true) {
+            this.closeAlertNotif()
             return (
                 <AlertNotif message="Submitted Successfully! Thank You for your contributions!"
-                            submitCheck = {this.state.submitSuccess}
-                            icon = {<i class="bi bi-check-circle"></i>}
+                    submitCheck={this.state.submitSuccess}
+                    icon={<i class="bi bi-check-circle"></i>}
                 />
             )
         }
-        this.closeAlertNotif() 
+        
     }
 
     render() {
-        return (
-            <React.Fragment>
-                {this.submitNotif()}
-                <div id="addnew-form">
-                    {/* Form Title */}
-                    <div id="addnew-title-div">
-                        <h1 id="addnew-title">Submit Question</h1>
-                    </div>
-                    {/* Level Input */}
-                    <motion.div className="mb-3"
-                                variants={this.variants}
-                                animate="animate1"
-                                initial="initial1"
-                                transition={this.variants.transition1}
-                    >
-                        <span class="add-form-label">Level: </span>
-                        <select name="submitLevel"
-                            id="add-level-dropdown"
-                            onChange={this.selectLevel}
-                            value = {this.state.submitLevel}
+        if (this.state.submitSuccess == true) {
+            return (
+                <React.Fragment>
+                    {this.submitNotif()}
+                    <div id="addnew-form">
+                        {/* Form Title */}
+                        <div id="addnew-title-div">
+                            <h1 id="addnew-title">Submit Question</h1>
+                        </div>
+                        {/* Level Input */}
+                        <motion.div className="mb-3"
+                            variants={this.variants}
+                            animate="animate1"
+                            initial="initial1"
+                            transition={this.variants.transition1}
+                        >
+                            <span class="add-form-label">Level: </span>
+                            <select name="submitLevel"
+                                id="add-level-dropdown"
+                                onChange={this.selectLevel}
+                                value={this.state.submitLevel}
                             >
-                            <option value="" selected disabled>Please Select a Level</option>
-                            {this.state.data.map(function (obj) {
-                                return (
-                                    <option value={obj.value}
-                                    >{obj.level}</option>
-                                )
-                            })}
-                        </select>
-                    </motion.div>
+                                <option value="" selected disabled>Please Select a Level</option>
+                                {this.state.data.map(function (obj) {
+                                    return (
+                                        <option value={obj.value}
+                                        >{obj.level}</option>
+                                    )
+                                })}
+                            </select>
+                        </motion.div>
 
-                    {/* Grade Input */}
-                    <div className="mb-3">
-                        {this.renderGrade()}
+                        {/* Grade Input */}
+                        <div className="mb-3">
+                            {this.renderGrade()}
+                        </div>
+
+                        {/* Subject Input */}
+                        <div className="mb-3">
+                            {this.renderSubjects()}
+                        </div>
+
+                        {/* Topic Input */}
+                        <div className="mb-3">
+                            {this.renderTopics()}
+                        </div>
+
+                        {/* Question Prompt & Suggested Answer*/}
+                        <div className="mb-3">
+                            {this.renderQnA()}
+                        </div>
+
+                        <div>
+                            {this.renderBtns()}
+                        </div>
+
+
                     </div>
+                </React.Fragment>
+            )
+        } else {
+            return (
+                <React.Fragment>
+                    <div id="addnew-form">
+                        {/* Form Title */}
+                        <div id="addnew-title-div">
+                            <h1 id="addnew-title">Submit Question</h1>
+                        </div>
+                        {/* Level Input */}
+                        <motion.div className="mb-3"
+                            variants={this.variants}
+                            animate="animate1"
+                            initial="initial1"
+                            transition={this.variants.transition1}
+                        >
+                            <span class="add-form-label">Level: </span>
+                            <select name="submitLevel"
+                                id="add-level-dropdown"
+                                onChange={this.selectLevel}
+                                value={this.state.submitLevel}
+                            >
+                                <option value="" selected disabled>Please Select a Level</option>
+                                {this.state.data.map(function (obj) {
+                                    return (
+                                        <option value={obj.value}
+                                        >{obj.level}</option>
+                                    )
+                                })}
+                            </select>
+                        </motion.div>
 
-                    {/* Subject Input */}
-                    <div className="mb-3">
-                        {this.renderSubjects()}
+                        {/* Grade Input */}
+                        <div className="mb-3">
+                            {this.renderGrade()}
+                        </div>
+
+                        {/* Subject Input */}
+                        <div className="mb-3">
+                            {this.renderSubjects()}
+                        </div>
+
+                        {/* Topic Input */}
+                        <div className="mb-3">
+                            {this.renderTopics()}
+                        </div>
+
+                        {/* Question Prompt & Suggested Answer*/}
+                        <div className="mb-3">
+                            {this.renderQnA()}
+                        </div>
+
+                        <div>
+                            {this.renderBtns()}
+                        </div>
+
+
                     </div>
+                </React.Fragment>
+            )
 
-                    {/* Topic Input */}
-                    <div className="mb-3">
-                        {this.renderTopics()}
-                    </div>
-
-                    {/* Question Prompt & Suggested Answer*/}
-                    <div className="mb-3">
-                        {this.renderQnA()}
-                    </div>
-
-                    <div>
-                        {this.renderBtns()}
-                    </div>
-
-
-                </div>
-            </React.Fragment>
-        )
+        }
     }
 
 
