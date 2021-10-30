@@ -1,10 +1,11 @@
 import React from "react"
 import { motion } from "framer-motion"
-
+import AlertNotif from "./AlertNotif"
 
 export default function LandingPage(props) {
     return (
         <React.Fragment>
+            <AlertNotif/>
             <div id="landing-page">
             {/* Landing Page Text 1 */}
             <div id="page-text-1-div">

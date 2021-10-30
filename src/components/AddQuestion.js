@@ -251,7 +251,11 @@ export default class AddQuestion extends React.Component {
                         {/* Reset Button Temp*/}
                         <button id="add-new-reset-btn" onClick={this.resetState}>Clear</button>
                         {/* Submit Question */}
-                        <button id="add-new-submit-btn" onClick={this.submitNewQuestion}>Submit</button>
+                        <button id="add-new-submit-btn" onClick={async () => {
+                            await this.submitNewQuestion()
+                            this.resetState()
+                            }}
+                            >Submit</button>
                     </div>
                 </React.Fragment>
             )
