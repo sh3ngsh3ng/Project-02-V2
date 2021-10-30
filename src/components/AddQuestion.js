@@ -298,7 +298,7 @@ export default class AddQuestion extends React.Component {
         if (this.state.submitSuccess == true) {
             this.closeAlertNotif()
             return (
-                <AlertNotif message="Submitted Successfully!"
+                <AlertNotif message="Submitted Successfully! Thank You for your contribution!"
                     submitCheck={this.state.submitSuccess}
                     icon={<i class="bi bi-check-circle success-submit-icon"></i>}
                 />
@@ -308,129 +308,189 @@ export default class AddQuestion extends React.Component {
     }
 
     render() {
-        if (this.state.submitSuccess == true) {
-            return (
-                <React.Fragment>
-                    {this.submitNotif()}
-                    <div id="addnew-form">
-                        {/* Form Title */}
-                        <div id="addnew-title-div">
-                            <h1 id="addnew-title">Submit Question</h1>
-                        </div>
-                        {/* Level Input */}
-                        <motion.div className="mb-3"
-                            variants={this.variants}
-                            animate="animate1"
-                            initial="initial1"
-                            transition={this.variants.transition1}
-                        >
-                            <span class="add-form-label">Level: </span>
-                            <select name="submitLevel"
-                                id="add-level-dropdown"
-                                onChange={this.selectLevel}
-                                value={this.state.submitLevel}
-                            >
-                                <option value="" selected disabled>Please Select a Level</option>
-                                {this.state.data.map(function (obj) {
-                                    return (
-                                        <option value={obj.value}
-                                        >{obj.level}</option>
-                                    )
-                                })}
-                            </select>
-                        </motion.div>
 
-                        {/* Grade Input */}
-                        <div className="mb-3">
-                            {this.renderGrade()}
-                        </div>
-
-                        {/* Subject Input */}
-                        <div className="mb-3">
-                            {this.renderSubjects()}
-                        </div>
-
-                        {/* Topic Input */}
-                        <div className="mb-3">
-                            {this.renderTopics()}
-                        </div>
-
-                        {/* Question Prompt & Suggested Answer*/}
-                        <div className="mb-3">
-                            {this.renderQnA()}
-                        </div>
-
-                        <div>
-                            {this.renderBtns()}
-                        </div>
-
-
+        // version 2 (no rerendering of the level topic dropdown)
+        return (
+            <React.Fragment>
+                {this.submitNotif()}
+                <div id="addnew-form">
+                    {/* Form Title */}
+                    <div id="addnew-title-div">
+                        <h1 id="addnew-title">Submit Question</h1>
                     </div>
-                </React.Fragment>
-            )
-        } else {
-            return (
-                <React.Fragment>
-                    <div id="addnew-form">
-                        {/* Form Title */}
-                        <div id="addnew-title-div">
-                            <h1 id="addnew-title">Submit Question</h1>
-                        </div>
-                        {/* Level Input */}
-                        <motion.div className="mb-3"
-                            variants={this.variants}
-                            animate="animate1"
-                            initial="initial1"
-                            transition={this.variants.transition1}
+                    {/* Level Input */}
+                    <motion.div className="mb-3"
+                        variants={this.variants}
+                        animate="animate1"
+                        initial="initial1"
+                        transition={this.variants.transition1}
+                    >
+                        <span class="add-form-label">Level: </span>
+                        <select name="submitLevel"
+                            id="add-level-dropdown"
+                            onChange={this.selectLevel}
+                            value={this.state.submitLevel}
                         >
-                            <span class="add-form-label">Level: </span>
-                            <select name="submitLevel"
-                                id="add-level-dropdown"
-                                onChange={this.selectLevel}
-                                value={this.state.submitLevel}
-                            >
-                                <option value="" selected disabled>Please Select a Level</option>
-                                {this.state.data.map(function (obj) {
-                                    return (
-                                        <option value={obj.value}
-                                        >{obj.level}</option>
-                                    )
-                                })}
-                            </select>
-                        </motion.div>
+                            <option value="" selected disabled>Please Select a Level</option>
+                            {this.state.data.map(function (obj) {
+                                return (
+                                    <option value={obj.value}
+                                    >{obj.level}</option>
+                                )
+                            })}
+                        </select>
+                    </motion.div>
 
-                        {/* Grade Input */}
-                        <div className="mb-3">
-                            {this.renderGrade()}
-                        </div>
-
-                        {/* Subject Input */}
-                        <div className="mb-3">
-                            {this.renderSubjects()}
-                        </div>
-
-                        {/* Topic Input */}
-                        <div className="mb-3">
-                            {this.renderTopics()}
-                        </div>
-
-                        {/* Question Prompt & Suggested Answer*/}
-                        <div className="mb-3">
-                            {this.renderQnA()}
-                        </div>
-
-                        <div>
-                            {this.renderBtns()}
-                        </div>
-
-
+                    {/* Grade Input */}
+                    <div className="mb-3">
+                        {this.renderGrade()}
                     </div>
-                </React.Fragment>
-            )
 
-        }
+                    {/* Subject Input */}
+                    <div className="mb-3">
+                        {this.renderSubjects()}
+                    </div>
+
+                    {/* Topic Input */}
+                    <div className="mb-3">
+                        {this.renderTopics()}
+                    </div>
+
+                    {/* Question Prompt & Suggested Answer*/}
+                    <div className="mb-3">
+                        {this.renderQnA()}
+                    </div>
+
+                    <div>
+                        {this.renderBtns()}
+                    </div>
+
+
+                </div>
+            </React.Fragment>
+        )
+
+        // version 1 (this version causes the page to rerender again.)
+        // if (this.state.submitSuccess == true) {
+        //     return (
+        //         <React.Fragment>
+        //             {this.submitNotif()}
+        //             <div id="addnew-form">
+        //                 {/* Form Title */}
+        //                 <div id="addnew-title-div">
+        //                     <h1 id="addnew-title">Submit Question</h1>
+        //                 </div>
+        //                 {/* Level Input */}
+        //                 <motion.div className="mb-3"
+        //                     variants={this.variants}
+        //                     animate="animate1"
+        //                     initial="initial1"
+        //                     transition={this.variants.transition1}
+        //                 >
+        //                     <span class="add-form-label">Level: </span>
+        //                     <select name="submitLevel"
+        //                         id="add-level-dropdown"
+        //                         onChange={this.selectLevel}
+        //                         value={this.state.submitLevel}
+        //                     >
+        //                         <option value="" selected disabled>Please Select a Level</option>
+        //                         {this.state.data.map(function (obj) {
+        //                             return (
+        //                                 <option value={obj.value}
+        //                                 >{obj.level}</option>
+        //                             )
+        //                         })}
+        //                     </select>
+        //                 </motion.div>
+
+        //                 {/* Grade Input */}
+        //                 <div className="mb-3">
+        //                     {this.renderGrade()}
+        //                 </div>
+
+        //                 {/* Subject Input */}
+        //                 <div className="mb-3">
+        //                     {this.renderSubjects()}
+        //                 </div>
+
+        //                 {/* Topic Input */}
+        //                 <div className="mb-3">
+        //                     {this.renderTopics()}
+        //                 </div>
+
+        //                 {/* Question Prompt & Suggested Answer*/}
+        //                 <div className="mb-3">
+        //                     {this.renderQnA()}
+        //                 </div>
+
+        //                 <div>
+        //                     {this.renderBtns()}
+        //                 </div>
+
+
+        //             </div>
+        //         </React.Fragment>
+        //     )
+        // } else {
+        //     return (
+        //         <React.Fragment>
+        //             <div id="addnew-form">
+        //                 {/* Form Title */}
+        //                 <div id="addnew-title-div">
+        //                     <h1 id="addnew-title">Submit Question</h1>
+        //                 </div>
+        //                 {/* Level Input */}
+        //                 <motion.div className="mb-3"
+        //                     variants={this.variants}
+        //                     animate="animate1"
+        //                     initial="initial1"
+        //                     transition={this.variants.transition1}
+        //                 >
+        //                     <span class="add-form-label">Level: </span>
+        //                     <select name="submitLevel"
+        //                         id="add-level-dropdown"
+        //                         onChange={this.selectLevel}
+        //                         value={this.state.submitLevel}
+        //                     >
+        //                         <option value="" selected disabled>Please Select a Level</option>
+        //                         {this.state.data.map(function (obj) {
+        //                             return (
+        //                                 <option value={obj.value}
+        //                                 >{obj.level}</option>
+        //                             )
+        //                         })}
+        //                     </select>
+        //                 </motion.div>
+
+        //                 {/* Grade Input */}
+        //                 <div className="mb-3">
+        //                     {this.renderGrade()}
+        //                 </div>
+
+        //                 {/* Subject Input */}
+        //                 <div className="mb-3">
+        //                     {this.renderSubjects()}
+        //                 </div>
+
+        //                 {/* Topic Input */}
+        //                 <div className="mb-3">
+        //                     {this.renderTopics()}
+        //                 </div>
+
+        //                 {/* Question Prompt & Suggested Answer*/}
+        //                 <div className="mb-3">
+        //                     {this.renderQnA()}
+        //                 </div>
+
+        //                 <div>
+        //                     {this.renderBtns()}
+        //                 </div>
+
+
+        //             </div>
+        //         </React.Fragment>
+        //     )
+
+        // }
     }
-
-
-
 }
