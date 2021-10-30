@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from "axios"
 import {motion} from "framer-motion"
-
+import AlertNotif from "./AlertNotif"
 
 export default class AddQuestion extends React.Component {
     state = {
@@ -12,7 +12,8 @@ export default class AddQuestion extends React.Component {
         "submitSubject": "",
         "submitTopic": "",
         "submitPrompt": "",
-        "submitAnswer": ""
+        "submitAnswer": "",
+        "submitSuccess": "",
     }
 
     // baseState & resetState function to reset states
@@ -23,7 +24,7 @@ export default class AddQuestion extends React.Component {
         "submitSubject": "",
         "submitTopic": "",
         "submitPrompt": "",
-        "submitAnswer": ""
+        "submitAnswer": "",
     }
 
     resetState = () => {
@@ -276,11 +277,39 @@ export default class AddQuestion extends React.Component {
             "answer": this.state.submitAnswer
         })
         console.log("Question Added")
+        this.setState({
+            "submitSuccess": true
+        })
+    }
+
+
+    // function to close AlertNotif after set amount of time
+    closeAlertNotif = () => {
+        setTimeout(function(){
+            this.setState({
+                "submitSuccess": ""
+            })
+        }.bind(this), 5000)
+    }
+
+
+    // conditional rendering of AlertNotif
+    submitNotif = () => {
+        if (this.state.submitSuccess) {
+            return (
+                <AlertNotif message="Submitted Successfully! Thank You for your contributions!"
+                            submitCheck = {this.state.submitSuccess}
+                            icon = {<i class="bi bi-check-circle"></i>}
+                />
+            )
+        }
+        this.closeAlertNotif() 
     }
 
     render() {
         return (
             <React.Fragment>
+                {this.submitNotif()}
                 <div id="addnew-form">
                     {/* Form Title */}
                     <div id="addnew-title-div">
