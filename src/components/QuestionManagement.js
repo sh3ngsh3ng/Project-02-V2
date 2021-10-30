@@ -142,6 +142,7 @@ export default class QuestionManagement extends React.Component {
 
 
     render() {
+        // version 2
         return (
             <React.Fragment>
                 {this.submitNotif()}
@@ -168,6 +169,56 @@ export default class QuestionManagement extends React.Component {
         )
     }
 
-
+    // version 1 (not the best, will cause rerendering of the whole list of questions)
+    // if (this.state.updateSuccess || this.state.deleteSuccess == true) {
+    //     return (
+    //         <React.Fragment>
+    //             {this.submitNotif()}
+    //             <ul class="nav nav-tabs">
+    //                 <li class="nav-item">
+    //                     <button className={`nav-link ${this.state.active === "submissions" ? "active" : null}`}
+    //                         onClick={(evt) => {
+    //                             this.setActive('submissions')
+    //                             this.fetchData()
+    //                         }}
+    //                     >Submissions</button>
+    //                 </li>
+    //                 <li class="nav-item">
+    //                     <button className={`nav-link ${this.state.active === "addnew" ? "active" : null}`}
+    //                         onClick={(evt) => {
+    //                             this.setActive('addnew')
+    //                         }}
+    //                     >Add New</button>
+    //                 </li>
+    //             </ul>
+    //             {this.renderContent()}
+    //             <BackBtn changePage={this.props.changePage} />
+    //         </React.Fragment>
+    //     )
+    // } else {
+    //     return (
+    //         <React.Fragment>
+    //             <ul class="nav nav-tabs">
+    //                 <li class="nav-item">
+    //                     <button className={`nav-link ${this.state.active === "submissions" ? "active" : null}`}
+    //                         onClick={(evt) => {
+    //                             this.setActive('submissions')
+    //                             this.fetchData()
+    //                         }}
+    //                     >Submissions</button>
+    //                 </li>
+    //                 <li class="nav-item">
+    //                     <button className={`nav-link ${this.state.active === "addnew" ? "active" : null}`}
+    //                         onClick={(evt) => {
+    //                             this.setActive('addnew')
+    //                         }}
+    //                     >Add New</button>
+    //                 </li>
+    //             </ul>
+    //             {this.renderContent()}
+    //             <BackBtn changePage={this.props.changePage} />
+    //         </React.Fragment>
+    //     )
+    // }
 
 }
