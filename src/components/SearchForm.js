@@ -35,6 +35,7 @@ export default function SearchForm (props) {
                                         updateFormField = {props.updateFormField}
                                         variants={variants}
                                         selectedLevel={props.selectedLevel}
+                                        resetSearchFields = {props.resetSearchFields}
                                         />
                             </div>
                         <div className="mb-2">

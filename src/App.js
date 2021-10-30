@@ -28,6 +28,14 @@ export default class App extends React.Component {
 
   }
 
+  // event handler to reset the fields if selectedLevel changes
+  resetSearchFields = () => {
+    this.setState({
+      'selectedGrade': "",
+      'selectedSubject': "",
+      'selectedTopic': ""
+    })
+  }
 
   // API url
   url = "https://3000-crimson-rat-mjdeddj3.ws-us18.gitpod.io/"
@@ -217,6 +225,7 @@ export default class App extends React.Component {
                           updateFormField = {this.updateFormField}
                           changeSearchForm ={this.changeSearchForm}
                           advancedSearch ={this.state.advancedSearch}
+                          resetSearchFields = {this.resetSearchFields}
                           />
     }
   }

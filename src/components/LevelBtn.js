@@ -11,7 +11,10 @@ export default function LevelBtn (props) {
                             className={`btn search-level-btn
                             ${props.selectedLevel == obj.value ? "btn-success": "btn-outline-primary"}`}
                             name = "selectedLevel"
-                            onClick = {props.updateFormField}
+                            onClick = {(evt) => {
+                                props.updateFormField(evt)
+                                props.resetSearchFields()
+                            }}
                             variants = {props.variants}
                             animate="animate1"
                             initial="initial1"
