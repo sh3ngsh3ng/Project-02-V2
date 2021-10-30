@@ -6,7 +6,7 @@ export default function Alert(props) {
 
     return (
         <motion.div 
-            className={`alert-notif alert ${props.submitCheck ? "alert-success": "alert-warning"}`} 
+            className={`alert-notif-div alert ${props.submitCheck ? "alert-success": "alert-warning"}`} 
             role="alert"
             animate={{y:0}}
             initial={{y:"-100%"}}
@@ -16,9 +16,11 @@ export default function Alert(props) {
                 delay: 0.02
             }}
             >
+                <div class="alert-notif-content">
                 {/* <i class="bi bi-check-circle"></i> */}
                 {props.icon}
-                {props.message}
+                <span class="alert-notif-text">{props.message}</span>
+                </div>
         </motion.div>
     )
 

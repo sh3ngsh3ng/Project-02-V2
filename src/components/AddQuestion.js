@@ -298,9 +298,9 @@ export default class AddQuestion extends React.Component {
         if (this.state.submitSuccess == true) {
             this.closeAlertNotif()
             return (
-                <AlertNotif message="Submitted Successfully! Thank You for your contributions!"
+                <AlertNotif message="Submitted Successfully!"
                     submitCheck={this.state.submitSuccess}
-                    icon={<i class="bi bi-check-circle"></i>}
+                    icon={<i class="bi bi-check-circle success-submit-icon"></i>}
                 />
             )
         }
