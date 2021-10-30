@@ -292,7 +292,9 @@ export default class AddQuestion extends React.Component {
                         <span class="add-form-label">Level: </span>
                         <select name="submitLevel"
                             id="add-level-dropdown"
-                            onChange={this.selectLevel}>
+                            onChange={this.selectLevel}
+                            value = {this.state.submitLevel}
+                            >
                             <option value="" selected disabled>Please Select a Level</option>
                             {this.state.data.map(function (obj) {
                                 return (
