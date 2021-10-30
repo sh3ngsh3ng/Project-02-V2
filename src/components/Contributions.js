@@ -40,6 +40,8 @@ export default function Contributions(props) {
                                             updateQuestion = {props.updateQuestion}
                                             deleteQuestion={props.deleteQuestion}
                                             reloadQuestions={props.reloadQuestions}
+                                            modifiedPrompt = {props.modifiedPrompt}
+                                            modifiedAnswer = {props.modifiedAnswer}
                                 />
                                 }
                             </Accordion.Body>

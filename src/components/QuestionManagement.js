@@ -87,6 +87,8 @@ export default class QuestionManagement extends React.Component {
                     updateQuestion={this.updateQuestion}
                     deleteQuestion={this.deleteQuestion}
                     reloadQuestions={this.fetchData}
+                    modifiedPrompt = {this.state.modifiedPrompt}
+                    modifiedAnswer = {this.state.modifiedAnswer}
                 />
             )
         }
@@ -103,7 +105,9 @@ export default class QuestionManagement extends React.Component {
     // event handler to set the question to modify
     modifyingQuestion = (questionObj) => {
         this.setState({
-            "modifyingCurrentQuestion": questionObj
+            "modifyingCurrentQuestion": questionObj,
+            "modifiedPrompt": questionObj.prompt,
+            "modifiedAnswer": questionObj.suggested_answer
         })
     }
 
