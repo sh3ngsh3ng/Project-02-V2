@@ -14,7 +14,7 @@ export default class QuestionManagement extends React.Component {
         "modifyingCurrentQuestion": {},
         "modifiedPrompt": "",
         "modifiedAnswer": "",
-        "updateSuccess": "",
+        "updateSuccess": null,
         "deleteSuccess": ""
     }
 
@@ -61,6 +61,13 @@ export default class QuestionManagement extends React.Component {
                 <AlertNotif message="Deleted Successfully!"
                     submitCheck={this.state.deleteSuccess}
                     icon={<i class="bi bi-check-circle success-submit-icon"></i>}
+                />
+            )
+        } else if (this.state.updateSuccess == false) {
+            return (
+                <AlertNotif message="Update unsuccessful. No fields were modified"
+                            submitCheck={this.state.updateSuccess}
+                            icon = {<i class="bi bi-exclamation-circle update-failed-icon"></i>}
                 />
             )
         }
@@ -123,15 +130,22 @@ export default class QuestionManagement extends React.Component {
 
     // (API) event handler to update question
     updateQuestion = async () => {
-        let questionId = this.state.modifyingCurrentQuestion._id
-        await axios.put(this.url + "update/" + questionId, {
-            "prompt": this.state.modifiedPrompt,
-            "answer": this.state.modifiedAnswer
-        })
-        this.setState({
-            'updateSuccess': true
-        })
-        return(console.log("Question Updated"))
+        // Case where there is no modification
+        if ((this.state.modifiedAnswer == this.state.modifyingCurrentQuestion.suggested_answer) && (this.state.modifiedPrompt == this.state.modifyingCurrentQuestion.prompt)) {
+            this.setState({
+                'updateSuccess': false
+            })
+        } else {
+            let questionId = this.state.modifyingCurrentQuestion._id
+            await axios.put(this.url + "update/" + questionId, {
+                "prompt": this.state.modifiedPrompt,
+                "answer": this.state.modifiedAnswer
+            })
+            this.setState({
+                'updateSuccess': true
+            })
+            return(console.log("Question Updated"))
+        }
     }
 
     // (API) event handler to delete question
