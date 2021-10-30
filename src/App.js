@@ -281,9 +281,11 @@ export default class App extends React.Component {
   render () {
     return (
       <React.Fragment>
+        <div id="full-page">
         <NavBar login={this.changeToQuestionManagement}/>
         <div id="question-management-div">
           {this.renderContent()}
+        </div>
         </div>
       </React.Fragment>
     )

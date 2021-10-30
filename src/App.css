@@ -1,8 +1,12 @@
+#full-page {
+  position: relative;
+  height: 100vh;
+}
 
 /* start of landing page */
 #landing-page {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-image: url("background-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,7 +79,7 @@
 /* start of submissions page */
 #question-management-div {
   height: 100vh;
-  background-image: url("background-repeat.png")
+  background-image: url("background-repeat.png");
 }
 
 .question-title {
