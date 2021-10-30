@@ -3,6 +3,7 @@ import React from "react"
 import AddQuestion from "./AddQuestion"
 import Contributions from "./Contributions"
 import BackBtn from "./BackBtn"
+import AlertNotif from "./AlertNotif"
 
 
 export default class QuestionManagement extends React.Component {
@@ -12,7 +13,9 @@ export default class QuestionManagement extends React.Component {
         "contributions": [],
         "modifyingCurrentQuestion": {},
         "modifiedPrompt": "",
-        "modifiedAnswer": ""
+        "modifiedAnswer": "",
+        "updateSuccess": "",
+        "deleteSuccess": ""
     }
 
     url = "https://3000-crimson-rat-mjdeddj3.ws-us18.gitpod.io/"
@@ -32,6 +35,38 @@ export default class QuestionManagement extends React.Component {
     }
 
 
+    // function to close AlertNotif after set amount of time
+    closeAlertNotif = () => {
+        setTimeout(function () {
+            this.setState({
+                "updateSuccess": "",
+                "deleteSuccess": ""
+            })
+        }.bind(this), 5000)
+    }
+
+    // conditional rendering of AlertNotif
+    submitNotif = () => {
+        if (this.state.updateSuccess == true) {
+            this.closeAlertNotif()
+            return (
+                <AlertNotif message="Updated Successfully!"
+                    submitCheck={this.state.updateSuccess}
+                    icon={<i class="bi bi-check-circle success-submit-icon"></i>}
+                />
+            )
+        } else if (this.state.deleteSuccess == true) {
+            this.closeAlertNotif()
+            return (
+                <AlertNotif message="Deleted Successfully!"
+                    submitCheck={this.state.deleteSuccess}
+                    icon={<i class="bi bi-check-circle success-submit-icon"></i>}
+                />
+            )
+        }
+    }
+
+    // conditional rendering of Submissions Page and AddNew Page
     renderContent() {
         if (this.state.active == "addnew") {
             return (
@@ -89,6 +124,9 @@ export default class QuestionManagement extends React.Component {
             "prompt": this.state.modifiedPrompt,
             "answer": this.state.modifiedAnswer
         })
+        this.setState({
+            'updateSuccess': true
+        })
         return(console.log("Question Updated"))
     }
 
@@ -96,6 +134,9 @@ export default class QuestionManagement extends React.Component {
     deleteQuestion = async () => {
         let questionId = this.state.modifyingCurrentQuestion._id
         await axios.delete(this.url + "delete/" + questionId)
+        this.setState({
+            'deleteSuccess': true
+        })
         return(console.log("Question Deleted"))
     }
 
@@ -103,6 +144,7 @@ export default class QuestionManagement extends React.Component {
     render() {
         return (
             <React.Fragment>
+                {this.submitNotif()}
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
                         <button className={`nav-link ${this.state.active === "submissions" ? "active" : null}`}
