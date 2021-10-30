@@ -15,7 +15,7 @@ export default class QuestionManagement extends React.Component {
         "modifiedPrompt": "",
         "modifiedAnswer": "",
         "updateSuccess": null,
-        "deleteSuccess": ""
+        "deleteSuccess": null
     }
 
     url = "https://3000-crimson-rat-mjdeddj3.ws-us18.gitpod.io/"
@@ -39,8 +39,8 @@ export default class QuestionManagement extends React.Component {
     closeAlertNotif = () => {
         setTimeout(function () {
             this.setState({
-                "updateSuccess": "",
-                "deleteSuccess": ""
+                "updateSuccess": null,
+                "deleteSuccess": null
             })
         }.bind(this), 5000)
     }
@@ -64,6 +64,7 @@ export default class QuestionManagement extends React.Component {
                 />
             )
         } else if (this.state.updateSuccess == false) {
+            this.closeAlertNotif()
             return (
                 <AlertNotif message="Update unsuccessful. No fields were modified"
                             submitCheck={this.state.updateSuccess}
