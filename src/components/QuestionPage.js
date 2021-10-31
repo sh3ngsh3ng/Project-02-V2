@@ -6,11 +6,13 @@ export default function QuestionPage (props) {
 
     return (
         <React.Fragment>
+            {props.savingQuestionNotif()}
             <div>
                 {props.renderSearchForm()}
                             
             </div>
                 <BackBtn changePage={props.changePage} />
+                {props.confirmUpdateBtn()}
             <div>
                 <QuestionDisplay searchResults = {props.searchResults}
                                     questionAnswer = {props.questionAnswer}

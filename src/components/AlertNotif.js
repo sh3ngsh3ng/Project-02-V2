@@ -17,7 +17,6 @@ export default function Alert(props) {
             }}
             >
                 <div class="alert-notif-content">
-                {/* <i class="bi bi-check-circle"></i> */}
                 {props.icon}
                 <span class="alert-notif-text">{props.message}</span>
                 </div>

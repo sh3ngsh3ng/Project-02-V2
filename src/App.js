@@ -10,6 +10,7 @@ import {motion} from "framer-motion"
 import "./App.css"
 import AdvancedSearchForm from "./components/AdvancedSearchForm"
 import SearchForm from "./components/SearchForm"
+import AlertNotif from "./components/AlertNotif"
 
 export default class App extends React.Component {
   state = {
@@ -26,7 +27,7 @@ export default class App extends React.Component {
     'advancedSearchField': "level",
     'advancedSearchInput': "",
     'savedQuestion': [],
-
+    'savingQuestion': null
   }
 
 
@@ -206,14 +207,46 @@ export default class App extends React.Component {
     })
   }
 
+
+  // function to close AlertNotif after set amount of time
+  closeAlertNotif = () => {
+    setTimeout(function () {
+        this.setState({
+            'savingQuestion': null
+        })
+    }.bind(this), 5000)
+  }
+
+
+  // alertnotif function when question is saved or unsaved
+  savingQuestionNotif = () => {
+    if (this.state.savingQuestion == true) {
+      return (
+        <AlertNotif message="Selected! Click 'Confirm' to save the questions"
+                        submitCheck = {true}
+        />
+      )
+    } else if (this.state.savingQuestion == false) {
+        return (
+          <AlertNotif message="Unselected! Select questions to save." 
+                        submitCheck = {false} />
+        )
+    }
+  }
+
+
   // event handler for when the like button is clicked
   clickThumb = (question) => {
     if (!this.state.savedQuestion.includes(question._id)) {
       let cloned = this.state.savedQuestion.slice()
       cloned.push(question._id)
       this.setState({
-        'savedQuestion': cloned
+        'savedQuestion': cloned,
+        'savingQuestion': true
       })
+      this.savingQuestionNotif()
+      this.closeAlertNotif()
+
     } else if (this.state.savedQuestion.includes(question._id)) {
       let indexToDelete = this.state.savedQuestion.findIndex(id => question._id == id)
       let clonedArray = [
@@ -221,10 +254,26 @@ export default class App extends React.Component {
         ...this.state.savedQuestion.slice(indexToDelete + 1)
       ]
       this.setState({
-        'savedQuestion': clonedArray
+        'savedQuestion': clonedArray,
+        'savingQuestion': false
       })
+      this.savingQuestionNotif()
+      this.closeAlertNotif()
     }
   }
+
+  // conditional rendering of submit button for saved questions
+  confirmUpdateBtn = () => {
+    return(
+      <div id="confirm-btn-div">
+            <button type="button" 
+            className="btn btn-success confirm-btn" 
+            onClick = {console.log("hi")}
+            >Confirm</button>
+      </div>
+    )
+  }
+
 
 
 
@@ -257,10 +306,6 @@ export default class App extends React.Component {
   }
 
 
-
-
-
-
   // function for conditional rendering of pages (LandingPage & QuestionPage & QuestionManagementPage)
   renderContent() {
     if (this.state.active === "landingpage") {
@@ -289,6 +334,8 @@ export default class App extends React.Component {
                       removeQuestionCard = {this.removeQuestionCard}
                       clickThumb = {this.clickThumb}
                       savedQuestion = {this.state.savedQuestion}
+                      savingQuestionNotif = {this.savingQuestionNotif}
+                      confirmUpdateBtn = {this.confirmUpdateBtn}
                       />
       )
     } else if (this.state.active === "questionmanage") {
