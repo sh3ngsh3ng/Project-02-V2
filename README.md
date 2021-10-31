@@ -75,7 +75,7 @@ The next question is, where do we get these resources? When pondering on this qu
 - axios
     - HTTP client used for HTTP requests (GET, POST, PUT, DELETE)
 - RESTful API
-    - Base Link for API: https://lys-qshare-2021.herokuapp.com/
+    - Base Link for API: https://lys-project2-qshare.herokuapp.com/
 
 <br/>
 
