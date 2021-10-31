@@ -34,7 +34,7 @@ export default class App extends React.Component {
 
 
   // API url
-  url = "https://lys-qshare.herokuapp.com/"
+  url = "https://3000-harlequin-nightingale-heftsy8c.ws-us18.gitpod.io/"
 
   // (API) Call event handler to search questions in SearchForm
   searchQuestions = async () => {
@@ -288,8 +288,8 @@ export default class App extends React.Component {
 
   // (API) Call to update saved questions
   confirmUpdate = async () => {
-    let results = await axios.patch(this.url + "savequestions/", {
-      'savedQuestions': this.state.savedQuestions
+    let results = await axios.patch(this.url + "savequestions", {
+      'savedQuestions': this.state.savedQuestion
     })
     this.setState({
       'savedSuccess': true
@@ -324,6 +324,7 @@ export default class App extends React.Component {
                           />
     }
   }
+
 
 
   // function for conditional rendering of pages (LandingPage & QuestionPage & QuestionManagementPage)
