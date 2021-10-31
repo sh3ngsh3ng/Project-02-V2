@@ -87,7 +87,7 @@ With a firm belief and this "sharing/helping culture" notion, **QShare** was con
 - axios
     - HTTP client used for HTTP requests (GET, POST, PUT, DELETE)
 - RESTful API
-    - Link for code: 
+    - Base Link for API: https://lys-qshare-2021.herokuapp.com/
 
 <br/>
 
