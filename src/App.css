@@ -398,6 +398,8 @@
 .reveal-btn-div {
   display: flex;
   justify-content: flex-end;
+  padding-right: 20px;
+  margin-top: 30px;
 }
 
 .reveal-btn {
@@ -674,6 +676,10 @@
 
   /* end of AdvancedSearchForm */
 
+  .reveal-btn-div {
+    padding-right: 40px;
+  }
+
   /* end of QuestionPage */
 
 
@@ -752,3 +758,11 @@
 
   /* end of AddQuestion page */
 }
+
+
+/* start of QuestionPage */
+.reveal-btn-div {
+  padding-right: 60px;
+}
+
+/* end of QuestionPage */
