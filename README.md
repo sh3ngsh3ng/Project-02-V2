@@ -25,23 +25,23 @@ The next question is, where do we get these resources? When pondering on this qu
 
 # First Look
 
-<h3 align="center" style="font-weight:bold;">Landing Page</h3>
+<h3 align="center" >Landing Page</h3>
 <div align="center">
 <img src="images/pj2-laptop-view.PNG" style="width:400px;">
 </div>
 <br/>
-<p align="center" style="font-weight:bold;">Question Page (normal & advanced search)</p>
+<h3 align="center">Question Page (normal & advanced search)</h3>
 <div align="center" style="display: flex; justify-content: center;">
 <img src="images/pj2-laptop-view-questionpage.JPG" style="width:350px; margin-right: 20px;">
 <img src="images/pj2-laptop-view-questionpage2.JPG" style="width:350px;">
 </div>
 <br/>
-<p align="center" style="font-weight:bold">User's Submissions/Contributions</p>
+<h3 align="center" >User's Submissions/Contributions</h3>
 <div align="center">
 <img src="images/pj2-laptop-view-contributions.JPG" style="width:400px;">
 </div>
 <br/>
-<p align="center" style="font-weight:bold">Add New Questions</p>
+<h3 align="center">Add New Questions</h3>
 <div align="center">
 <img src="images/pj2-laptop-view-addnew.JPG" style="width:400px;">
 </div>
