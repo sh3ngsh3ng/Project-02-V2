@@ -69,18 +69,25 @@ With a firm belief and this "sharing/helping culture" notion, **QShare** was con
 <br />
 
 # Technologies Used
-- HTML & CSS
-- Javascript
+- Languages used:
+    - HTML & CSS
+    - Javascript
 - Node.JS
+    - Backend runtime environment for API
 - MongoDB
+    - Database used to store the data
 - React.JS
+    - Framework for FrontEnd
 - Framer Motion
-- Bootstrap (v5.1)
+    - Animation of React Components
+- Bootstrap (v5.1) - Frontend Library
     - Native 
     - React Version
     - Bootstrap Icons
 - axios
-- RESTful APIs
+    - HTTP client used for HTTP requests (GET, POST, PUT, DELETE)
+- RESTful API
+    - Link for code: 
 
 <br/>
 
