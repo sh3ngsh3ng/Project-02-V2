@@ -281,7 +281,7 @@ export default class App extends React.Component {
 
   //
   confirmUpdate = () => {
-
+    
   }
 
   // conditional rendering of search forms (SearchForm & AdvancedSearchForm)
