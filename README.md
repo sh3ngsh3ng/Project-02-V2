@@ -118,6 +118,8 @@ Fonts:
 - Font Sizes: Adjustments are made based on the screen sizes to allow for comfortable reading without giving too much of a "chonky text" feels.
 - Typography: To fit the theme of mordern and simple, only sans-serif fonts were used instead of serif fonts where decorative lines are present.
 
+Refer to: https://bit.ly/3Eur3Lx for full UI/UX
+
 <br/>
 
 # Mobile Responsiveness
@@ -145,13 +147,9 @@ Test cases can be found in the following link: https://docs.google.com/document/
 # Bugs
 Testing is done after every implementation of function/feature. As such, most of the bugs for a particular function/feature is resolved before moving on to the next.
 
-For the bugs encountered during the project, refer to:
+For more bugs encountered during the project, refer to: https://bit.ly/3Eur3Lx
 
 Below are some of the unresolved bugs:
-- Bug 1
-- Bug 2
-
-
 
 <br/>
 
@@ -177,6 +175,4 @@ Last but not least, I would like to thank Google and StackOverflow for their unw
 
 # Disclaimer
 This project is for educational purposes only. Other than the idea/concept/mock questions of the project, all media files and technologies used in this project belongs to their respective owners and I do not claim any right over them.
-
-
 

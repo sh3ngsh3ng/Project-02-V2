@@ -90,9 +90,9 @@ export default function EditForm(props) {
                             </span>
                         </span>
                         <textarea className="form-control edit-input-field"
-                        name="modifiedAnswer" 
-                        defaultValue={props.modifiedAnswer}
-                        onChange={props.updatingQuestion}
+                                    name="modifiedAnswer" 
+                                    defaultValue={props.modifiedAnswer}
+                                    onChange={props.updatingQuestion}
                         >
                         </textarea>
                     </div>
