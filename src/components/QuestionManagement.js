@@ -4,6 +4,7 @@ import AddQuestion from "./AddQuestion"
 import Contributions from "./Contributions"
 import BackBtn from "./BackBtn"
 import AlertNotif from "./AlertNotif"
+import QuestionDisplay from "./QuestionDisplay"
 
 
 export default class QuestionManagement extends React.Component {
@@ -15,17 +16,19 @@ export default class QuestionManagement extends React.Component {
         "modifiedPrompt": "",
         "modifiedAnswer": "",
         "updateSuccess": null,
-        "deleteSuccess": null
+        "deleteSuccess": null,
+        "savedQuestions": []
     }
 
-    url = "https://lys-qshare.herokuapp.com/"
+    url = "https://3000-harlequin-nightingale-heftsy8c.ws-us18.gitpod.io/"
 
 
     fetchData = async () => {
         let contributions = (await axios.get(this.url)).data
         let data = (await axios.get("data.json")).data
+        let savedQuestions = (await axios.get(this.url + "savedquestions")).data
         this.setState({
-            contributions, data
+            contributions, data, savedQuestions
         })
         console.log("Data Fetched")
     }
@@ -77,8 +80,8 @@ export default class QuestionManagement extends React.Component {
     // conditional rendering of Submissions Page and AddNew Page
     renderContent() {
         if (this.state.active == "addnew") {
-            return (
-                // Form to addnew
+            // Form to addnew
+            return (   
                 <AddQuestion levelObj={this.props.levelObj} />
             )
         } else if (this.state.active == "submissions") {
@@ -99,7 +102,12 @@ export default class QuestionManagement extends React.Component {
                     modifiedAnswer = {this.state.modifiedAnswer}
                 />
             )
-        }
+        } 
+        // else if (this.state.active == "savedquestions") {
+        //     return (
+        //         <QuestionDisplay />
+        //     )
+        // }
     }
 
     // function to set the active page to show (addnew or contributions)
@@ -173,12 +181,20 @@ export default class QuestionManagement extends React.Component {
                         >Submissions</button>
                     </li>
                     <li class="nav-item">
+                        <button className={`nav-link ${this.state.active === "savedquestions" ? "active" : null}`}
+                            onClick={(evt) => {
+                                this.setActive('savedquestions')
+                            }}
+                        >Saved</button>
+                    </li>
+                    <li class="nav-item">
                         <button className={`nav-link ${this.state.active === "addnew" ? "active" : null}`}
                             onClick={(evt) => {
                                 this.setActive('addnew')
                             }}
                         >Add New</button>
                     </li>
+                    
                 </ul>
                 {this.renderContent()}
                 <BackBtn changePage={this.props.changePage} />
