@@ -62,9 +62,9 @@ With a firm belief and this "sharing/helping culture" notion, **QShare** was con
 
 ## QuickStart
 - Deployed Link:
-    - deployed link
+    - https://eager-heisenberg-5cdeeb.netlify.app/
 - User Guide for Application:
-    - Link to user guide
+    - (pending)
 
 <br />
 
