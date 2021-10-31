@@ -73,7 +73,7 @@ export default function EditForm(props) {
                             </span>
                         <textarea className="form-control edit-input-field"
                                 name="modifiedPrompt"
-                                defaultValue={props.modifiedPrompt}
+                                value={props.modifiedPrompt}
                                 onChange={props.updatingQuestion}
 
                         >
@@ -91,7 +91,7 @@ export default function EditForm(props) {
                         </span>
                         <textarea className="form-control edit-input-field"
                                     name="modifiedAnswer" 
-                                    defaultValue={props.modifiedAnswer}
+                                    value={props.modifiedAnswer}
                                     onChange={props.updatingQuestion}
                         >
                         </textarea>
