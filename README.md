@@ -98,7 +98,7 @@ Color:
 
 Images:
 - Since the application is going for a minimalistic design, not a lot of images were used.
-- The landing page uses a "study area" picture to depict convey the purpose of the website.
+- The landing page uses a "study area" picture to convey the purpose of the website.
 - A repeating background image is used for the other interface. This repeating image is chosen to give a "texture" to the application. A non-jarring image was used to fit the minimalistic and clean design.
 
 Fonts:
@@ -135,9 +135,7 @@ Test cases can be found in the following link: https://docs.google.com/document/
 # Bugs
 Testing is done after every implementation of function/feature. As such, most of the bugs for a particular function/feature is resolved before moving on to the next.
 
-For more bugs encountered during the project, refer to: https://bit.ly/3Eur3Lx
-
-Below are some of the unresolved bugs:
+For a list of bugs encountered during the project, refer to the bugs section of : https://bit.ly/3Eur3Lx
 
 <br/>
 
