@@ -104,15 +104,19 @@ With a firm belief and this "sharing/helping culture" notion, **QShare** was con
 # UI/UX (Surface Plane)
 The whole theme of the application is to achieve a minimalistic, clean design with a modern style. 
 
+Color:
+- A lot of the color chosen for the interface is blue or a family of blue colors due to its association with the theme "Education". For example, "Subject" buttons, Navigation Bar, etc
+- Other colors were chosen based on conventionality. E.g. "Submit" buttons are green, "Delete" buttons are red, "Update" buttons are yellowish.
+
 Images:
 - Since the application is going for a minimalistic design, not a lot of images were used.
 - The landing page uses a "study area" picture to depict convey the purpose of the website.
 - A repeating background image is used for the other interface. This repeating image is chosen to give a "texture" to the application. A non-jarring image was used to fit the minimalistic and clean design.
 
 Fonts:
-- Font Color: 
-- Font Sizes are adjusted based on the screen sizes to ensure no inconsistency
-- Typography......
+- Font Color: Generally, most of the fonts are black, with the exception where some texts in buttons are white to allow for better visibility. Or
+- Font Sizes: Adjustments are made based on the screen sizes to allow for comfortable reading without giving too much of a "chonky text" feels.
+- Typography: To fit the theme of mordern and simple, only sans-serif fonts were used instead of serif fonts where decorative lines are present.
 
 <br/>
 
