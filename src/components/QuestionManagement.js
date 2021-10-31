@@ -136,7 +136,7 @@ export default class QuestionManagement extends React.Component {
             })
         } else {
             let questionId = this.state.modifyingCurrentQuestion._id
-            await axios.put(this.url + "update/" + questionId, {
+            await axios.patch(this.url + "update/" + questionId, {
                 "prompt": this.state.modifiedPrompt,
                 "answer": this.state.modifiedAnswer
             })
