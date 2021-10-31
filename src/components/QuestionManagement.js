@@ -18,7 +18,7 @@ export default class QuestionManagement extends React.Component {
         "deleteSuccess": null
     }
 
-    url = "https://lys-qshare-2021.herokuapp.com/"
+    url = "https://lys-project2-qshare.herokuapp.com/"
 
 
     fetchData = async () => {
