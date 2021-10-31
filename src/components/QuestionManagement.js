@@ -37,6 +37,20 @@ export default class QuestionManagement extends React.Component {
         this.fetchData()
     }
 
+    // function to remove question card (modifying code from the one in App.js)
+    // event handler to remove question cards (deleting from array)
+    removeQuestionCard = (questionToDelete) => {
+        let indexToRemove = this.state.savedQuestions.findIndex(question => question._id == questionToDelete._id)
+    
+        let clonedSearchResults = [
+        ...this.state.savedQuestions.slice(0, indexToRemove),
+        ...this.state.savedQuestions.slice(indexToRemove + 1)
+        ]
+
+        this.setState({
+        'savedQuestions': clonedSearchResults
+        })
+    }
 
     // function to close AlertNotif after set amount of time
     closeAlertNotif = () => {
@@ -108,7 +122,7 @@ export default class QuestionManagement extends React.Component {
                                     questionAnswer = {this.props.questionAnswer}
                                     revealAnswer ={this.props.revealAnswer}
                                     displayDate = {this.props.displayDate}
-                                    removeQuestionCard = {this.props.removeQuestionCard}
+                                    removeQuestionCard = {this.removeQuestionCard}
                                     clickThumb = {this.props.clickThumb}
                                     savedQuestion = {this.returnIdOnly()}
                 />
