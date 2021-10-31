@@ -214,7 +214,7 @@ export default class App extends React.Component {
         this.setState({
             'savingQuestion': null
         })
-    }.bind(this), 5000)
+    }.bind(this), 3000)
   }
 
 
@@ -264,19 +264,25 @@ export default class App extends React.Component {
 
   // conditional rendering of submit button for saved questions
   confirmUpdateBtn = () => {
-    return(
-      <div id="confirm-btn-div">
-            <button type="button" 
-            className="btn btn-success confirm-btn" 
-            onClick = {console.log("hi")}
-            >Confirm</button>
-      </div>
-    )
+    if (this.state.savedQuestion.length !== 0) {
+      return(
+        <div id="confirm-btn-div">
+              <button type="button" 
+              className="btn btn-warning confirm-btn" 
+              onClick = {console.log("hi")}
+              >Confirm</button>
+        </div>
+      )
+    } else {
+      return null
+    }
   }
 
 
+  //
+  confirmUpdate = () => {
 
-
+  }
 
   // conditional rendering of search forms (SearchForm & AdvancedSearchForm)
   renderSearchForm = () => {

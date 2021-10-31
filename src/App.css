@@ -399,6 +399,8 @@
   padding: 2px 10px;
   border-radius: 10px;
   font-size: 15px;
+  color: rgb(53, 49, 49);
+  font-weight: 600;
 }
 
 
@@ -683,6 +685,12 @@
     margin-left: 30px;
   }
 
+  .confirm-btn {
+    font-size: 20px;
+    color: rgb(53, 49, 49);
+    font-weight: 600;
+  }
+
   /* start of AdvancedSearchForm */
 
 
@@ -778,6 +786,8 @@
     font-size: 20px;
   } 
 
+
+
   /* end of QuestionManagementPage */
 
 
@@ -819,6 +829,8 @@
   .reveal-btn-div {
     padding-right: 60px;
   }
+
+
 
   /* end of QuestionPage */
 
