@@ -21,12 +21,11 @@ The next question is, where do we get these resources? When pondering on this qu
 
 <p align="center">Together, let's make and effort to make educational resources more available to everyone!</p>
 
-
 <br />
 
 # First Look
 
-<p align="center" style="font-weight:bold">Landing Page</p>
+<p align="center" style="font-weight:500">Landing Page</p>
 <div align="center">
 <img src="images/pj2-laptop-view.PNG" style="width:400px;">
 </div>
