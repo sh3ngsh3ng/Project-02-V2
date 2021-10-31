@@ -102,12 +102,26 @@ export default class QuestionManagement extends React.Component {
                     modifiedAnswer = {this.state.modifiedAnswer}
                 />
             )
-        } 
-        // else if (this.state.active == "savedquestions") {
-        //     return (
-        //         <QuestionDisplay />
-        //     )
-        // }
+        } else if (this.state.active == "savedquestions") {
+            return (
+                <QuestionDisplay searchResults = {this.state.savedQuestions}
+                                    questionAnswer = {this.props.questionAnswer}
+                                    revealAnswer ={this.props.revealAnswer}
+                                    displayDate = {this.props.displayDate}
+                                    removeQuestionCard = {this.props.removeQuestionCard}
+                                    clickThumb = {this.props.clickThumb}
+                                    savedQuestion = {this.returnIdOnly()}
+                />
+            )
+        }
+    }
+    // return array of all saved question Id
+    returnIdOnly = () => {
+        let cloned = this.state.savedQuestions.slice()
+        let questionIds = cloned.map(questionObj => {
+            return questionObj._id
+        })
+        return (questionIds)
     }
 
     // function to set the active page to show (addnew or contributions)

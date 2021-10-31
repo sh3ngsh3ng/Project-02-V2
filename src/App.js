@@ -364,7 +364,13 @@ export default class App extends React.Component {
         <QuestionManagement levelObj = {this.findLevelObj}
                             editDone = {this.editDone}
                             changePage = {this.changeToLandingPage}
-                            
+
+                            removeQuestionCard = {this.removeQuestionCard}
+                            clickThumb = {this.clickThumb}
+                            savedQuestion = {this.state.savedQuestion}
+                            revealAnswer = {this.revealAnswer}
+                            questionAnswer = {this.questionAnswer}
+                            displayDate = {this.displayDate}
         
         />
       )
