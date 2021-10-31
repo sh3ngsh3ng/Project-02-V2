@@ -34,7 +34,7 @@ export default class App extends React.Component {
 
 
   // API url
-  url = "https://3000-harlequin-nightingale-heftsy8c.ws-us18.gitpod.io/"
+  url = "https://lys-project02-qshare.herokuapp.com/"
 
   // (API) Call event handler to search questions in SearchForm
   searchQuestions = async () => {

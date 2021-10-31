@@ -20,7 +20,7 @@ export default class QuestionManagement extends React.Component {
         "savedQuestions": []
     }
 
-    url = "https://3000-harlequin-nightingale-heftsy8c.ws-us18.gitpod.io/"
+    url = "https://lys-project02-qshare.herokuapp.com/"
 
 
     fetchData = async () => {
@@ -37,8 +37,7 @@ export default class QuestionManagement extends React.Component {
         this.fetchData()
     }
 
-    // function to remove question card (modifying code from the one in App.js)
-    // event handler to remove question cards (deleting from array)
+    // event handler to remove question cards (deleting from array) - modifying code from the one in App.js
     removeQuestionCard = (questionToDelete) => {
         let indexToRemove = this.state.savedQuestions.findIndex(question => question._id == questionToDelete._id)
     
