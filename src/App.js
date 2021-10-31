@@ -27,17 +27,17 @@ export default class App extends React.Component {
     'advancedSearchField': "level",
     'advancedSearchInput': "",
     'savedQuestion': [],
-    'savingQuestion': null
+    'savingQuestion': null,
+    'savedSuccess': null
   }
 
 
 
   // API url
-  url = "https://lys-project2-qshare.herokuapp.com/"
+  url = "https://lys-qshare.herokuapp.com/"
 
-  // event handler to search questions in SearchForm
+  // (API) Call event handler to search questions in SearchForm
   searchQuestions = async () => {
-    // API call
     let response = await axios.get(this.url + "search/" + `${this.state.selectedLevel}`, {
       params: {
         "grade": `${this.state.selectedGrade}`,
@@ -212,9 +212,10 @@ export default class App extends React.Component {
   closeAlertNotif = () => {
     setTimeout(function () {
         this.setState({
-            'savingQuestion': null
+            'savingQuestion': null,
+            'savedSuccess': null
         })
-    }.bind(this), 3000)
+    }.bind(this), 2500)
   }
 
 
@@ -231,6 +232,13 @@ export default class App extends React.Component {
           <AlertNotif message="Unselected! Select questions to save." 
                         submitCheck = {false} />
         )
+    } else if (this.state.savedSuccess == true) {
+      return (
+        <AlertNotif message="Question has been saved successfully!"
+                      submitCheck = {true}
+                      icon={<i class="bi bi-check-circle success-submit-icon"></i>}
+        />
+      )
     }
   }
 
@@ -269,7 +277,7 @@ export default class App extends React.Component {
         <div id="confirm-btn-div">
               <button type="button" 
               className="btn btn-warning confirm-btn" 
-              onClick = {console.log("hi")}
+              onClick = {this.confirmUpdate}
               >Confirm</button>
         </div>
       )
@@ -278,10 +286,16 @@ export default class App extends React.Component {
     }
   }
 
-
-  //
-  confirmUpdate = () => {
-    // start here
+  // (API) Call to update saved questions
+  confirmUpdate = async () => {
+    let results = await axios.patch(this.url + "savequestions/", {
+      'savedQuestions': this.state.savedQuestions
+    })
+    this.setState({
+      'savedSuccess': true
+    })
+    this.closeAlertNotif()
+    console.log(results)
   }
 
   // conditional rendering of search forms (SearchForm & AdvancedSearchForm)

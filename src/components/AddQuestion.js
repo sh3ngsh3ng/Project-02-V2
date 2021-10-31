@@ -51,7 +51,7 @@ export default class AddQuestion extends React.Component {
     }
 
     // API URL
-    url = "https://lys-project2-qshare.herokuapp.com/"
+    url = "https://lys-qshare.herokuapp.com/"
 
     // event handler to update state
     updateFormField = (evt) => {
