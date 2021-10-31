@@ -1,4 +1,6 @@
 # Project: QShare
+
+
 <div align="center">
 <img src="images/pj2-laptop-view.PNG" style="width:500px;">
 </div>
@@ -7,7 +9,7 @@
 <p align="center">- Nelson Mandela</p>
 <br />
 
-## Introduction
+# Introduction
 With the advent of technology, education has become more available than ever. Information and knowledge are now literally just one search away. 
 
 <br/>
@@ -30,7 +32,10 @@ As a tutor myself,
 
 Let's make educational resources more avaialbe....
 
-## First Look
+<br />
+
+# First Look
+
 <p align="center" style="font-weight:bold">Landing Page</p>
 <div align="center">
 <img src="images/pj2-laptop-view.PNG" style="width:400px;">
@@ -60,6 +65,8 @@ Let's make educational resources more avaialbe....
 - User Guide for Application:
     - 
 
+<br />
+
 # Technologies Used
 - HTML & CSS
 - Javascript
@@ -74,15 +81,19 @@ Let's make educational resources more avaialbe....
 - axios
 - RESTful APIs
 
+<br/>
 
 # Features
 
+
+<br/>
 
 # UI/UX
 For more details of the planning behind the UI/UX, please refer to: 
 
 
 
+<br/>
 
 # Mobile Responsiveness
 From the painful experience of Project 1, the strategy for mobile responsiveness this time is to adopt a mobile-first strategy. After the functionality were coded, all the components were styled and adjusted to fit mobile sizing [iPhone X (375px) used as base]. After which, media query was used to adjust the sizing of the elements to fit all the larger resolution devices. 
@@ -97,13 +108,14 @@ Below are the devices that can be supported:
 - Laptop (1024)
 - Laptop (1440)
 
-
+<br/>
 
 # Test Cases
-Testing is done using test cases. The focus for testing is to......
+Testing is done using test cases. The focus for testing is to make sure that application allows for the searching, adding, updating and deleting of questions.
 
+Test cases can be found in the following link: https://docs.google.com/document/d/1ldeXxDb2wLrwYknFTmNlgId-tdx0KqrqBnOrgrWJwvo/edit?usp=sharing
 
-
+<br/>
 
 # Bugs
 Testing is done after every implementation of function/feature. As such, most of the bugs for a particular function/feature is resolved before moving on to the next.
@@ -116,6 +128,7 @@ Below are some of the unresolved bugs:
 
 
 
+<br/>
 
 # Incomplete + Possible Improvements
 - (incomplete)
@@ -123,6 +136,7 @@ Below are some of the unresolved bugs:
 
 
 
+<br/>
 
 # Credits & Acknowledgements
 I would like to acknowledge the lead instructor Mr Paul, teaching assistant Haryati, as well as all my classmates for the guidance and emotional support during the duration of this project.
@@ -133,6 +147,8 @@ Background images is sourced from these websites:
 
 
 Last but not least, I would like to thank Google and StackOverflow for their unwavering 24/7 support in this project as well.
+
+<br/>
 
 # Disclaimer
 This project is for educational purposes only. Other than the idea/concept/mock questions of the project, all media files and technologies used in this project belongs to their respective owners and I do not claim any right over them.
