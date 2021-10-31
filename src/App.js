@@ -24,7 +24,8 @@ export default class App extends React.Component {
     'selectedQuestionId': "",
     'advancedSearch': false,
     'advancedSearchField': "level",
-    'advancedSearchInput': ""
+    'advancedSearchInput': "",
+    'savedQuestion': [],
 
   }
 
@@ -205,6 +206,28 @@ export default class App extends React.Component {
     })
   }
 
+  // event handler for when the like button is clicked
+  clickThumb = (question) => {
+    if (!this.state.savedQuestion.includes(question._id)) {
+      let cloned = this.state.savedQuestion.slice()
+      cloned.push(question._id)
+      this.setState({
+        'savedQuestion': cloned
+      })
+    } else if (this.state.savedQuestion.includes(question._id)) {
+      let indexToDelete = this.state.savedQuestion.findIndex(id => question._id == id)
+      let clonedArray = [
+        ...this.state.savedQuestion.slice(0, indexToDelete),
+        ...this.state.savedQuestion.slice(indexToDelete + 1)
+      ]
+      this.setState({
+        'savedQuestion': clonedArray
+      })
+    }
+  }
+
+
+
 
   // conditional rendering of search forms (SearchForm & AdvancedSearchForm)
   renderSearchForm = () => {
@@ -228,6 +251,7 @@ export default class App extends React.Component {
                           changeSearchForm ={this.changeSearchForm}
                           advancedSearch ={this.state.advancedSearch}
                           resetSearchFields = {this.resetSearchFields}
+
                           />
     }
   }
@@ -263,6 +287,8 @@ export default class App extends React.Component {
                       changeSearchForm = {this.changeSearchForm}
                       renderSearchForm = {this.renderSearchForm}
                       removeQuestionCard = {this.removeQuestionCard}
+                      clickThumb = {this.clickThumb}
+                      savedQuestion = {this.state.savedQuestion}
                       />
       )
     } else if (this.state.active === "questionmanage") {

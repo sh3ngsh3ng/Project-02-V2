@@ -1,8 +1,6 @@
 import React from "react"
 import QuestionDisplay from "./QuestionDisplay"
-import SearchForm from "./SearchForm"
 import BackBtn from "./BackBtn"
-
 
 export default function QuestionPage (props) {
 
@@ -19,6 +17,8 @@ export default function QuestionPage (props) {
                                     revealAnswer ={props.revealAnswer}
                                     displayDate = {props.displayDate}
                                     removeQuestionCard = {props.removeQuestionCard}
+                                    clickThumb = {props.clickThumb}
+                                    savedQuestion = {props.savedQuestion}
                                 />
             </div>
         </React.Fragment>

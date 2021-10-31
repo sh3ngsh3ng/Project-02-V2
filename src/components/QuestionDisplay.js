@@ -1,5 +1,6 @@
 import React from "react"
 import {motion} from "framer-motion"
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function QuestionDisplay(props) {
     let searchResultsArray = props.searchResults
@@ -41,7 +42,11 @@ export default function QuestionDisplay(props) {
                                             value={question._id}
                                             >Answer</button>
                                     </div>
-                                    <p className="card-text"><small className="text-muted">Date Added: {props.displayDate(question.datetime)}</small></p>
+                                    <i class={`like-btn bi bi-cloud-download-fill ${props.savedQuestion.includes(question._id)? "upvote-green" : "upvote-white"}`} 
+                                        onClick = {() => props.clickThumb(question)}
+                                    ></i>
+                                    <span className="card-text"><small className="text-muted">Date Added: {props.displayDate(question.datetime)}</small></span>
+                                    
                                 </div>
                             </div>
                         </div>

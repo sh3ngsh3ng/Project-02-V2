@@ -64,7 +64,7 @@ export default class QuestionManagement extends React.Component {
                 />
             )
         } else if (this.state.updateSuccess == false) {
-            this.closeAlertNotif()
+            // this.closeAlertNotif()
             return (
                 <AlertNotif message="Update unsuccessful. No fields were modified"
                             submitCheck={this.state.updateSuccess}
@@ -118,8 +118,6 @@ export default class QuestionManagement extends React.Component {
             "modifiedAnswer": questionObj.suggested_answer
         })
     }
-
-
 
     // event handler to store update (prompt & answer)
     updatingQuestion = (evt) => {
