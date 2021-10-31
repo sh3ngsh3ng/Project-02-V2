@@ -5,32 +5,33 @@
 <img src="images/pj2-laptop-view.PNG" style="width:500px;">
 </div>
 <br/>
-<p align="center">"Education is the most powerful weapon we can use to change the world"</p>
+<p align="center">"Education is the most powerful weapon we can use to change the world."</p>
 <p align="center">- Nelson Mandela</p>
 <br />
 
 # Introduction
-With the advent of technology, education has become more available than ever. Information and knowledge are now literally just one search away. 
+The project was designed to further improve the accessibility of educational resources for students undergoing Singapore's education curriculum. In Singapore, bookstores are always filled with assessment books where students can purchase to get more practice questions to practice. However, not everyone have the luxury of getting these books/practice questions.
 
-<br/>
-However, all of these wouldn't have been possible if none of us "share" in the first place. For example, can you imagine a world where no one is answering questions on StackOverFlow? Bizarre, right?
+<br />
 
-<br
-/>
-However, not everyone of us 
-We are learning and improving 
+Personally, I **firmly** believe that lack of educational resources should not be an obstacle during the course of learning.
 
-Various organizations have also contributed to 
+<br />
 
-For example, various resources such as Khan Academy, Coursera, MIT OpenCourseWare
+The next question is, where do we get these resources? When pondering on this question, StackOverFlow came to mind. The place where kind strangers from all around the world share their expertise/knowledge to solve coding issues for others. Can you imagine a world where StackOverFlow is gone? Bizarre, right?
 
-As such, this project was planned with the intention to add .........
+<br />
 
-As a tutor myself, 
+With a firm belief and this "sharing/helping culture" notion, **QShare** was conceptualized.
 
-**QShare** is the short-form derived from Question Sharing. **QShare** provides the convenience for students to find practice questions to get more practice. Furthermore, it allows contributors to add to this pool of question database to share with others.
+<br />
 
-Let's make educational resources more avaialbe....
+**QShare** is the short-form derived from Question Sharing. **QShare** provides the platform for students to find practice questions to get more practice. In addition, it allows the users to contribute questions to the database and share them with others!
+
+<br />
+
+<p align="center">Together, let's make and effort to make educational resources more available to everyone!</p>
+
 
 <br />
 
@@ -63,7 +64,7 @@ Let's make educational resources more avaialbe....
 - Deployed Link:
     - deployed link
 - User Guide for Application:
-    - 
+    - Link to user guide
 
 <br />
 
@@ -84,14 +85,27 @@ Let's make educational resources more avaialbe....
 <br/>
 
 # Features
+- (Default Search) Search for practice questions by level, grade, subject and topic.
+- (Advanced Search) Search for practice questions by keywords from level, subject and topic field
+- (Registered Users) Add new questions to the database for others to practice
+- (Registered Users) Edit submitted questions to update them
+- (Registered Users) Delete submitted questions
 
 
 <br/>
 
-# UI/UX
-For more details of the planning behind the UI/UX, please refer to: 
+# UI/UX (Surface Plane)
+The whole theme of the application is to achieve a minimalistic, clean design with a modern style. 
 
+Images:
+- Since the application is going for a minimalistic design, not a lot of images were used.
+- The landing page uses a "study area" picture to depict convey the purpose of the website.
+- A repeating background image is used for the other interface. This repeating image is chosen to give a "texture" to the application. A non-jarring image was used to fit the minimalistic and clean design.
 
+Fonts:
+- Font Color: 
+- Font Sizes are adjusted based on the screen sizes to ensure no inconsistency
+- Typography......
 
 <br/>
 
