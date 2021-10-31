@@ -20,11 +20,10 @@ export default function Contributions(props) {
                                     }}>
                         <Accordion.Item eventKey={question._id}
                                         value={question._id}
-                                        onClick={() => {
-                                            props.modifyQuestion(question)
-                                        }}
                                         >
-                            <Accordion.Header>
+                            <Accordion.Header onClick={() => {
+                                            props.modifyQuestion(question)
+                                        }}>
                                 <Badge pill bg="success">
                                     <span class="badge-text">Approved</span>
                                     </Badge>
