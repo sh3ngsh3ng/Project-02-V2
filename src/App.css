@@ -757,12 +757,17 @@
   }
 
   /* end of AddQuestion page */
+
+  /* start of QuestionPage */
+  .reveal-btn-div {
+    padding-right: 60px;
+  }
+
+  /* end of QuestionPage */
+
+
+
+
 }
 
 
-/* start of QuestionPage */
-.reveal-btn-div {
-  padding-right: 60px;
-}
-
-/* end of QuestionPage */
