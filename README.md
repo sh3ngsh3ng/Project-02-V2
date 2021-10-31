@@ -70,6 +70,7 @@ Let's make educational resources more avaialbe....
 - Bootstrap (v5.1)
     - Native 
     - React Version
+    - Bootstrap Icons
 - axios
 - RESTful APIs
 
@@ -87,6 +88,14 @@ For more details of the planning behind the UI/UX, please refer to:
 From the painful experience of Project 1, the strategy for mobile responsiveness this time is to adopt a mobile-first strategy. After the functionality were coded, all the components were styled and adjusted to fit mobile sizing [iPhone X (375px) used as base]. After which, media query was used to adjust the sizing of the elements to fit all the larger resolution devices. 
 
 Below are the devices that can be supported:
+- Mobile M (375) to Mobile L (425)
+    - iPhone 6/7/8 Plus
+    - iPhoneX
+- Tablet (768)
+    - iPad & iPad Pro
+    - Surface Duo
+- Laptop (1024)
+- Laptop (1440)
 
 
 
@@ -97,6 +106,13 @@ Testing is done using test cases. The focus for testing is to......
 
 
 # Bugs
+Testing is done after every implementation of function/feature. As such, most of the bugs for a particular function/feature is resolved before moving on to the next.
+
+For the bugs encountered during the project, refer to:
+
+Below are some of the unresolved bugs:
+- Bug 1
+- Bug 2
 
 
 
@@ -109,12 +125,14 @@ Testing is done using test cases. The focus for testing is to......
 
 
 # Credits & Acknowledgements
-I would like to acknowledge the lead instructor Mr Paul, teaching assistant Haryati and John, as well as all my classmates for the guidance and emotional support during the duration of this project.
+I would like to acknowledge the lead instructor Mr Paul, teaching assistant Haryati, as well as all my classmates for the guidance and emotional support during the duration of this project.
 
-Background image.........
+Background images is sourced from these websites:
+- https://www.toptal.com/designers/subtlepatterns/ep-natural-white/
+- https://wallpapersafari.com/w/rFUMHq#google_vignette
 
 
-Last but not least, I would like to thank Google and StackOverflow for their continuous unwavering 24/7 support in this project as well.
+Last but not least, I would like to thank Google and StackOverflow for their unwavering 24/7 support in this project as well.
 
 # Disclaimer
 This project is for educational purposes only. Other than the idea/concept/mock questions of the project, all media files and technologies used in this project belongs to their respective owners and I do not claim any right over them.
