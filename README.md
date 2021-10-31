@@ -11,19 +11,18 @@
 
 # Introduction
 The project was designed to further improve the accessibility of educational resources for students undergoing Singapore's education curriculum. In Singapore, bookstores are always filled with assessment books where students can purchase to get more practice questions to practice. However, not everyone have the luxury of getting these books/practice questions.
-
 <br />
+
 Personally, I **firmly** believe that lack of educational resources should not be an obstacle during the course of learning.
-
 <br />
+
 The next question is, where do we get these resources? When pondering on this question, StackOverFlow came to mind. The place where kind strangers from all around the world share their expertise/knowledge to solve coding issues for others. Can you imagine a world where StackOverFlow is gone? Bizarre, right?
-
 <br />
+
 With a firm belief and this "sharing/helping culture" notion, **QShare** was conceptualized.
-
 <br />
-**QShare** is the short-form derived from Question Sharing. **QShare** provides the platform for students to find practice questions to get more practice. In addition, it allows the users to contribute questions to the database and share them with others!
 
+**QShare** is the short-form derived from Question Sharing. **QShare** provides the platform for students to find practice questions to get more practice. In addition, it allows the users to contribute questions to the database and share them with others!
 <br />
 
 <p align="center">Together, let's make and effort to make educational resources more available to everyone!</p>
