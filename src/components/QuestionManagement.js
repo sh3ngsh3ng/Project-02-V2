@@ -20,7 +20,7 @@ export default class QuestionManagement extends React.Component {
         "savedQuestions": []
     }
 
-    url = "https://lys-project02-qshare.herokuapp.com/"
+    url = "https://3000-amber-puma-hs6a6gy9.ws-us25.gitpod.io/"
 
 
     fetchData = async () => {
