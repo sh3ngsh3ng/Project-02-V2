@@ -20,6 +20,7 @@ export default class App extends React.Component {
     'selectedGrade': "",
     'selectedSubject': "",
     'selectedTopic': "",
+    'selectedTags': [],
     'searchResults': [],
     'revealAnswer': false,
     'selectedQuestionId': "",
@@ -59,15 +60,14 @@ export default class App extends React.Component {
         'keywords': this.state.advancedSearchInput
       }
     })
-    console.log("function called")
-    console.log(response.data)
+
     this.setState({
       'searchResults': response.data
     })
   }
   
   async componentDidMount() {
-    // fetch data.json on loa
+    // fetch data.json on load
     let response = await axios.get("data.json")
     this.setState ({
       'data': response.data
@@ -76,7 +76,7 @@ export default class App extends React.Component {
   }
 
   // event handler to change page from landing to question page + set state for selectedLevel)
-  changeToQuestionPage = async (evt) => {
+  changeToQuestionPage = (evt) => {
     this.setState({
       'active': "questionpage",
       'selectedLevel': evt.target.value,
@@ -93,6 +93,13 @@ export default class App extends React.Component {
     })
   }
 
+  // event handler to change page to questionmanagement
+  changeToQuestionManagement = () => {
+    this.setState({
+      'active': "questionmanage"
+    })
+  }
+
   // event handler to reset the fields if selectedLevel changes
   resetSearchFields = () => {
     this.setState({
@@ -102,14 +109,7 @@ export default class App extends React.Component {
     })
   }
 
-  // event handler to change page to questionmanagement
-  changeToQuestionManagement = () => {
-    this.setState({
-      'active': "questionmanage"
-    })
-  }
-
-
+  
   // recursive function to find object of selected level
   findLevelObj = (array, level) => {
     if (array.length === 1) {
@@ -125,10 +125,31 @@ export default class App extends React.Component {
 
   // update form field
   updateFormField = (evt) => {
-    this.setState({
-      [evt.target.name]: evt.target.value
-    })
+
+    // if updating tags array
+    if (evt.target.name == "selectedTags") {
+      let currentValues = this.state[evt.target.name]
+      let modifiedValues = []
+      if (!currentValues.includes(evt.target.value)) {
+        modifiedValues = [...currentValues, evt.target.value]
+      } else {
+        modifiedValues = currentValues.filter((element) => {
+          return element !== evt.target.value
+        })
+      }
+      console.log(modifiedValues)
+      this.setState({
+        [evt.target.name]: modifiedValues
+      })
+    } 
+    // updating other form updates
+    else {
+      this.setState({
+        [evt.target.name]: evt.target.value
+      })
+    }
   }
+
 
   // function for AnimatedLettersV1 (list rendering of strings)
   animateLettersV1 = (string) => {
@@ -314,6 +335,7 @@ export default class App extends React.Component {
                           selectSubject = {this.selectSubject}
                           selectedSubject = {this.state.selectedSubject}
                           selectedGrade = {this.state.selectedGrade}
+                          selectedTags = {this.state.selectedTags}
                           selectTopic = {this.selectTopic}
                           searchQuestions = {this.searchQuestions}
                           updateFormField = {this.updateFormField}
@@ -364,7 +386,6 @@ export default class App extends React.Component {
         <QuestionManagement levelObj = {this.findLevelObj}
                             editDone = {this.editDone}
                             changePage = {this.changeToLandingPage}
-
                             removeQuestionCard = {this.removeQuestionCard}
                             clickThumb = {this.clickThumb}
                             savedQuestion = {this.state.savedQuestion}

@@ -53,13 +53,28 @@ export default class AddQuestion extends React.Component {
     // API URL
     url = "https://3000-amber-puma-hs6a6gy9.ws-us25.gitpod.io/"
 
+    // (API) submit new question
+    submitNewQuestion = async () => {
+        let newQuestion = await axios.post(this.url + `addquestion`, {
+            "level": this.state.submitLevel,
+            "grade": this.state.submitGrade,
+            "subject": this.state.submitSubject,
+            "topic": this.state.submitTopic,
+            "prompt": this.state.submitPrompt,
+            "answer": this.state.submitAnswer
+        })
+        console.log("Question Added")
+        this.setState({
+            "submitSuccess": true
+        })
+    }
+
     // event handler to update state
     updateFormField = (evt) => {
         this.setState({
             [evt.target.name]: evt.target.value
         })
     }
-
 
     // select level event handler 
     selectLevel = (evt) => {
@@ -198,7 +213,6 @@ export default class AddQuestion extends React.Component {
         }
     }
 
-
     // conditional rendering of question prompt and suggested answer function
     renderQnA = () => {
         if (this.state.submitTopic !== "") {
@@ -266,23 +280,6 @@ export default class AddQuestion extends React.Component {
     }
 
 
-    // (API) submit new question
-    submitNewQuestion = async () => {
-        let newQuestion = await axios.post(this.url + `addquestion`, {
-            "level": this.state.submitLevel,
-            "grade": this.state.submitGrade,
-            "subject": this.state.submitSubject,
-            "topic": this.state.submitTopic,
-            "prompt": this.state.submitPrompt,
-            "answer": this.state.submitAnswer
-        })
-        console.log("Question Added")
-        this.setState({
-            "submitSuccess": true
-        })
-    }
-
-
     // function to close AlertNotif after set amount of time
     closeAlertNotif = () => {
         setTimeout(function () {
@@ -308,7 +305,6 @@ export default class AddQuestion extends React.Component {
     }
 
     render() {
-
         // version 2 (no rerendering of the level topic dropdown)
         return (
             <React.Fragment>
@@ -364,7 +360,6 @@ export default class AddQuestion extends React.Component {
                     <div>
                         {this.renderBtns()}
                     </div>
-
 
                 </div>
             </React.Fragment>

@@ -5,6 +5,7 @@ import SubjectBtn from "./SubjectBtn"
 import SearchBtn from "./SearchBtn"
 import LevelBtn from "./LevelBtn"
 import AdvancedBtn from "./AdvancedBtn"
+import QuestionTags from "./QuestionTags"
 
 export default function SearchForm (props) {
 
@@ -66,6 +67,11 @@ export default function SearchForm (props) {
                                         updateFormField = {props.updateFormField}
                                         selectTopic = {props.selectTopic}
                                         variants = {variants}
+                                        />
+                        </div>
+                        <div className="mb-2">
+                            <QuestionTags selectedTags = {props.selectedTags}
+                                        updateFormField = {props.updateFormField}
                                         />
                         </div>
                         <div id="search-form-btns-div">

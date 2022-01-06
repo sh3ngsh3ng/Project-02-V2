@@ -35,6 +35,7 @@ export default class QuestionManagement extends React.Component {
 
     async componentDidMount() {
         this.fetchData()
+        console.log(this.state.savedQuestions)
     }
 
     // event handler to remove question cards (deleting from array) - modifying code from the one in App.js
@@ -128,13 +129,14 @@ export default class QuestionManagement extends React.Component {
             )
         }
     }
+
     // return array of all saved question Id
     returnIdOnly = () => {
         let cloned = this.state.savedQuestions.slice()
-        let questionIds = cloned.map(questionObj => {
+        let questionIds = cloned.map(function(questionObj) {
             return questionObj._id
         })
-        return (questionIds)
+        return questionIds
     }
 
     // function to set the active page to show (addnew or contributions)
