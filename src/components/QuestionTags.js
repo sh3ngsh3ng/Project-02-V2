@@ -3,8 +3,6 @@ import React from 'react'
 
 export default function QuestionTags(props) {
 
-
-
     return (
         <React.Fragment>
             <input type="checkbox" name="selectedTags" value="hot" 

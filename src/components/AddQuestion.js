@@ -2,6 +2,7 @@ import React from 'react'
 import axios from "axios"
 import { motion } from "framer-motion"
 import AlertNotif from "./AlertNotif"
+import QuestionTags from "./QuestionTags"
 
 export default class AddQuestion extends React.Component {
     state = {
@@ -14,6 +15,7 @@ export default class AddQuestion extends React.Component {
         "submitPrompt": "",
         "submitAnswer": "",
         "submitSuccess": "",
+        "selectedTags": []
     }
 
     // baseState & resetState function to reset states
@@ -71,9 +73,28 @@ export default class AddQuestion extends React.Component {
 
     // event handler to update state
     updateFormField = (evt) => {
-        this.setState({
+        // if updating tags array
+        if (evt.target.name == "selectedTags") {
+            let currentValues = this.state[evt.target.name]
+            let modifiedValues = []
+            if (!currentValues.includes(evt.target.value)) {
+            modifiedValues = [...currentValues, evt.target.value]
+            } else {
+            modifiedValues = currentValues.filter((element) => {
+                return element !== evt.target.value
+            })
+            }
+            console.log(modifiedValues)
+            this.setState({
+            [evt.target.name]: modifiedValues
+            })
+        } 
+      // updating other form updates
+        else {
+            this.setState({
             [evt.target.name]: evt.target.value
-        })
+            })
+        }
     }
 
     // select level event handler 
@@ -213,7 +234,7 @@ export default class AddQuestion extends React.Component {
         }
     }
 
-    // conditional rendering of question prompt and suggested answer function
+    // conditional rendering of question prompt and suggested answer function + question tags
     renderQnA = () => {
         if (this.state.submitTopic !== "") {
             return (
@@ -250,6 +271,11 @@ export default class AddQuestion extends React.Component {
                             value={this.state.submitAnswer}
                         ></textarea>
                     </motion.div>
+                    <div>
+                        <QuestionTags selectedTags = {this.state.selectedTags}
+                                        updateFormField = {this.updateFormField}
+                                    />
+                    </div>
                 </React.Fragment>
             )
         } else {
