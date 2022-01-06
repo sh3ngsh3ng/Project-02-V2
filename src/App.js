@@ -43,7 +43,8 @@ export default class App extends React.Component {
       params: {
         "grade": `${this.state.selectedGrade}`,
         "subject": `${this.state.selectedSubject}`,
-        "topic": `${this.state.selectedTopic}`
+        "topic": `${this.state.selectedTopic}`,
+        "tags": `${this.state.selectedTags}`
       }
     })
     

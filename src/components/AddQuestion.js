@@ -63,7 +63,8 @@ export default class AddQuestion extends React.Component {
             "subject": this.state.submitSubject,
             "topic": this.state.submitTopic,
             "prompt": this.state.submitPrompt,
-            "answer": this.state.submitAnswer
+            "answer": this.state.submitAnswer,
+            "tags": this.state.selectedTags
         })
         console.log("Question Added")
         this.setState({
