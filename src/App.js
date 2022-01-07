@@ -46,15 +46,13 @@ export default class App extends React.Component {
     if (this.state.selectedDate1 !== "") {
       fromDate = this.state.selectedDate1.toISOString().split('T')[0]
     } else {
-      fromDate = null
+      fromDate = ""
     }
     if (this.state.selectedDate2 !== "") {
       toDate = this.state.selectedDate2.toISOString().split('T')[0]
     } else {
-      toDate = null
+      toDate = ""
     }
-    console.log(fromDate)
-    console.log(toDate)
 
     let response = await axios.get(this.url + "read/search/" + `${this.state.selectedLevel}`, {
       params: {

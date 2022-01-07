@@ -27,6 +27,7 @@ export default class AddQuestion extends React.Component {
         "submitTopic": "",
         "submitPrompt": "",
         "submitAnswer": "",
+        "selectedTags": []
     }
 
     resetState = () => {
