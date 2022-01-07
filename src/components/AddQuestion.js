@@ -8,13 +8,13 @@ export default class AddQuestion extends React.Component {
     state = {
         "data": [],
         "levelObj": {},
+        "submitSuccess": "null",
         "submitLevel": "",
         "submitGrade": "",
         "submitSubject": "",
         "submitTopic": "",
         "submitPrompt": "",
         "submitAnswer": "",
-        "submitSuccess": "",
         "selectedTags": []
     }
 
@@ -57,7 +57,9 @@ export default class AddQuestion extends React.Component {
 
     // (API) submit new question
     submitNewQuestion = async () => {
-        let newQuestion = await axios.post(this.url + `create/addquestion`, {
+        console.log("called")
+
+        await axios.post(this.url + `create/addquestion`, {
             "level": this.state.submitLevel,
             "grade": this.state.submitGrade,
             "subject": this.state.submitSubject,
@@ -65,12 +67,25 @@ export default class AddQuestion extends React.Component {
             "prompt": this.state.submitPrompt,
             "answer": this.state.submitAnswer,
             "tags": this.state.selectedTags
+        }).then((response) => {
+            console.log(response.status)
+            if (response.status == 200) {
+                this.setState({
+                    "submitSuccess": "success"
+                })
+            }
+        }).catch((error) => {
+            console.log(error.response.status)
+            if (error.response.status == 400) {
+                this.setState({
+                    "submitSuccess": "failed",
+                })
+            }
         })
-        console.log("Question Added")
-        this.setState({
-            "submitSuccess": true
-        })
+        
     }
+
+    
 
     // event handler to update state
     updateFormField = (evt) => {
@@ -124,6 +139,7 @@ export default class AddQuestion extends React.Component {
             'data': response.data
         })
     }
+
 
     // conditional rendering of grade function
     renderGrade = () => {
@@ -311,7 +327,7 @@ export default class AddQuestion extends React.Component {
     closeAlertNotif = () => {
         setTimeout(function () {
             this.setState({
-                "submitSuccess": ""
+                "submitSuccess": "null"
             })
         }.bind(this), 5000)
     }
@@ -319,7 +335,11 @@ export default class AddQuestion extends React.Component {
 
     // conditional rendering of AlertNotif
     submitNotif = () => {
-        if (this.state.submitSuccess == true) {
+        if (this.state.submitSuccess == "null") {
+            return null
+        }
+
+        if (this.state.submitSuccess == "success") {
             this.closeAlertNotif()
             return (
                 <AlertNotif message="Submitted Successfully! Thank You for your contribution!"
@@ -327,7 +347,17 @@ export default class AddQuestion extends React.Component {
                     icon={<i class="bi bi-check-circle success-submit-icon"></i>}
                 />
             )
+        } 
+        if (this.state.submitSuccess == "failed") {
+            this.closeAlertNotif()
+            return (
+                <AlertNotif message="Submission Failed!"
+                    submitCheck = {this.state.submitSuccess}
+                    icon = {<i class="bi bi-exclamation-circle update-failed-icon"></i>}
+                />
+            )
         }
+
         
     }
 

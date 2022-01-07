@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function DateSearch (props) {
    
-  return (
+    return (
     <DatePicker selected={props.selectedDate} onChange={(date) => props.updateDateField(props.dateName, date) }/>
     );
 

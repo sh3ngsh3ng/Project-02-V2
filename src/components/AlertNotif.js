@@ -6,7 +6,7 @@ export default function Alert(props) {
 
     return (
         <motion.div 
-            className={`alert-notif-div alert ${props.submitCheck ? "alert-success": "alert-warning"}`} 
+            className={`alert-notif-div alert ${props.submitCheck == "success" ? "alert-success": "alert-warning"}`} 
             role="alert"
             animate={{y:0}}
             initial={{y:"-100%"}}
