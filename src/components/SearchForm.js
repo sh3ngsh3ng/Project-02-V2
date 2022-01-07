@@ -6,6 +6,7 @@ import SearchBtn from "./SearchBtn"
 import LevelBtn from "./LevelBtn"
 import AdvancedBtn from "./AdvancedBtn"
 import QuestionTags from "./QuestionTags"
+import DateSearch from "./DateSearch"
 
 export default function SearchForm (props) {
 
@@ -73,6 +74,18 @@ export default function SearchForm (props) {
                             <QuestionTags selectedTags = {props.selectedTags}
                                         updateFormField = {props.updateFormField}
                                         />
+                        </div>
+                        <div>
+                            <label>From: </label>
+                            <DateSearch selectedDate = {props.selectedDate1}
+                                        dateName = "selectedDate1"
+                                        updateDateField = {props.updateDateField}
+                            />
+                            <label>To: </label>
+                            <DateSearch selectedDate = {props.selectedDate2}
+                                        dateName = "selectedDate2"
+                                        updateDateField = {props.updateDateField}
+                            />
                         </div>
                         <div id="search-form-btns-div">
                             <AdvancedBtn changeSearchForm={props.changeSearchForm}/>

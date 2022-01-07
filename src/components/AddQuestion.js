@@ -57,7 +57,7 @@ export default class AddQuestion extends React.Component {
 
     // (API) submit new question
     submitNewQuestion = async () => {
-        let newQuestion = await axios.post(this.url + `addquestion`, {
+        let newQuestion = await axios.post(this.url + `create/addquestion`, {
             "level": this.state.submitLevel,
             "grade": this.state.submitGrade,
             "subject": this.state.submitSubject,

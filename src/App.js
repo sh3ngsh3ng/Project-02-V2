@@ -22,6 +22,8 @@ export default class App extends React.Component {
     'selectedTopic': "",
     'selectedTags': [],
     'searchResults': [],
+    'selectedDate1': "",
+    'selectedDate2': "",
     'revealAnswer': false,
     'selectedQuestionId': "",
     'advancedSearch': false,
@@ -39,12 +41,29 @@ export default class App extends React.Component {
 
   // (API) Call event handler to search questions in SearchForm
   searchQuestions = async () => {
-    let response = await axios.get(this.url + "search/" + `${this.state.selectedLevel}`, {
+    let fromDate
+    let toDate
+    if (this.state.selectedDate1 !== "") {
+      fromDate = this.state.selectedDate1.toISOString().split('T')[0]
+    } else {
+      fromDate = null
+    }
+    if (this.state.selectedDate2 !== "") {
+      toDate = this.state.selectedDate2.toISOString().split('T')[0]
+    } else {
+      toDate = null
+    }
+    console.log(fromDate)
+    console.log(toDate)
+
+    let response = await axios.get(this.url + "read/search/" + `${this.state.selectedLevel}`, {
       params: {
         "grade": `${this.state.selectedGrade}`,
         "subject": `${this.state.selectedSubject}`,
         "topic": `${this.state.selectedTopic}`,
-        "tags": `${this.state.selectedTags}`
+        "tags": `${this.state.selectedTags}`,
+        "fromDate": fromDate,
+        "toDate": toDate
       }
     })
     
@@ -151,6 +170,12 @@ export default class App extends React.Component {
     }
   }
 
+  // update date state 
+  updateDateField = (name, date) => {
+    this.setState({
+      [name]: date
+    })
+  }
 
   // function for AnimatedLettersV1 (list rendering of strings)
   animateLettersV1 = (string) => {
@@ -343,7 +368,9 @@ export default class App extends React.Component {
                           changeSearchForm ={this.changeSearchForm}
                           advancedSearch ={this.state.advancedSearch}
                           resetSearchFields = {this.resetSearchFields}
-
+                          selectedDate1 = {this.state.selectedDate1}
+                          selectedDate2 = {this.state.selectedDate2}
+                          updateDateField = {this.updateDateField}
                           />
     }
   }

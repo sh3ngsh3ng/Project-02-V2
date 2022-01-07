@@ -24,9 +24,9 @@ export default class QuestionManagement extends React.Component {
 
 
     fetchData = async () => {
-        let contributions = (await axios.get(this.url)).data
+        let contributions = (await axios.get(this.url + "read")).data
         let data = (await axios.get("data.json")).data
-        let savedQuestions = (await axios.get(this.url + "savedquestions")).data
+        let savedQuestions = (await axios.get(this.url + "read/" + "savedquestions")).data
         this.setState({
             contributions, data, savedQuestions
         })
@@ -187,11 +187,13 @@ export default class QuestionManagement extends React.Component {
     // (API) event handler to delete question
     deleteQuestion = async () => {
         let questionId = this.state.modifyingCurrentQuestion._id
+        console.log(this.url + "delete/" + questionId)
         await axios.delete(this.url + "delete/" + questionId)
         this.setState({
             'deleteSuccess': true
         })
-        return(console.log("Question Deleted"))
+        console.log("Question Deleted")
+        return
     }
 
 
