@@ -23,6 +23,16 @@ The next question is, where do we get these resources? When pondering on this qu
 
 <br />
 
+# QuickStart
+- Deployed Link:
+    - React: https://sharp-leakey-780ef5.netlify.app/
+    - Express: https://lys-project02-express-resub.herokuapp.com/
+- User Guide for Application:
+    - (pending)
+
+<br />
+
+
 # First Look
 
 <h3 align="center" >Landing Page</h3>
@@ -47,15 +57,6 @@ The next question is, where do we get these resources? When pondering on this qu
 </div>
 <br/>
 
-
-## QuickStart
-- Deployed Link:
-    - React: https://sharp-leakey-780ef5.netlify.app/
-    - Express: https://lys-project02-express-resub.herokuapp.com/
-- User Guide for Application:
-    - (pending)
-
-<br />
 
 # Technologies Used
 - Languages used:
