@@ -50,7 +50,8 @@ The next question is, where do we get these resources? When pondering on this qu
 
 ## QuickStart
 - Deployed Link:
-    - https://competent-agnesi-50e277.netlify.app/
+    - React: https://sharp-leakey-780ef5.netlify.app/
+    - Express: https://lys-project02-express-resub.herokuapp.com/
 - User Guide for Application:
     - (pending)
 
